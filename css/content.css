@@ -1,0 +1,27 @@
+#title {
+  font-family: 'Rancho', serif;
+  font-size: 70px;
+}
+
+
+#content {
+  /*background: url('http://cdn.wallpapersafari.com/85/90/SvzWQV.jpg') fixed;
+  background-size: cover;*/
+  padding: 150px 200px 200px 200px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#box_description {
+  background: rgb(0, 0, 0,0.9);
+  color: white;
+}
+
+
+#box_image {
+  padding-top:70px;
+}
