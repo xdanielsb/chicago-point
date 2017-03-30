@@ -40,3 +40,7 @@
   -o-transform:scale(1.25); /* Opera */
    transform:scale(1.25);
   }
+
+.gray{
+  filter: grayscale(100%);
+}

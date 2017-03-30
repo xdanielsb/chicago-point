@@ -1,5 +1,5 @@
 setTimeout(greeting, 3000)
-setTimeout(remind, 4000)
+setTimeout(remind, 7000)
 
 function greeting(){
 $.notify({
@@ -8,7 +8,7 @@ $.notify({
 	message: '  Hello, Welcome'
 },{
 	type: 'minimalist',
-	delay: 3000,
+	delay: 2000,
 	icon_type: 'image',
 	template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
 		'<img data-notify="icon"  height="50px" class="img-circle pull-left">' +
