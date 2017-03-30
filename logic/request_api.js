@@ -1,62 +1,28 @@
 'use strict'
 
-//Ensure that the DOM is completely load
-$(document).ready(function (){
-
-  let response;
-  let dataset;
-
-  function fill_table(){
-    let results = response.results
-    dataset = [];
-
-    // Iterate over the data in the table
-    results.forEach( function (e){
-        var row = [e.uid, e.mindate, e.maxdate, e.name, e.datacoverage, e.id]
-        dataset.push(row)
-    });
-
-    // Print the dataset in console
-    console.log(dataset)
-
-    // Creating the table
-    let table = $('#example').DataTable({
-      data: dataset,
-      columns: [
-          { title: "uid" },
-          { title: "mindate" },
-          { title: "maxdate" },
-          { title: "name" },
-          { title: "datacoverage" },
-          { title: "id" }
-      ]
-    });
-
-    // Listen click on the table
-    $('#example').on('click', 'tr', function () {
-        var data = table.row( this ).data();
-        alert( 'You clicked on '+data[0]+'\'s row' );
-    } );
-
-  }
-  //Create ajax JQuery request
+let response;
+let dataset;
+//Create ajax JQuery request
+function request(_method, _url) {
   $.ajax({
-      method: "GET",
-      url: 'https://www.ncdc.noaa.gov/cdo-web/api/v2/datasets',
-      headers: {
-        'token': 'xtLJFvVAFGacWOPnHFCOJvAfwVhVPFmI',
-      },
-    })
+    method: _method,
+    url: _url,
+    headers: {
+      'token': 'xtLJFvVAFGacWOPnHFCOJvAfwVhVPFmI',
+    },
+  })
 
-    .done((res) => {
-      response = res;
-      //Fill the table with the answer
-      console.log(response);
-      fill_table();
-    })
+  .done((res) => {
+    response = res;
+    //Fill the table with the answer
+    show_datasets_noaa_api();
+    console.log(response);
+  })
 
-    .fail((_, status, error) => {
-      console.log(status);
-    });
+  .fail((_, status, error) => {
+    console.log(status);
+  });
+}
 
-});
+//Testing the API
+request("GET", "https://www.ncdc.noaa.gov/cdo-web/api/v2/datasets")
