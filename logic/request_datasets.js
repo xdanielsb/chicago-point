@@ -96,7 +96,19 @@ function show_datasets_rent(){
         title: "Lat"
     },{
         title: "Long"
-    }]
+    }],
+    "columnDefs": [
+            {
+                "targets": [3],
+                "visible": false
+            },{
+                "targets": [6],
+                "visible": false
+            },{
+                "targets": [5],
+                "visible": false
+            }
+        ]
     });
 
   // Listen click on the table
