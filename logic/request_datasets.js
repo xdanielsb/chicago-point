@@ -1,10 +1,19 @@
 'use strict'
 /*
- * This function consume the api of noaa.gov in this case the weather
- * API,
- * This function is called after the ajax API has finished.
+ * Depend on: No local
+ * These methods are called when the promises are getting by the
+ * request api.
  */
-function show_datasets_noaa_api() {
+
+
+/*
+ * This function consume the api of noaa.gov in this case the weather
+ * API, besides this iscalled after the ajax API has finished.
+ */
+
+let dataset = []
+
+function show_datasets_noaa_api(response) {
   let results = response.results
   dataset = [];
 
@@ -55,7 +64,7 @@ function show_datasets_noaa_api() {
  * This function consume the apartments avaliable for renting
  */
 
-function show_datasets_rent(){
+function show_datasets_rent(response){
   let results = response
   dataset = [];
 
@@ -119,5 +128,13 @@ function show_datasets_rent(){
       alert('You clicked on ' + data[0] + '\'s row');
     });
 
+}
 
+function insert_markers(dataset){
+  console.log("Inserting markers")
+  dataset.forEach(function (e) {
+    var location = {lat: e[6], lng: e[5]}
+    //Call google map API
+    createMarker(location)
+  });
 }

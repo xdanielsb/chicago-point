@@ -1,7 +1,9 @@
 'use strict'
+/*
+ * Depend on: request_datasets (file for showing the datasets)
+ */
 
 let response;
-let dataset;
 //Create ajax JQuery request with token
 function request(_method, _url) {
   $.ajax({
@@ -15,8 +17,8 @@ function request(_method, _url) {
   .done((res) => {
     response = res;
     //Fill the table with the answer
-    show_datasets_noaa_api();
-    console.log(response);
+    show_datasets_noaa_api(response);
+    console.log("The request1 for :"+_url+ " has finished");
   })
 
   .fail((_, status, error) => {
@@ -34,8 +36,10 @@ function request2(_method, _url) {
   .done((res) => {
     response = res;
     //Fill the table with the answer
-    show_datasets_rent();
-    console.log(response);
+    show_datasets_rent(response);
+    console.log("The request2 for :"+_url+ " has finished");
+    insert_markers(dataset)
+
   })
   .fail((_, status, error) => {
     console.log(status)
