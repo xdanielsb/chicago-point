@@ -12,8 +12,8 @@ $.notify({
 	icon_type: 'image',
 	template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
 		'<img data-notify="icon"  height="50px" class="img-circle pull-left">' +
-		'<span data-notify="title">&nbsp&nbsp<strong>{1}</strong></span><br>' +
-		'<span data-notify="message">&nbsp&nbsp{2}</span>' +
+		'<span data-notify="title" style="color: rgb(0, 0, 0);">&nbsp&nbsp<strong>{1}</strong></span><br>' +
+		'<span data-notify="message"  style="color: rgb(0, 0, 0);">&nbsp&nbsp{2}</span>' +
 	'</div>'
 });
 }
@@ -27,10 +27,10 @@ function remind (){
   	type: 'minimalist',
   	delay: 5000,
   	icon_type: 'image',
-  	template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+  	template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert" >' +
   		'<img data-notify="icon"  height="50px" class="img-circle pull-left">' +
-  		'<span data-notify="title">&nbsp&nbsp<strong>{1}</strong></span><br>' +
-  		'<span data-notify="message">&nbsp&nbsp{2}</span>' +
+  		'<span data-notify="title" style="color: rgb(0, 0, 0);" >&nbsp&nbsp<strong>{1}</strong></span><br>' +
+  		'<span data-notify="message" style="color: rgb(0, 0, 0);">&nbsp&nbsp{2}</span>' +
   	'</div>'
   });
 }
