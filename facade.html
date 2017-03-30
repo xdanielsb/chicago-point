@@ -11,6 +11,7 @@
       <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
       <!-- Datatables: (Print Data CSS) -->
       <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+
       <title>Document</title>
    </head>
    <body>
@@ -32,7 +33,7 @@
            </div>
          </div>
          <div class="col-md-6" >
-          <div class="col-md-10" id="map" style="width: 600px; height:500px"></div>
+          <div class="col-md-10" id="map" style="width: 700px; height:700px"></div>
          </div>
       </section>
       <!-- Another information?  lol-->
@@ -49,14 +50,14 @@
       <script type="text/javascript" charset="utf8"  src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
 
       <!-- Google maps; Application Programing Interface -->
-      <script src="logic/map_google.js"></script>
-      <script async defer
+      <script defer src="logic/map_google.js"></script>
+      <script defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSaP-yNmxveks9F0c-ylR8R2yXt6356f4&callback=initMap">
       </script>
 
       <!-- jQuery: Request API -->
-      <script src="logic/request_datasets.js"></script>
-      <script src="logic/request_api.js"></script>
-
+      <script  defer src="logic/request_datasets.js"></script>
+      <script  defer src="logic/request_api.js"></script>
+      <script  defer src="createMarker({lat: 41.244772343082076, lng: -103.7109375})"></script>
    </body>
 </html>
