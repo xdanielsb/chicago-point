@@ -23,7 +23,7 @@
          <div class="col-md-9">
          </div>
       </section>
-      <!-- Table Data section -->
+      <!-- Table and mini Map Data section -->
       <section id="table_data" class="container-fluid">
 
          <div class="col-md-6">
@@ -31,7 +31,8 @@
              <table id="table_datasets" class="table table-bordered table-hover" ></table>
            </div>
          </div>
-         <div class="col-md-6">
+         <div class="col-md-6" >
+          <div class="col-md-10" id="map" style="width: 600px; height:500px"></div>
          </div>
       </section>
       <!-- Another information?  lol-->
@@ -46,6 +47,12 @@
       <script src="static/js/bootstrap.min.js"></script>
       <!-- Datatables: (Print Data) -->
       <script type="text/javascript" charset="utf8"  src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+
+      <!-- Google maps; Application Programing Interface -->
+      <script src="logic/map_google.js"></script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSaP-yNmxveks9F0c-ylR8R2yXt6356f4&callback=initMap">
+      </script>
 
       <!-- jQuery: Request API -->
       <script src="logic/request_datasets.js"></script>
