@@ -9,6 +9,8 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <!-- Bootstrap: (Optional theme) -->
       <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+      <!-- Datatables: (Print Data CSS) -->
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
       <title>Document</title>
    </head>
    <body>
@@ -26,6 +28,9 @@
          <div class="col-md-3">
          </div>
          <div class="col-md-9">
+           <div class="table-responsive">
+             <table id="example" class="table table-bordered table-hover" ></table>
+           </div>
          </div>
       </section>
       <!-- Another information?  lol-->
@@ -38,7 +43,10 @@
       <script src="static/js/jquery.min.js"></script>
       <!-- Bootstrap: (Latest compiled and minified JavaScript -->
       <script src="static/js/bootstrap.min.js"></script>
-      <!-- Request API -->
+      <!-- Datatables: (Print Data) -->
+      <script type="text/javascript" charset="utf8"  src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+      
+      <!-- jQuery: Request API -->
       <script src="logic/request_api.js"></script>
    </body>
 </html>
