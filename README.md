@@ -1,8 +1,8 @@
-# README
+# CHICAGO POINT
 
->This application will try to solve the problem for some students that needs to move to Chicago City.
+***CHICAGO POINT application will try to solve the problem for some students that need to move to Chicago City.***
 
-Some characteristics that will have this application.
+#### Some features
 
   - Ad-hoc Queries
   - Easy to use
@@ -13,6 +13,11 @@ Some characteristics that will have this application.
 * [Bootstrap] - Make a responsive page
 * [jQuery] - Useful functions
 * [CSS] - Help to make beautiful the page
+
+### Datasets Used
+
+* [Weather Dataset]( https://www.ncdc.noaa.gov/cdo-web/api/v2/datasets)
+* [Rent Dataset](https://data.cityofchicago.org/resource/uahe-iimk.json)
 
 
 ### How to run the application?
@@ -27,12 +32,12 @@ $ firefox index.html
 
 ### About the author
 
->Name : DANIEL FERNANDO SANTOS BUSTOS
->Email : dfsantosbu@unal.edu.co
->Description: Small, intelligent and commited to create a better world through software
->Class : Software Enginiering I
->Group : #2
->Teacher : Jairo Aponte
+* Name : DANIEL FERNANDO SANTOS BUSTOS
+* Email : dfsantosbu@unal.edu.co
+* Description: Small, intelligent and commited to create a better world through software
+* Class : Software Enginiering I
+* Group : #2
+* Teacher : Jairo Aponte
 
 
 [comment]: <> (References)
