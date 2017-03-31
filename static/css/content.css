@@ -13,7 +13,7 @@ body {
     padding-left: 0;
 }
 
-#main {
+.main {
     width: 100%;
     padding: 0;
     background-color: #fff;
