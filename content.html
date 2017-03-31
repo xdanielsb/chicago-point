@@ -9,6 +9,11 @@
       <title>Chicago point</title>
       <!-- Bootstrap: (Latest compiled and minified CSS) -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!-- Bootstrap: (Optional theme) -->
+      <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+      <!-- Datatables: (Print Data CSS) -->
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+
       <!-- Custom CSS -->
       <link href="static/css/content.css" rel="stylesheet">
    </head>
@@ -58,24 +63,38 @@
          </nav>
 
 
-         <div id="page-wrapper">
-           <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos necessitatibus nisi sit nihil officiis error expedita accusantium voluptatum beatae, reprehenderit nostrum neque numquam, quia consequatur consectetur. Officiis eius quisquam, dolor.</div>
-           <div>Nesciunt recusandae atque at ab non autem quasi fugit veniam, quidem quaerat illum ipsam debitis velit! Voluptates iste id magni non minus? Cupiditate ex, impedit placeat, doloremque rem id incidunt.</div>
-           <div>Eligendi aliquid, vero necessitatibus nihil aliquam tempora veritatis a consequuntur perferendis obcaecati aut reprehenderit eius, culpa numquam, magnam vel similique assumenda ea nam sit voluptatem quaerat ad quisquam consectetur. Odit?</div>
-           <div>Id mollitia hic ab sapiente modi qui veritatis provident officiis saepe eligendi nam dolore excepturi eius, voluptatum nemo repellat dolores, earum possimus placeat labore ipsa recusandae facilis atque! Provident, accusamus.</div>
-           <div>Repudiandae, deleniti repellendus fuga. Repellat dignissimos illo asperiores velit minus nulla doloribus nemo atque quos quibusdam reprehenderit impedit eaque consequuntur, distinctio voluptate assumenda odit fuga blanditiis numquam, porro, ab debitis!</div>
-           <div>Debitis iusto, magnam. Totam officiis tempore modi adipisci odio, neque fugiat exercitationem accusantium expedita, dignissimos voluptatum accusamus repellat officia unde assumenda sunt. Numquam iusto amet eligendi aut, deserunt fuga totam.</div>
-           <div>Explicabo aut provident magni, necessitatibus temporibus, laudantium tenetur commodi accusamus odio. Adipisci magnam, nemo earum nam vitae cumque molestiae. Quod cupiditate maxime porro sunt culpa molestiae, ipsam impedit incidunt consectetur.</div>
-           <div>Praesentium accusantium iure esse id reprehenderit ex est quisquam suscipit velit. Error, impedit rerum ullam optio labore sit quaerat iure sint velit sunt minima aliquam dolorem! Commodi, magni tempore eum!</div>
-           <div>Assumenda quae, voluptatem! Molestiae itaque error sapiente cupiditate vitae atque et, quia placeat harum exercitationem neque odit ab fugit adipisci tenetur labore modi, nesciunt voluptatem animi tempora ratione! Delectus, maxime!</div>
-           <div>Suscipit vitae cum modi quo, quidem magnam recusandae explicabo illum iure tenetur minus ipsa sequi, ducimus, vel sint aliquid animi. Unde maxime laborum eligendi accusantium saepe molestiae, blanditiis odio distinctio.</div>
+
+         <div id="main">
+           <div class="col-md-6">
+              <div class="table-responsive" style="background:rgb(255, 255, 255);">
+                <table id="table_datasets" class="table table-bordered table-hover" ></table>
+              </div>
+            </div>
+            <div class="col-md-6" >
+              <div class="col-md-10" id="map" style="width: 700px; height:650px"></div>
+            </div>
          </div>
 
 
       </div>
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <!-- Latest compiled and minified JavaScript Bootstrap-->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+      <!-- jQuery: (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="static/js/jquery.min.js"></script>
+      <!-- Bootstrap: (Latest compiled and minified JavaScript -->
+      <script src="static/js/bootstrap.min.js"></script>
+      <!-- Datatables: (Print Data) -->
+      <script type="text/javascript" charset="utf8"  src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+
+      <!-- Google maps; Application Programing Interface -->
+      <script defer src="logic/map_google.js"></script>
+      <script defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSaP-yNmxveks9F0c-ylR8R2yXt6356f4&callback=initMap">
+      </script>
+
+      <!-- jQuery: Request API -->
+      <script  defer src="logic/request_datasets.js"></script>
+      <script  defer src="logic/request_api.js"></script>
+      <script  defer src="createMarker({lat: 41.244772343082076, lng: -103.7109375})"></script>
+
    </body>
 </html>
