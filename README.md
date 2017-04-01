@@ -1,4 +1,4 @@
-![Alt Planarity testing](static/img/logo.png?raw=true "Logo")
+![Alt Planarity testing](static/img/logo1.png?raw=true "Logo")
 
 ***CHICAGO POINT application will try to solve the problem for some students that need to move to Chicago City.***
 
