@@ -1,7 +1,6 @@
-'use strict'
+data_labels= ["Daniel", "Julian", "Ana", "Beng", "Erika", "Jhon Doe"]
+data_values = [12, 19, 3, 5, 2, 3]
 
-let data_labels= ["Daniel", "Julian", "Ana", "Beng", "Erika", "Jhon Doe"]
-let data_values = [12, 19, 3, 5, 2, 3]
 
 let config_bar = {
     type: 'bar', //bar, line
@@ -23,6 +22,14 @@ let config_bar = {
                     beginAtZero:true
                 }
             }]
+        },
+        responsive: true,
+        title: {
+            display: true,
+            text: 'Custom Bar Chart',
+            fontFamily: 'Arial',
+            position: 'top',
+            fullWidth: true
         }
     }
 };
