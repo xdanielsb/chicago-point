@@ -21,7 +21,7 @@
    <body>
       <div id="wrapper">
          <!-- Menus -->
-         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+         <nav class="navbar top-nav navbar-fixed-top" role="navigation">
 
             <!-- RESPONSIVE  : (lol) -->
             <div class="navbar-header">
@@ -33,7 +33,7 @@
                </button>
 
                <div class="logo">
-                 <a href="#"> <img  width="80" height="40" src="static/img/logo.png"/> </a>
+                 <a href="#"> <img  width="90" height="50" src="static/img/logo.png"/> </a>
                  <span>CHICAGO POINT <span>
                </div>
 
@@ -44,18 +44,18 @@
 
             </ul>
 
-
             <!-- MENU:( Sidebar Menu Items) -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-               <ul class="nav navbar-nav side-nav">
-                  <li class="active">
-                     <a href="#"><span class="glyphicon glyphicon-plus"></span>Filters</a>
+            <div class="hidden-xs hidden-sm ">
+              <!-- When change the width change the padding left in the wrapping -->
+               <ul class="nav navbar-nav side-nav" style="background:rgb(158, 116, 44); width:180px; ">
+                  <li class="active" >
+                     <a href="#" style="color:#fff">Filters</a>
                   </li>
                   <li>
-                     <a href="#"><span class="glyphicon glyphicon-plus"></span>Dashboard</a>
+                     <a href="#" style="color:#fff">Dashboard</a>
                   </li>
                   <li>
-                     <a href="#"><span class="glyphicon glyphicon-plus"></span>Plot</a>
+                     <a href="#" style="color:#fff">Plot</a>
                   </li>
                </ul>
             </div>
@@ -66,7 +66,7 @@
 
          <section class="main" style="padding-top:50px;">
            <div class="col-md-6" style="background:rgb(255, 255, 255);">
-              <div class="table-responsive" style="width: 500px; height:500px">
+              <div class="table-responsive" style="width: 520px; height:500px">
                 <table id="table_datasets" class="table table-bordered table-hover" ></table>
               </div>
             </div>

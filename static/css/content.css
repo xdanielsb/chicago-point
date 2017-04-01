@@ -1,12 +1,6 @@
 body {
     margin-top: 100px;
-    background-color: #222;
-}
-
-@media(min-width:768px) {
-    body {
-        margin-top: 50px;
-    }
+    /*background-color: #222;*/
 }
 
 #wrapper {
@@ -19,25 +13,10 @@ body {
     background-color: #fff;
 }
 
-.huge {
-    font-size: 50px;
-    line-height: normal;
-}
-
-@media(min-width:768px) {
-    #wrapper {
-        padding-left: 225px;
-    }
-
-    #page-wrapper {
-        padding: 10px;
-    }
-}
-
-/* Top Navigation */
-
 .top-nav {
     padding: 0 15px;
+    background: rgb(158, 116, 44);
+    color: #fff;
 }
 
 .top-nav>li {
@@ -78,7 +57,36 @@ body {
 }
 
 
-/* Side Navigation */
+.side-nav>li>ul {
+    padding: 0;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: #999;
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 200px;
+    }
+}
+
+
+/* Side Navigation  if the viewport is 768 pixels or wider*/
 
 @media(min-width:768px) {
     .side-nav {
@@ -105,19 +113,4 @@ body {
         outline: none;
         background-color: #000 !important;
     }
-}
-
-.side-nav>li>ul {
-    padding: 0;
-}
-
-.side-nav>li>ul>li>a {
-    display: block;
-    padding: 10px 15px 10px 38px;
-    text-decoration: none;
-    color: #999;
-}
-
-.side-nav>li>ul>li>a:hover {
-    color: #fff;
 }
