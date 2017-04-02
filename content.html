@@ -47,7 +47,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-               <a href="#" class="navbar-brand" style="margin-bottom:10px;"><img src="static/img/logo.png"  width="120px" height="50px" alt=""></a>
+               <a href="#" class="navbar-brand" style="margin-bottom:10px;"><img src="static/img/logo2.png"  width="120px" height="50px" alt=""></a>
             </div>
             <div class="collapse navbar-collapse " id="navegacion2">
                <ul class="nav navbar-nav " role="tablist">
@@ -76,22 +76,26 @@
          </div>
       </div>
 
-      <!-- Graph section -->
-      <br>
+
     <div class="change hidden-lg hidden-md"></div>
-     <div  class="seccion col-lg-offset-2 col-md-offset-2 ">
+     <div  class="seccion col-lg-offset-2 col-md-offset-2" style="padding-top: 20px;">
+
+       <div class="row" >
         <div class=" col-xs-12 col-sm-6  col-md-6" >
-          <canvas  id="chart_bar" style="height:150px;" ></canvas>
+          <canvas  id="chart_bar" height="77" width="100"></canvas>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6">
-          <canvas  id="chart_radar" ></canvas>
+          <canvas  id="chart_line"  style="height:400px;"></canvas>
         </div>
-        <br>
-        <div class=" col-xs-12 col-sm-6 col-md-6" style="height: 450px;" >
-          <canvas   id="chart_line" ></canvas>
+      </div>
+
+        <div class="row">
+        <div class=" col-xs-12 col-sm-6 col-md-6"  >
+          <canvas   id="chart_radar" ></canvas>
         </div>
-        <div class=" col-xs-12 col-sm-6 col-md-6" style="height: 450;">
+        <div class=" col-xs-12 col-sm-6 col-md-6" >
           <canvas  id="chart_polar" ></canvas>
+        </div>
         </div>
      </div>
 
