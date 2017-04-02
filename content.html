@@ -72,24 +72,24 @@
          </div>
          <!-- MAP WITH THE DATA -->
          <div class="col-md-6" style="background:rgb(255, 255, 255);" style="width:100%; height:100%;">
-            <div class="col-md-10" id="map" style="height: 600px; width:540px"></div>
+            <div class="col-md-10" id="map" style="height: 670px; width:540px"></div>
          </div>
       </div>
 
       <!-- Graph section -->
       <br>
     <div class="change hidden-lg hidden-md"></div>
-     <div  class="seccion col-lg-offset-2 col-md-offset-2 " id="seccion1">
+     <div  class="seccion col-lg-offset-2 col-md-offset-2 ">
         <div class="plot1 col-xs-12 col-sm-6  col-md-6">
-          <canvas  id=""></canvas>
+          <canvas  id="chart_polar"></canvas>
         </div>
         <div class="plot2 col-xs-12 col-sm-6 col-md-6">
-          <canvas  id=""></canvas>
+          <canvas  id="chart_radar"></canvas>
         </div>
         <div class="plot3 col-xs-12 col-sm-6 col-md-6" >
-          <canvas   id=""></canvas>
+          <canvas   id="chart_line"></canvas>
         </div>
-        <div   class="plot4 col-xs-12 col-sm-6 col-md-6">
+        <div class="plot4 col-xs-12 col-sm-6 col-md-6">
           <canvas  id="chart_bar"></canvas>
         </div>
      </div>
@@ -112,5 +112,9 @@
       <!-- ChartJS: (Graphs) -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
       <script src="logic/graphs/bar_graph.js"></script>
+      <script src="logic/graphs/linear_graph.js"></script>
+      <script src="logic/graphs/polar_graph.js"></script>
+      <script src="logic/graphs/radar_graph.js"></script>
+
    </body>
 </html>
