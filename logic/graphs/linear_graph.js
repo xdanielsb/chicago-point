@@ -33,7 +33,6 @@ var config_line = {
             }]
         },
         responsive: true,
-        maintainAspectRatio: false,
         title: {
             display: true,
             text: 'Custom Line Chart',
