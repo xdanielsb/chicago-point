@@ -4,8 +4,7 @@
       <meta charset="utf-8">
       <meta name="description" content="Dashboard">
       <meta name="author" content="Daniel Santos">
-      <title>Chicago point</title>
-      <link rel="shortcut icon" type='image/x-icon' href='static/img/favicon.ico'>
+      <title>Visualization</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- Latest compiled and minified CSS Bootstrap -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -16,49 +15,37 @@
       <!-- Data tables styles   -->
      <link rel="stylesheet" href="static/css/jquery.dataTables.min.css">
      <link rel="stylesheet" href="static/css/buttons.dataTables.min.css">
+     <!--Import Google Icon Font-->
+     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!--Import materialize.css-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+
    </head>
-   <body data-spy="scroll" data-target="#navegacion">
-      <!-- These represents the menu -->
-      <header>
-         <!-- left-menu -->
-         <nav class="navbar navbar-inverse navbar-fixed-left hidden-sm hidden-xs " role="navigation">
-            <div class="navbar-header">
-               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navegacion1">
-               <span class="sr-only">Menu</span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               </button>
-               <a href="#" class="navbar-brand" style="margin-bottom:30px;"><img src="static/img/logo2.png"  width="120px" height="50px" alt=""></a>
-            </div>
-            <div class="collapse navbar-collapse " id="navegacion1">
-               <ul class="nav navbar-nav" role="tablist">
-                  <li><a href="#seccion1"> <span class="glyphicon glyphicon-stats"></span> Dashboard</a></li>
-                  <li><a href="#seccion3"> <span class="glyphicon glyphicon-map-marker"></span> Map</a></li>
-                  <li><a href="#seccion3"> <span class="glyphicon glyphicon-search"></span> Queries</a></li>
-               </ul>
-            </div>
-         </nav>
-         <!-- Top menu-->
-         <nav class="navbar navbar-inverse navbar-fixed-top hidden-lg hidden-md" role="navigation">
-            <div class="navbar-header">
-               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navegacion2">
-               <span class="sr-only">Menu</span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               </button>
-               <a href="#" class="navbar-brand" style="margin-bottom:10px;"><img src="static/img/logo2.png"  width="120px" height="50px" alt=""></a>
-            </div>
-            <div class="collapse navbar-collapse " id="navegacion2">
-               <ul class="nav navbar-nav " role="tablist">
-                  <li><a href="#seccion3"> <span class="glyphicon glyphicon-map-marker"></span> Data</a></li>
-                  <li><a href="#seccion1"> <span class="glyphicon glyphicon-stats"></span> Dashboard</a></li>
-                  <li><a href="#seccion3"> <span class="glyphicon glyphicon-search"></span> Queries</a></li>
-               </ul>
-            </div>
-         </nav>
-      </header>
+   <body>
+
+     <ul id="slide-out" class="side-nav">
+        <li><a href="#!">DashBoard</a></li>
+        <li><a href="#!">Charts</a></li>
+        <li class="no-padding">
+           <ul class="collapsible collapsible-accordion">
+              <li>
+                 <a class="collapsible-header">Filters<i class="material-icons">arrow_drop_down</i></a>
+                 <div class="collapsible-body">
+                    <ul>
+                       <li><a href="#!">Safety</a></li>
+                       <li><a href="#!">Cost</a></li>
+                       <li><a href="#!">Distance</a></li>
+                       <li><a href="#!">Girls</a></li>
+                    </ul>
+                 </div>
+              </li>
+           </ul>
+        </li>
+     </ul>
+     <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+     <script src="static/js/facade.js"></script>
+
 
       <!--  TRICKY PARRT -->
       <div class="change hidden-lg hidden-md"></div>
@@ -112,6 +99,8 @@
       <script defer
          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSaP-yNmxveks9F0c-ylR8R2yXt6356f4&callback=initMap"></script>
       <!-- jQuery: Request API -->
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
       <script  defer src="logic/request_datasets.js"></script>
       <script  defer src="logic/request_api.js"></script>
 
@@ -121,6 +110,8 @@
       <script src="logic/graphs/linear_graph.js"></script>
       <script src="logic/graphs/polar_graph.js"></script>
       <script src="logic/graphs/radar_graph.js"></script>
+
+      <script src="static/js/facade.js"></script>
 
    </body>
 </html>
