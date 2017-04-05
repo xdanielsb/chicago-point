@@ -7,7 +7,7 @@
     <meta name="author" content="Daniel Santos">
     <title>Visualization</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
     <!-- Latest compiled and minified CSS Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
@@ -18,6 +18,7 @@
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
 
 
     <link rel="stylesheet" href="static/css/content.css">
@@ -50,20 +51,21 @@
 
 
         <!-- DATA  -->
-        <div class="charts" style="margin-left:50px;">
+        <div class="charts" >
             <!-- TABLE WITH THE DATA -->
+
             <div class="col-md-6" style="float:left; ">
                 <!-- <div class="table-responsive"> -->
+                <strong> Results of possible flats </strong>
                 <div class="input-group">
-                  
                   <table id="table_datasets" class="table table-bordered table-hover"></table>
                 </div>
-
                 <!-- </div> -->
             </div>
+
             <!-- MAP WITH THE DATA -->
             <div class="col-md-6" style="float:left;">
-                <div class="col-md-10" id="map" style="height: 540px; width:520px;border-radius:3%; margin-top: 50px; margin-bottom: 50px; "></div>
+                <div class="col-md-10" id="map"></div>
             </div>
         </div>
 
