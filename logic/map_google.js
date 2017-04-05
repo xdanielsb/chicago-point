@@ -5,6 +5,12 @@
 let map_data
 let marker
 let div_map
+let infowindow
+
+let icon_origin = 'static/img/location_pin1.png'
+let icon_house = "static/img/location_pin2.png"
+
+
 //Configuration map
 let config_mapa = {
   zoom: 14,
@@ -12,8 +18,6 @@ let config_mapa = {
   mapTypeId: 'terrain'
 }
 
-let icon_origin = 'http://m.schuepfen.ch/icons/helveticons/black/60/Pin-location.png'
-let icon_house = "http://findicons.com/files/icons/829/quartz/64/house_2.png"
 // Function for place a marker
 function createMarker(location, _icon) {
     //Simulate omition parameters of python
@@ -23,10 +27,20 @@ function createMarker(location, _icon) {
        position: location,
        map: map_data,
        icon: _icon,
+       clickable: true,
        title: 'Click to get more information'
      }
     //intance the marker
     marker = new google.maps.Marker(data);
+
+    marker.info = new google.maps.InfoWindow({
+      content: '<b>Speed:</b> knots'
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+      marker.info.open(map, this);
+    });
+
 }
 
 // Function for init a google maps map =}
