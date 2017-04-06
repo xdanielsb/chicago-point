@@ -21,10 +21,28 @@ def content():
 def charts():
     return render_template('facade.html')
 
+
+
+"""
+    Methods for the custom API
+"""
+
 @app.route('/houses/')
 def houses():
     houses = get_houses()
     return jsonify(houses)
+
+@app.route('/health/')
+def health():
+    health = get_health_statistics()
+    return jsonify(health)
+
+@app.route("/weather/")
+def weather():
+    weather = get_weather()
+    return jsonify(weather)
+
+
 
 if __name__ =="__main__":
     app.run(debug=True)

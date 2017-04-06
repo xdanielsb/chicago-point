@@ -1,8 +1,8 @@
 from urllib2 import urlopen, Request
 import json
+import urllib2
 
 
-CODE_ILLINOIS = "FIPS:17"
 """
     Get the houses
 """
@@ -21,9 +21,9 @@ def get_health_statistics():
 
 
 """
-    Get avaliable datasets
+    Get the weather based on ZIP code
 """
-def get_datasets(locationid="60007",datasetid="GSOM", startdate="2016-05-01", enddate="2016-05-31"):
+def get_weather(locationid="60007",startdate="2016-05-01", enddate="2016-05-31", datasetid="GSOM"):
     url = "https://www.ncdc.noaa.gov/cdo-web/api/v2/data?"+ \
           "datasetid={}"+ \
           "&locationid=ZIP:{}"+ \
@@ -31,16 +31,8 @@ def get_datasets(locationid="60007",datasetid="GSOM", startdate="2016-05-01", en
           "&enddate={}"
 
     url = url.format(datasetid, locationid, startdate, enddate)
-
-    print (url)
     token = "xtLJFvVAFGacWOPnHFCOJvAfwVhVPFmI"
     request = Request(url)
     request.add_header('token', token)
     response = json.load(urlopen(request))
-    print(response)
-
-
-
-
-
-print(get_datasets())
+    return response

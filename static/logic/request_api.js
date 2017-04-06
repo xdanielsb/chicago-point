@@ -1,34 +1,14 @@
 'use strict'
 /*
  * Depend on: request_datasets (file for showing the datasets)
+ * Good documentation for the API https://www.ncdc.noaa.gov/cdo-web/webservices/v2
  */
 
 let response;
-//Create ajax JQuery request with token
-function request(_method, _url) {
-  $.ajax({
-    method: _method,
-    url: _url,
-    headers: {
-      'token': 'xtLJFvVAFGacWOPnHFCOJvAfwVhVPFmI',
-    },
-  })
 
-  .done((res) => {
-    response = res;
-    //Fill the table with the answer
-    show_datasets_noaa_api(response);
-    console.log("The request1 for :"+_url+ " has finished");
-  })
-
-  .fail((_, status, error) => {
-    console.log(status)
-    console.log(error)
-  });
-}
 
 //Create ajax JQuery request without token
-function request2(_method, _url) {
+function request(_method, _url) {
   $.ajax({
     method: _method,
     url: _url
@@ -52,9 +32,9 @@ let opcion = 2
 
 //Testing the API
 if (opcion == 1){
-  let url = "https://www.ncdc.noaa.gov/cdo-web/api/v2/datasets"
+  let url = "/health/"
   request("GET", url)
 } else if(opcion == 2 ){
   let url = "/houses/"
-  request2("GET", url)
+  request("GET", url)
 }
