@@ -3,7 +3,6 @@
 from flask import Flask, render_template
 
 app = Flask(__name__)
-app.config['DEBUG'] = False
 
 @app.route('/')
 def index():

@@ -1,100 +1,77 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="Dashboard">
-    <meta name="author" content="Daniel Santos">
-    <title>Visualization</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type='image/x-icon' href="{{url_for('static',filename='img/favicon.ico')}}">
-    <!-- Latest compiled and minified CSS Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-theme.min.css')}}" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Data tables styles   -->
-    <link rel="stylesheet" href="{{url_for('static',filename='css/jquery.dataTables.min.css')}}">
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+{%extends "header.html"%}
 
 
-    <link rel="stylesheet" href="{{url_for('static',filename='css/content.css')}}">
+{%block header%}
+<!-- Data tables styles   -->
+<link rel="stylesheet" href="{{url_for('static',filename='css/jquery.dataTables.min.css')}}">
+<!--Import Google Icon Font-->
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+<link rel="stylesheet" href="{{url_for('static',filename='css/content.css')}}">
 
-    <style>
+{%endblock%}
+
+{%block body%}
+<div class="container-fluid">
+
+    <ul id="slide-out" class="side-nav">
+        <li><a href="#!">DashBoard</a></li>
+        <li><a href="/charts/">Charts</a></li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header">Filters<i class="material-icons">arrow_drop_down</i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="#!">Safety</a></li>
+                            <li><a href="#!">Cost</a></li>
+                            <li><a href="#!">Distance</a></li>
+                            <li><a href="#!">Girls</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <a href="#" data-activates="slide-out" id="menu_button" class="button-collapse show-on-large">
+        <i class="material-icons">menu</i></a>
 
 
+    <!-- DATA  -->
+    <div class="charts" >
+        <!-- TABLE WITH THE DATA -->
 
-    </style>
-</head>
-
-<body>
-    <div class="container-fluid">
-
-        <ul id="slide-out" class="side-nav">
-            <li><a href="#!">DashBoard</a></li>
-            <li><a href="/charts/">Charts</a></li>
-            <li class="no-padding">
-                <ul class="collapsible collapsible-accordion">
-                    <li>
-                        <a class="collapsible-header">Filters<i class="material-icons">arrow_drop_down</i></a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="#!">Safety</a></li>
-                                <li><a href="#!">Cost</a></li>
-                                <li><a href="#!">Distance</a></li>
-                                <li><a href="#!">Girls</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <a href="#" data-activates="slide-out" id="menu_button" class="button-collapse show-on-large">
-            <i class="material-icons">menu</i></a>
-
-
-        <!-- DATA  -->
-        <div class="charts" >
-            <!-- TABLE WITH THE DATA -->
-
-            <div class="col-md-6" style="float:left; ">
-                <!-- <div class="table-responsive"> -->
-                <strong> Results of possible flats </strong>
-                <div class="input-group">
-                  <table id="table_datasets" class="table table-bordered table-hover"></table>
-                </div>
-                <!-- </div> -->
+        <div class="col-md-6" style="float:left; ">
+            <!-- <div class="table-responsive"> -->
+            <strong> Results of possible flats </strong>
+            <div class="input-group">
+              <table id="table_datasets" class="table table-bordered table-hover"></table>
             </div>
-
-            <!-- MAP WITH THE DATA -->
-            <div class="col-md-6" style="float:left;">
-              <strong>Map with the information</strong>
-                <div class="col-md-10" id="map"></div>
-            </div>
+            <!-- </div> -->
         </div>
 
+        <!-- MAP WITH THE DATA -->
+        <div class="col-md-6" style="float:left;">
+          <strong>Map with the information</strong>
+            <div class="col-md-10" id="map"></div>
+        </div>
     </div>
 
-    <!-- jQuery: (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
-    <!-- Bootstrap: (Latest compiled and minified JavaScript -->
-    <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
-    <!-- Datatables: (Print Data) -->
-    <script type="text/javascript" charset="utf8" src="{{url_for('static',filename='js/jquery.dataTables.min.js')}}"></script>
-    <!-- Google maps; Application Programing Interface -->
-    <script defer src="{{url_for('static',filename='logic/map_google.js')}}"></script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSaP-yNmxveks9F0c-ylR8R2yXt6356f4&v=3.20&callback=initMap"></script>
-    <!-- jQuery: Request API -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
-    <script defer src="{{url_for('static',filename='logic/request_datasets.js')}}"></script>
-    <script defer src="{{url_for('static',filename='logic/request_api.js')}}"></script>
+</div>
+{%endblock%}
 
 
-    <script src="{{url_for('static',filename='js/facade.js')}}"></script>
 
-</body>
-
-</html>
+{%block imports%}
+<!-- Datatables: (Print Data) -->
+<script type="text/javascript" charset="utf8" src="{{url_for('static',filename='js/jquery.dataTables.min.js')}}"></script>
+<!-- Google maps; Application Programing Interface -->
+<script defer src="{{url_for('static',filename='logic/map_google.js')}}"></script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSaP-yNmxveks9F0c-ylR8R2yXt6356f4&v=3.20&callback=initMap"></script>
+<!-- jQuery: Request API -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+<script defer src="{{url_for('static',filename='logic/request_datasets.js')}}"></script>
+<script defer src="{{url_for('static',filename='logic/request_api.js')}}"></script>
+<script src="{{url_for('static',filename='js/facade.js')}}"></script>
+{%endblock%}
