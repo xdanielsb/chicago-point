@@ -2,10 +2,36 @@
 
 ***CHICAGO POINT application will try to solve the problem for some students that need to move to Chicago City.***
 
+---
+### Requirements
+* python
+* pip
+* Flask
+* Firefox *Run with firefox for creating a better user-experience*
+
+```sh
+$ pip install Flask
+```
+
+---
+### How to run the application?
+Follow the next steps
+
+```sh
+$ git clone https://github.com/goldironhack/2017-Purdue-UNAL-IronHack-xdanielsb.git
+$ cd 2017-Purdue-UNAL-IronHack-xdanielsb
+$ python main.py
+$ ** Open a browser an write in the the url bar localhost:5000 ** 
+```
+---
+
 #### Some features
 
   - Ad-hoc Queries
   - Easy to use
+  - Responsive design
+
+---
 
 ### Technologies
 
@@ -14,21 +40,14 @@
 * [jQuery] - Useful functions
 * [CSS] - Help to make beautiful the page
 
+---
+
 ### Datasets Used
 
 * [Weather Dataset]( https://www.ncdc.noaa.gov/cdo-web/api/v2/datasets)
 * [Rent Dataset](https://data.cityofchicago.org/resource/uahe-iimk.json)
 
-
-### How to run the application?
-
-Follow the next steps
-
-```sh
-$ git clone https://github.com/goldironhack/2017-Purdue-UNAL-IronHack-xdanielsb.git
-$ cd 2017-Purdue-UNAL-IronHack-xdanielsb
-$ firefox index.html
-```
+---
 
 ### About the author
 
@@ -38,6 +57,13 @@ $ firefox index.html
 * Class : Software Enginiering I
 * Group : #2
 * Teacher : Jairo Aponte
+
+---
+
+### License
+
+MIT
+**Free Software, Hell Yeah!**
 
 
 [comment]: <> (References)
