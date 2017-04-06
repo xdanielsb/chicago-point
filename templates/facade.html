@@ -8,9 +8,8 @@
       <!-- Bootstrap: (Latest compiled and minified CSS) -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <!-- Bootstrap: (Optional theme) -->
-      <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
-      <!-- Datatables: (Print Data CSS) -->
-      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-theme.min.css')}}">
+
 
       <title>Document</title>
    </head>
@@ -32,15 +31,15 @@
      </div>
 
       <!-- jQuery: (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="static/js/jquery.min.js"></script>
+      <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
       <!-- Bootstrap: (Latest compiled and minified JavaScript -->
-      <script src="static/js/bootstrap.min.js"></script>
+      <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
 
       <!-- ChartJS: (Graphs) -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
-      <script src="logic/graphs/bar_graph.js"></script>
-      <script src="logic/graphs/linear_graph.js"></script>
-      <script src="logic/graphs/polar_graph.js"></script>
-      <script src="logic/graphs/radar_graph.js"></script>
+      <script src="{{url_for('static',filename='logic/graphs/bar_graph.js')}}"></script>
+      <script src="{{url_for('static',filename='logic/graphs/linear_graph.js')}}"></script>
+      <script src="{{url_for('static',filename='logic/graphs/polar_graph.js')}}"></script>
+      <script src="{{url_for('static',filename='logic/graphs/radar_graph.js')}}"></script>
    </body>
 </html>

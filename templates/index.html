@@ -3,16 +3,18 @@
    <head>
       <meta charset="utf-8">
       <title> Chicago Point </title>
-      <link rel="shortcut icon" type='image/x-icon' href='static/img/favicon.ico'>
+      <link rel="shortcut icon" type='image/x-icon' href="{{url_for('static',filename='img/favicon.ico')}}">
+      
       <meta name="viewport" content="width=device-width,  user-scalable=no">
       <!-- Latest compiled and minified CSS Bootstrap -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <!-- Optional theme -->
-      <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-theme.min.css')}}">      
       <!-- AOS (Fancy transitions) -->
-      <link rel="stylesheet" href="static/css/aos.css" />
+      <link rel="stylesheet" href="{{url_for('static',filename='css/aos.css')}}" />
       <!-- Custom theme -->
-      <link rel="stylesheet" href="static/css/index.css">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+
 
    </head>
    <body>
@@ -20,77 +22,77 @@
          <div class="hidden-sm hidden-xs left-d col-md-4" style="padding-top:100px">
 
             <div class="hidden-sm hidden-xs col-md-3">
-                  <img src="static/img/blank.png" alt="" width="60px" height="60px">
+                  <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs d3 col-md-3">
-              <img src="static/img/blank.png" alt="" width="60px" height="60px">
+              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs col-md-3" data-aos="fade-left" data-aos-duration="3000">
                 <a href="" data-toggle="modal" data-target="#myModal2">
                   <div class="image">
-                    <img src="static/img/roller.jpg" alt="" width="80px" height="80px" style="padding-top: 2px;" class="gray">
+                    <img src="{{url_for('static',filename='img/roller.jpg')}}" alt="" width="80px" height="80px" style="padding-top: 2px;" class="gray">
                   </div>
                 </a>
             </div>
             <div class="hidden-sm hidden-xs col-md-3" data-aos="fade-left" data-aos-duration="3000">
               <a href="" data-toggle="modal" data-target="#myModal1">
                 <div class="image">
-                  <img src="static/img/bean.jpg" alt="" width="120px" height="120px" class="gray">
+                  <img src="{{url_for('static',filename='img/bean.jpg')}}" alt="" width="120px" height="120px" class="gray">
                 </div>
               </a>
             </div>
             <!--  -->
             <div class="hidden-sm hidden-xs col-md-3">
-              <img src="static/img/blank.png" alt="" width="60px" height="60px">
+              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs col-md-3 " data-aos="fade-left" data-aos-duration="3000">
               <a href="" data-toggle="modal" data-target="#myModal3">
                 <div class="image">
-                  <img src="static/img/whale.jpg"  alt="" width="60px" height="60px" class="gray">
+                  <img src="{{url_for('static',filename='img/whale.jpg')}}"  alt="" width="60px" height="60px" class="gray">
                 </div>
               </a>
             </div>
             <div class="hidden-sm hidden-xs col-md-3">
-              <img src="static/img/blank.png" alt="" width="60px" height="60px">
+              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs col-md-3">
-              <img src="static/img/blank.png" alt="" width="60px" height="60px">
+              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <!--  -->
             <div class="hidden-sm hidden-xs col-md-3 ">
-              <img src="static/img/blank.png" alt="" width="60px" height="60px">
+              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs col-md-3 " data-aos="fade-left" data-aos-duration="3000">
               <a href="" data-toggle="modal" data-target="#myModal4">
                 <div class="image">
-                  <img src="static/img/rex.jpg" alt="" width="60px" height="60px" class="gray">
+                  <img src="{{url_for('static',filename='img/rex.jpg')}}" alt="" width="60px" height="60px" class="gray">
                 </div>
               </a>
             </div>
             <div class="hidden-sm hidden-xs col-md-3">
-              <img src="static/img/blank.png" alt="" width="60px" height="60px">
+              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs col-md-3">
-              <img src="static/img/blank.png" alt="" width="60px" height="60px">
+              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <!--  -->
             <div class="hidden-sm hidden-xs col-md-3">
-              <img src="static/img/blank.png" alt="" width="60px" height="60px">
+              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs col-md-3">
-              <img src="static/img/blank.png" alt="" width="60px" height="60px">
+              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs col-md-3 " data-aos="fade-left" data-aos-duration="3000" >
               <a href="" data-toggle="modal" data-target="#myModal5">
                 <div class="image">
-                  <img src="static/img/lions.jpg" alt="" width="60px" height="60px" class="gray">
+                  <img src="{{url_for('static',filename='img/lions.jpg')}}" alt="" width="60px" height="60px" class="gray">
                 </div>
               </a>
               </div>
             <div class="hidden-sm hidden-xs col-md-3 " data-aos="fade-left" data-aos-duration="3000">
               <a href="" data-toggle="modal" data-target="#myModal6">
                 <div class="image">
-                  <img src="static/img/fountain.jpg" alt="" width="60px" height="60px" class="gray">
+                  <img src="{{url_for('static',filename='img/fountain.jpg')}}" alt="" width="60px" height="60px" class="gray">
                 </div>
               </a>
             </div>
@@ -105,7 +107,7 @@
          </div>
          <div class="hidden-sm hidden-xs right-d col-md-4" >
              <div class="col-md-2"><p class="letter">&nbsp;</p></div>
-             <div data-aos="zoom-in-up" data-aos-duration="3000" class="hidden-sm hidden-xs col-md-3"><img src="static/img/marker.png" alt="" width="150px" height="140px"></div>
+             <div data-aos="zoom-in-up" data-aos-duration="3000" class="hidden-sm hidden-xs col-md-3"><img src="{{url_for('static',filename='img/marker.png')}}" alt="" width="150px" height="140px"></div>
              <div class="col-md-2"><p class="letter">&nbsp;</p></div>
              <div class="col-md-2"><p class="letter">&nbsp;</p></div>
              <div class="col-md-1"><p class="letter">&nbsp;</p></div>
@@ -123,7 +125,7 @@
              <br><br><br><br><br><p id="hicago">POINT</p>
          </div>
          <br>
-        <a href="browser.html" class="btn btn-lg btn-default pull-right" >
+        <a href="/browser/" class="btn btn-lg btn-default pull-right" >
           <span class="glyphicon glyphicon-chevron-right"></span> <p > CONTINUE</p>
         </a>
 
@@ -140,7 +142,7 @@
               <h4 class="modal-title" id="myModalLabel1">Cloud gate</h4>
             </div>
             <div class="modal-body">
-              <img class="img-responsive "src="static/img/bean.jpg" alt="">
+              <img class="img-responsive "src="{{url_for('static',filename='img/bean.jpg')}}" alt="">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -159,7 +161,7 @@
               <h4 class="modal-title" id="myModalLabel2">Cloud gate</h4>
             </div>
             <div class="modal-body">
-              <img class="img-responsive" src="static/img/roller.jpg" alt="">
+              <img class="img-responsive" src="{{url_for('static',filename='img/roller.jpg')}}" alt="">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -179,7 +181,7 @@
               <h4 class="modal-title" id="myModalLabel3">Cloud gate</h4>
             </div>
             <div class="modal-body">
-              <img class="img-responsive" src="static/img/whale.jpg" alt="">
+              <img class="img-responsive" src="{{url_for('static',filename='img/whale.jpg')}}" alt="">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -198,7 +200,7 @@
               <h4 class="modal-title" id="myModalLabel4">Cloud gate</h4>
             </div>
             <div class="modal-body">
-              <img class="img-responsive" src="static/img/rex.jpg" alt="">
+              <img class="img-responsive" src="{{url_for('static',filename='img/rex.jpg')}}" alt="">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -217,7 +219,7 @@
               <h4 class="modal-title" id="myModalLabel5">Cloud gate</h4>
             </div>
             <div class="modal-body">
-              <img class="img-responsive "src="static/img/lions.jpg" alt="">
+              <img class="img-responsive "src="{{url_for('static',filename='img/lions.jpg')}}" alt="">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -237,7 +239,7 @@
               <h4 class="modal-title" id="myModalLabel6">Cloud gate</h4>
             </div>
             <div class="modal-body">
-              <img class="img-responsive "src="static/img/fountain.jpg" alt="">
+              <img class="img-responsive "src="{{url_for('static',filename='img/fountain.jpg')}}" alt="">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -248,14 +250,14 @@
       </div>
 
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="static/js/jquery.min.js"></script>
+      <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
       <!-- Latest compiled and minified JavaScript Bootstrap-->
-      <script src="static/js/bootstrap.min.js"></script>
+      <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
       <!-- AOS: (Fancy styles) -->
-      <script src="static/js/aos.js"></script>
+      <script src="{{url_for('static',filename='js/aos.js')}}"></script>
       <!-- Bootstrap:  (Notifications) -->
-      <script src="static/js/bootstrap-notify.min.js"></script>
-      <script src="logic/notifications.js"></script>
+      <script src="{{url_for('static',filename='js/bootstrap-notify.min.js')}}"></script>
+      <script src="{{url_for('static',filename='logic/notifications.js')}}"></script>
       <script>AOS.init();</script>
    </body>
 </html>

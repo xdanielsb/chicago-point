@@ -3,20 +3,20 @@
    <head>
       <!-- Meta information -->
       <meta charset="UTF-8">
-      <link rel="shortcut icon" type='image/x-icon' href='static/img/favicon.ico'>
+      <link rel="shortcut icon" type='image/x-icon' href="{{url_for('static',filename='img/favicon.ico')}}">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <!-- Bootstrap: (Latest compiled and minified CSS) -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <!-- Bootstrap: (Optional theme) -->
-      <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-theme.min.css')}}">
       <!-- GoogleApis: (Font letter) -->
       <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple">
       <!-- AOS (Fancy transitions) -->
-      <link rel="stylesheet" href="static/css/aos.css" />
+      <link rel="stylesheet" href="{{url_for('static',filename='css/aos.css')}}" />
       <!-- Custom Style -->
-      <link rel="stylesheet" href="static/css/browser.css">
-
+      <link rel="stylesheet" href="{{url_for('static',filename='css/browser.css')}}">
+      
       <title>Chicago Point.</title>
    </head>
    <body>
@@ -25,11 +25,11 @@
 
 
        <video autoplay>
-         <source src="static/video/one_day_in_chicago.mp4" type="video/mp4" /> Your browser does not support the video tag.
+         <source src="{{url_for('static',filename='video/one_day_in_chicago.mp4')}}" type="video/mp4" /> Your browser does not support the video tag.
        </video>
 
        <div class="col-xs-12 col-sm-offset-3" style="padding-top:40px;padding-bottom:40px;">
-         <img class="img-responsive" src="static/img/logo2.png" width="40%"  style="float:left;"/>
+         <img class="img-responsive" src="{{url_for('static',filename='img/logo2.png')}}" width="40%"  style="float:left;"/>
        </div>
 
       <section >
@@ -60,7 +60,7 @@
                </div>
                <div class="form-group">
                   <div class="col-md-12 ">
-                     <a href="content.html" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-search"></span> Search</a>
+                     <a href="/content/" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-search"></span> Search</a>
                   </div>
                </div>
             </div>
@@ -70,11 +70,11 @@
       </div>
 
       <!-- jQuery: (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="static/js/jquery.min.js"></script>
+      <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
       <!-- Bootstrap: (Latest compiled and minified JavaScript -->
-      <script src="static/js/bootstrap.min.js"></script>
+      <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
       <!-- AOS: (Fancy styles) -->
-      <script src="static/js/aos.js"></script>
+      <script src="{{url_for('static',filename='js/aos.js')}}"></script>
       <script>AOS.init();</script>
 
    </body>
