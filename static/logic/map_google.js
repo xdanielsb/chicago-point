@@ -7,8 +7,9 @@ let marker
 let div_map
 let infowindow
 
-let icon_origin = 'static/img/location_pin1.png'
-let icon_house = "static/img/location_pin2.png"
+//Check this-- a bit tricky
+let icon_origin = '../../static/img/location_pin1.png'
+let icon_house = "../../static/img/location_pin2.png"
 
 
 //Configuration map
