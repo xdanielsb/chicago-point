@@ -55,6 +55,6 @@ if (opcion == 1){
   let url = "https://www.ncdc.noaa.gov/cdo-web/api/v2/datasets"
   request("GET", url)
 } else if(opcion == 2 ){
-  let url = "https://data.cityofchicago.org/resource/uahe-iimk.json"
+  let url = "/houses/"
   request2("GET", url)
 }
