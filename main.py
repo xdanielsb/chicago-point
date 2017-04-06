@@ -1,6 +1,7 @@
 """This module control the application."""
 
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
+from request import *
 
 app = Flask(__name__)
 
@@ -19,6 +20,11 @@ def content():
 @app.route('/charts/')
 def charts():
     return render_template('facade.html')
+
+@app.route('/houses/')
+def houses():
+    houses = get_houses()
+    return jsonify(houses)
 
 if __name__ =="__main__":
     app.run(debug=True)
