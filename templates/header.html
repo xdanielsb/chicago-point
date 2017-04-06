@@ -12,13 +12,39 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-theme.min.css')}}" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
     {%block header%}
 
     {%endblock%}
 </head>
 
 <body>
+
+  <ul id="slide-out" class="side-nav">
+      <li><a href="/content/">DashBoard</a></li>
+      <li><a href="/charts/">Charts</a></li>
+      <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+              <li>
+                  <a class="collapsible-header">Filters<i class="material-icons">arrow_drop_down</i></a>
+                  <div class="collapsible-body">
+                      <ul>
+                          <li><a href="#!">Safety</a></li>
+                          <li><a href="#!">Cost</a></li>
+                          <li><a href="#!">Distance</a></li>
+                          <li><a href="#!">Girls</a></li>
+                      </ul>
+                  </div>
+              </li>
+          </ul>
+      </li>
+  </ul>
+  <a href="#" data-activates="slide-out" id="menu_button" class="button-collapse show-on-large">
+      <i class="material-icons">menu</i></a>
+
 
     {%block body%}
 
@@ -27,6 +53,10 @@
     <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
     <!-- Bootstrap: (Latest compiled and minified JavaScript -->
     <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+    <!-- Materialize: -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <!-- Menu -->
+    <script src="{{url_for('static',filename='js/menu.js')}}"></script>
     {%block imports%}
 
     {%endblock%}

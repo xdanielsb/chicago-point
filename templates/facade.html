@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <!-- Meta information -->
-      <meta charset="UTF-8">
-      <link rel="shortcut icon" type='image/x-icon' href="{{url_for('static',filename='img/favicon.ico')}}">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <!-- Bootstrap: (Latest compiled and minified CSS) -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <!-- Bootstrap: (Optional theme) -->
-      <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-theme.min.css')}}">
+{%extends "header.html"%}
 
+{%block header%}
 
-      <title>Document</title>
-   </head>
-   <body>
+{%endblock%}
 
+{%block body%}
      <div>
          <div class=" col-xs-12 col-sm-6  col-md-6">
              <canvas id="chart_bar"></canvas>
@@ -30,17 +19,13 @@
              <canvas id="chart_polar"></canvas>
          </div>
      </div>
+{%endblock%}
 
-      <!-- jQuery: (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
-      <!-- Bootstrap: (Latest compiled and minified JavaScript -->
-      <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
-
+{%block imports%}
       <!-- ChartJS: (Graphs) -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
       <script src="{{url_for('static',filename='logic/graphs/bar_graph.js')}}"></script>
       <script src="{{url_for('static',filename='logic/graphs/linear_graph.js')}}"></script>
       <script src="{{url_for('static',filename='logic/graphs/polar_graph.js')}}"></script>
       <script src="{{url_for('static',filename='logic/graphs/radar_graph.js')}}"></script>
-   </body>
-</html>
+{%endblock%}
