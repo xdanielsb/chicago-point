@@ -1,4 +1,6 @@
+
 $(".button-collapse").sideNav();
+document.getElementById("menu_button").click();
 
 $('.button-collapse').sideNav({
     menuWidth: 300, // Default is 300
