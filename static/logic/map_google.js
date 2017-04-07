@@ -22,7 +22,7 @@ let config_mapa = {
 }
 
 // Function for place a marker
-function createMarker(location, _icon) {
+function createMarker(location, e, _icon) {
     //Simulate omition parameters of python
     if (typeof(_icon)==='undefined') _icon = icon_house;
 
@@ -37,10 +37,13 @@ function createMarker(location, _icon) {
     marker = new google.maps.Marker(data);
 
     marker.info = new google.maps.InfoWindow({
-      content: '<b>Speed:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      content: ''
     });
 
+    marker.data=  e[0]+ "<br><a href='#'>Click to get more information</a>";
+
     google.maps.event.addListener(marker, 'click', function() {
+      marker.info.setContent(this.data);
       marker.info.open(map, this);
     });
 
@@ -64,7 +67,7 @@ function initMap() {
   // Instance the map
   div_map = document.getElementById("map")
   map_data = new google.maps.Map(div_map, config_mapa);
-  createMarker({lat: 41.870732, lng: -87.650495}, icon_origin)
+  createMarker({lat: 41.870732, lng: -87.650495}, ["Origin University"],icon_origin)
   console.log("The map has been loaded.")
   loadKmlLayer(kml_limitations, map_data);
 }
