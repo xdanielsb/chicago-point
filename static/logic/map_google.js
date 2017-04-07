@@ -40,9 +40,14 @@ function createMarker(location, e, _icon) {
       content: ''
     });
 
-    marker.data=  e[0]+ "<br><a href='#'>Click to get more information</a>";
+    marker.data=  "<a class='waves-effect waves-light btn' href='#modal1'>Click me!!!</a>";
+
+    marker.vals = e
 
     google.maps.event.addListener(marker, 'click', function() {
+      var $toastContent = $("<span>"+this.vals[0]+"</span>");
+      Materialize.toast($toastContent, 5000);
+      document.getElementById("address").innerHTML = this.vals[0]
       marker.info.setContent(this.data);
       marker.info.open(map, this);
     });

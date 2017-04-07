@@ -12,6 +12,17 @@
 <div id="map_container"></div>
 <div id="map"></div>
 </div>
+
+
+<!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 id="address"></h4>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
 {%endblock%}
 
 
@@ -25,4 +36,5 @@
 <!-- jQuery: Request API -->
 <script defer src="{{url_for('static',filename='logic/request_datasets.js')}}"></script>
 <script defer src="{{url_for('static',filename='logic/request_api.js')}}"></script>
+<script src="{{url_for('static',filename='js/content.js')}}"></script>
 {%endblock%}
