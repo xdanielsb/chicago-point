@@ -16,7 +16,7 @@ let kml_limitations = "https://data.cityofchicago.org/api/geospatial/cauq-8yn6?m
 
 //Configuration map
 let config_mapa = {
-  zoom: 14,
+  zoom: 15,
   center: {lat: 41.870732, lng: -87.650495}, //Center in US
   mapTypeId: 'terrain'
 }

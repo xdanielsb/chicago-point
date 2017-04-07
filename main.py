@@ -5,13 +5,14 @@ from request import *
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return render_template('index.html')
 
-@app.route('/browser/')
+@app.route('/')
 def browser ():
     return render_template('browser.html')
+    
+@app.route('/about/')
+def index():
+    return render_template('index.html')
 
 @app.route('/content/')
 def content():
@@ -41,7 +42,6 @@ def health():
 def weather():
     weather = get_weather()
     return jsonify(weather)
-
 
 
 if __name__ =="__main__":

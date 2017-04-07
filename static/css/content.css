@@ -1,13 +1,17 @@
-#charts {
-  background: rgb(43, 94, 209);
+
+.cont{
+  width: 100%;
+  margin: 0 auto;
 }
 
-#map {
-  height: 540px;
-  width:520px;
-  border-radius:3%;
-  margin-top: 50px;
-  margin-bottom: 50px;
+#map_container{
+  position: relative;
+}
+#map{
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 100%;
+    position: relative;
 }
 
 input[type=search] {
@@ -15,6 +19,6 @@ input[type=search] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 2px solid blue;
+    border: 2px solid rgb(43, 92, 201);
     border-radius: 4px;
 }

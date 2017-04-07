@@ -21,7 +21,7 @@ Follow the next steps
 $ git clone https://github.com/goldironhack/2017-Purdue-UNAL-IronHack-xdanielsb.git
 $ cd 2017-Purdue-UNAL-IronHack-xdanielsb
 $ python main.py
-$ ** Open a browser an write in the the url bar localhost:5000 ** 
+$ ** Open a browser an write in the the url bar localhost:5000 **
 ```
 ---
 
@@ -46,6 +46,7 @@ $ ** Open a browser an write in the the url bar localhost:5000 **
 
 * [Weather Dataset]( https://www.ncdc.noaa.gov/cdo-web/api/v2/datasets)
 * [Rent Dataset](https://data.cityofchicago.org/resource/uahe-iimk.json)
+* [Healthy](https://data.cityofchicago.org/Health-Human-Services/Public-Health-Statistics-Selected-public-health-in/iqnk-2tcu)
 
 ---
 
