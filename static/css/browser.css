@@ -3,6 +3,14 @@ body {
   background: #fff;
 }
 
+h1 {
+    padding: 50px 0;
+   font-size: 70px;
+   font-family: "Spirax";
+   font-style: normal;
+   font-weight: 400;
+}
+
 video {
     position: fixed;
     top: 50%;
@@ -21,4 +29,10 @@ video {
   background: rgb(0, 0, 0,0.8);
   color: #fff;
   border-radius: 25px;
+}
+
+img {
+  border: 2px solid;
+  border-color: rgb(255, 255, 255);
+  border-radius: 50%;
 }
