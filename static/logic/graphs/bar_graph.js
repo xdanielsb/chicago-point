@@ -52,6 +52,22 @@ let context_bar = document.getElementById("chart_bar");
 let mychart_bar = new Chart(context_bar, config_bar);
 
 
+
+$.ajax({
+  method: "GET",
+  url: "/houses/"
+})
+.done((res) => {
+  console.log("Data graph have come.")
+  console.log(res)
+})
+.fail((_, status, error) => {
+  console.log(status)
+  console.log(error)
+});
+
+
+
 // Events
 $("#chart_bar").click(
   function(evt){

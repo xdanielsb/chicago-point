@@ -4,7 +4,7 @@ import urllib2
 
 
 """
-    Get the houses
+    Get the houses for rent
 """
 def get_houses():
     url = "https://data.cityofchicago.org/resource/uahe-iimk.json"
@@ -18,7 +18,6 @@ def get_health_statistics():
     url = "https://data.cityofchicago.org/resource/iqnk-2tcu.json"
     result = json.load(urllib2.urlopen(url))
     return result
-
 
 """
     Get the weather based on ZIP code

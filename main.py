@@ -9,10 +9,10 @@ app = Flask(__name__)
 @app.route('/')
 def browser ():
     return render_template('browser.html')
-    
+
 @app.route('/about/')
 def index():
-    return render_template('index.html')
+    return render_template('about.html')
 
 @app.route('/content/')
 def content():
@@ -20,7 +20,7 @@ def content():
 
 @app.route('/charts/')
 def charts():
-    return render_template('facade.html')
+    return render_template('charts.html')
 
 
 
