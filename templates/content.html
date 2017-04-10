@@ -2,22 +2,19 @@
 
 
 {%block header%}
-<!-- Data tables styles   -->
-<link rel="stylesheet" href="{{url_for('static',filename='css/jquery.dataTables.min.css')}}">
-<link rel="stylesheet" href="{{url_for('static',filename='css/content.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/content.css')}}">
 {%endblock%}
 
 {%block body%}
-<div class="cont">
-<div id="map_container"></div>
-<div id="map"></div>
-</div>
+  <div class="cont">
+  <div id="map_container"></div>
+  <div id="map"></div>
+  </div>
 
-
-<!-- Modal Structure -->
+ <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h4 id="address"></h4>
+      <p id="address"></p>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>

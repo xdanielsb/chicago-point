@@ -22,7 +22,7 @@ let config_mapa = {
 }
 
 // Function for place a marker
-function createMarker(location, e, _icon) {
+function createMarker(location, info_location, _icon) {
     //Simulate omition parameters of python
     if (typeof(_icon)==='undefined') _icon = icon_house;
 
@@ -40,14 +40,14 @@ function createMarker(location, e, _icon) {
       content: ''
     });
 
-    marker.data=  "<a class='waves-effect waves-light btn' href='#modal1'>Click me!!!</a>";
+    marker.data=  "<a class='waves-effect waves-light btn' href='#modal1'>Click me.</a>";
 
-    marker.vals = e
+    marker.vals = info_location
 
     google.maps.event.addListener(marker, 'click', function() {
-      var $toastContent = $("<span>"+this.vals[0]+"</span>");
+      var $toastContent = $("<span>"+this.vals["property_name"]+"</span>");
       Materialize.toast($toastContent, 5000);
-      document.getElementById("address").innerHTML = this.vals
+      document.getElementById("address").innerHTML = JSON.stringify(this.vals)
       marker.info.setContent(this.data);
       marker.info.open(map, this);
     });
