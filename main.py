@@ -8,8 +8,9 @@ app = Flask(__name__)
 """
     Create no heavy request at the init of the application
 """
-houses_data = get_houses()
-health_data = get_health_statistics()
+
+request_object = Request()
+
 
 @app.route('/')
 def browser ():
@@ -33,17 +34,18 @@ def charts():
     Methods for the custom API
 """
 
-@app.route('/houses/')
-def houses():
-    return jsonify(houses_data)
+@app.route('/location_houses/')
+def location_houses():
+    locs = request_object.get_locations_houses()
+    return locs
 
 @app.route('/health/')
 def health():
-    return jsonify(health_data)
+    return jsonify(request_object.health_data)
 
 @app.route("/weather/")
 def weather():
-    weather_data = get_weather()
+    weather_data = request_object.get_weather()
     return jsonify(weather_data)
 
 

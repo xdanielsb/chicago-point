@@ -47,7 +47,7 @@ function createMarker(location, e, _icon) {
     google.maps.event.addListener(marker, 'click', function() {
       var $toastContent = $("<span>"+this.vals[0]+"</span>");
       Materialize.toast($toastContent, 5000);
-      document.getElementById("address").innerHTML = this.vals[0]
+      document.getElementById("address").innerHTML = this.vals
       marker.info.setContent(this.data);
       marker.info.open(map, this);
     });

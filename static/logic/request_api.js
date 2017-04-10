@@ -14,11 +14,8 @@ function request(_method, _url) {
     url: _url
   })
   .done((res) => {
-    response = res;
-    //Fill the table with the answer
-    show_datasets_rent(response);
     console.log("The request2 for :"+_url+ " has finished");
-    insert_markers(dataset)
+    insert_markers_locations(res)
 
   })
   .fail((_, status, error) => {
@@ -35,6 +32,6 @@ if (opcion == 1){
   let url = "/health/"
   request("GET", url)
 } else if(opcion == 2 ){
-  let url = "/houses/"
+  let url = "/location_houses/"
   request("GET", url)
 }

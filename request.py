@@ -53,8 +53,7 @@ class Request:
         h = json.dumps(self.houses_data)
         j = json.dumps(json.loads(h)) #tricky part
         data_frame = pd.read_json(j) #Start with the science
-        print (data_frame[["latitude", "longitude"]])
-
-
-a = Request()
-a.get_locations_houses()
+        data_frame = data_frame.dropna() #Remove NAN rows
+        locs = data_frame[["latitude", "longitude"]]
+        locs_js = locs.to_json()
+        return locs_js
