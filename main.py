@@ -5,6 +5,12 @@ from request import *
 
 app = Flask(__name__)
 
+"""
+    Create no heavy request at the init of the application
+"""
+houses_data = get_houses()
+health_data = get_health_statistics()
+weather_data = get_weather()
 
 @app.route('/')
 def browser ():
@@ -30,19 +36,16 @@ def charts():
 
 @app.route('/houses/')
 def houses():
-    houses = get_houses()
-    return jsonify(houses)
+    return jsonify(houses_data)
 
 @app.route('/health/')
 def health():
-    health = get_health_statistics()
-    return jsonify(health)
+    return jsonify(health_data)
 
 @app.route("/weather/")
 def weather():
-    weather = get_weather()
-    return jsonify(weather)
+    return jsonify(weather_data)
 
 
 if __name__ =="__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)
