@@ -10,7 +10,6 @@ app = Flask(__name__)
 """
 houses_data = get_houses()
 health_data = get_health_statistics()
-weather_data = get_weather()
 
 @app.route('/')
 def browser ():
@@ -44,6 +43,7 @@ def health():
 
 @app.route("/weather/")
 def weather():
+    weather_data = get_weather()
     return jsonify(weather_data)
 
 
