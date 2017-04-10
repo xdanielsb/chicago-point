@@ -54,6 +54,6 @@ class Request:
         j = json.dumps(json.loads(h)) #tricky part
         data_frame = pd.read_json(j) #Start with the science
         data_frame = data_frame.dropna() #Remove NAN rows
-        locs = data_frame[["latitude", "longitude"]]
+        locs = data_frame[["latitude", "longitude", "address", "community_area_number", "community_area", "phone_number", "property_name", "property_type", "zip_code"]]
         locs_js = locs.to_json()
         return locs_js
