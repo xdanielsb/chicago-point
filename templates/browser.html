@@ -12,7 +12,26 @@
       <link rel="stylesheet" href="{{url_for('static',filename='css/browser.css')}}">
 
       <title>Chicago Point.</title>
+      <script>
 
+      function requestFullScreen(element) {
+          // Supports most browsers and their versions.
+          var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+          if (requestMethod) { // Native full screen.
+              requestMethod.call(element);
+          } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+              var wscript = new ActiveXObject("WScript.Shell");
+              if (wscript !== null) {
+                  wscript.SendKeys("{F11}");
+              }
+          }
+      }
+
+      var elem = document.body; // Make the body go full screen.
+      requestFullScreen(elem);
+
+      </script>
    </head>
    <body >
 
@@ -20,7 +39,7 @@
 
 
        <video autoplay>
-         <source src="{{url_for('static',filename='video/one_day_in_chicago.mp4')}}" type="video/mp4" /> Your browser does not support the video tag.
+         <source src="{{url_for('static',filename='video/one_day3.mp4')}}" type="video/mp4" /> Your browser does not support the video tag.
        </video>
 
       <center> <H1>CHICAGO POINT</H1></center>
