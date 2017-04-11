@@ -4,6 +4,9 @@
     <!-- Data tables styles   -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
+    <style>
+      .modal { width: 90% !important; max-height: 80% !important; }
+    </style>
 {%endblock%}
 
 {%block body%}
@@ -20,6 +23,7 @@
               </div>
             <div class="card-stacked">
             <div class="card-content">
+              <h6> <strong>House per Comunity. </strong></h6>
               <p>In this graph is shown the number of houses by comunity.</p>
             </div>
             <div class="card-action">
@@ -37,13 +41,16 @@
             </div>
           <div class="card-stacked">
           <div class="card-content">
-            <p>In this graph is shown the number of houses by comunity.</p>
+            <h6> <strong>Comunity information. </strong></h6>
+            <p>In this table you can seek information of each comunity.</p>
           </div>
           <div class="card-action">
-            <a href="#modal1">Click me</a>
+            <a href="#modal2">Click me</a>
           </div>
           </div>
           </div>
+
+
       </div>
 
 
@@ -56,7 +63,7 @@
           </div>
         <div class="card-stacked">
         <div class="card-content">
-          <p>In this graph is shown the number of houses by comunity.</p>
+          <p>Coming soon...</p>
         </div>
         <div class="card-action">
           <a href="#modal1">Click me</a>
@@ -66,12 +73,13 @@
     </div>
 
 
+
          </div>
 
-         <table id="example" class="table table-bordered table-hover" ></table>
+
      </div>
 
-     <!-- Modal Structure -->
+     <!-- Modal Chart Bar -->
       <div id="modal1" class="modal">
         <div class="modal-content">
           <canvas id="chart_bar" ></canvas>
@@ -81,6 +89,16 @@
           <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
       </div>
+
+      <!-- Modal Data Table -->
+       <div id="modal2" class="modal">
+         <div class="modal-content">
+           <table id="example" class="table table-bordered table-hover" ></table>
+         </div>
+         <div class="modal-footer">
+           <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+         </div>
+       </div>
 
 
 
@@ -157,4 +175,5 @@
       <script src="{{url_for('static',filename='js/chart.js')}}"></script>
       <!-- Data Tables necessary -->
       <script type="text/javascript" charset="utf8"  src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+      <script defer src="{{url_for('static',filename='logic/request_comunities.js')}}"></script>
 {%endblock%}
