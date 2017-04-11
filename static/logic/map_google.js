@@ -8,8 +8,8 @@ let div_map
 let infowindow
 
 //Check this-- a bit tricky
-let icon_origin = '../../static/img/location_pin1.png'
-let icon_house = "../../static/img/location_pin2.png"
+let icon_origin = '../../static/img/location_pin.png'
+let icon_house = "../../static/img/home1.png"
 
 let kml_limitations = "https://data.cityofchicago.org/api/geospatial/cauq-8yn6?method=export&format=KML"
 
