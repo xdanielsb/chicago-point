@@ -1,9 +1,6 @@
 setTimeout(greeting, 3000)
 setTimeout(remind, 7000)
 
-if (navigator.userAgent.toLowerCase().indexOf('firefox') == -1) {
-	alert("User I recommend you to use Firefox.")
-}
 function greeting(){
 $.notify({
 	icon: 'https://avatars2.githubusercontent.com/u/17663363?v=3&s=460',
