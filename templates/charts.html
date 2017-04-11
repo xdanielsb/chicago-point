@@ -1,6 +1,9 @@
 {%extends "header.html"%}
 
 {%block header%}
+    <!-- Data tables styles   -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
 {%endblock%}
 
 {%block body%}
@@ -42,7 +45,9 @@
           </div>
           </div>
       </div>
-      
+
+
+
       <div class="col s12 m4">
 
         <div class="card horizontal">
@@ -62,12 +67,15 @@
 
 
          </div>
+
+         <table id="example" class="table table-bordered table-hover" ></table>
      </div>
 
      <!-- Modal Structure -->
       <div id="modal1" class="modal">
         <div class="modal-content">
           <canvas id="chart_bar" ></canvas>
+
         </div>
         <div class="modal-footer">
           <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -82,6 +90,7 @@
       <!-- ChartJS: (Graphs) -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
 
+<!-- Bar Graph -->
       <script>
 
    let config_bar = {
@@ -146,8 +155,6 @@
 
 </script>
       <script src="{{url_for('static',filename='js/chart.js')}}"></script>
-      <!-- <script src="{{url_for('static',filename='logic/graphs/bar_graph.js')}}"></script> -->
-      <!-- <script src="{{url_for('static',filename='logic/graphs/linear_graph.js')}}"></script> -->
-      <!-- <script src="{{url_for('static',filename='logic/graphs/polar_graph.js')}}"></script> -->
-      <!-- <script src="{{url_for('static',filename='logic/graphs/radar_graph.js')}}"></script> -->
+      <!-- Data Tables necessary -->
+      <script type="text/javascript" charset="utf8"  src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
 {%endblock%}

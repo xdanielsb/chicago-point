@@ -40,14 +40,17 @@ def location_houses():
     locs = request_object.get_locations_houses()
     return locs
 
-@app.route('/health/')
-def health():
-    return jsonify(request_object.health_data)
-
 @app.route("/weather/")
 def weather():
     weather_data = request_object.get_weather()
     return jsonify(weather_data)
+
+@app.route("/info_comunities/")
+def info_comun():
+    info = request_object.get_information_comunity()
+    return jsonify(info)
+
+
 
 
 if __name__ =="__main__":

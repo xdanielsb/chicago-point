@@ -1,6 +1,6 @@
 ![Alt Planarity testing](static/img/logo1.png?raw=true "Logo")
 
-***CHICAGO POINT application will try to solve the problem for some students that need to move to Chicago City.***
+***CHICAGO POINT application  solve the problem for finding home in Chicago City.***
 
 ---
 ### Requirements
@@ -38,6 +38,8 @@ $ ** Open a browser an write in the the url bar localhost:5000 **
 
 * [Html] - Used for building the front-end
 * [Bootstrap] - Make a responsive page
+* [Materialize] - Awesome styles
+* [AOS] - Fancy transitions
 * [jQuery] - Useful functions
 * [CSS] - Help to make beautiful the page
 
@@ -47,7 +49,8 @@ $ ** Open a browser an write in the the url bar localhost:5000 **
 
 * [Weather Dataset]( https://www.ncdc.noaa.gov/cdo-web/api/v2/datasets)
 * [Rent Dataset](https://data.cityofchicago.org/resource/uahe-iimk.json)
-* [Healthy](https://data.cityofchicago.org/Health-Human-Services/Public-Health-Statistics-Selected-public-health-in/iqnk-2tcu)
+* [Information healthy comunity.](https://data.cityofchicago.org/resource/iqnk-2tcu.json)
+
 
 ---
 

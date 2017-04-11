@@ -1,12 +1,4 @@
 'use strict'
-/*
- * Depend on: No local
- * These methods are called when the promises are getting by the
- * request api.
- */
-
-let dataset = []
-
 
 /*
  * This function insert the markers
@@ -45,3 +37,22 @@ function insert_markers_locations(response){
   }
 
 }
+
+//Create ajax JQuery request without token
+function request_location_houses(_method, _url) {
+  $.ajax({
+    method: _method,
+    url: _url
+  })
+  .done((res) => {
+    console.log("The request for :"+_url+ " has finished");
+    insert_markers_locations(res)
+
+  })
+  .fail((_, status, error) => {
+    console.log(status)
+    console.log(error)
+  });
+}
+
+request_location_houses("GET", "/location_houses/")

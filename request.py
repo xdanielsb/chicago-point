@@ -35,8 +35,18 @@ class Request:
     """
     def get_health_statistics(self):
         url = "https://data.cityofchicago.org/resource/iqnk-2tcu.json"
-        result = json.load(urllib2.urlopen(url))
-        return result
+        data = urllib2.urlopen(url)
+
+        #Tricky part
+        result = json.load(data)
+        aux = json.dumps(result)
+        aux2 = json.dumps(json.loads(aux))
+
+        #Data Frame
+        data_frame =  pd.read_json(aux2)
+        data_frame = data_frame.dropna()
+
+        return data_frame
 
         """
             Get the weather based on ZIP code
@@ -73,6 +83,7 @@ class Request:
         values = _counts.values
         labels = _counts.index.values
         colors = []
+        #Create random colors
         for i in values:
             r = random.randint(0,255)
             g = random.randint(0,255)
@@ -82,7 +93,12 @@ class Request:
 
         return labels, values,colors
 
+    def get_information_comunity(self):
+        info = self.health_data[["community_area", "cancer_all_sites", "below_poverty_level", "birth_rate", "per_capita_income", "community_area_name", "crowded_housing", "infant_mortality_rate", "assault_homicide", "unemployment"]]
+        info_js = info.to_json()
+        return info_js
+    
 
 if(__name__ =="__main__"):
     a = Request()
-    print(a.get_number_by_comunity())
+    print(a.get_information_comunity())
