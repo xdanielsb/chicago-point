@@ -1,6 +1,10 @@
 ![Alt Planarity testing](static/img/logo1.png?raw=true "Logo")
 
 ***CHICAGO POINT application  solve the problem for finding home in Chicago City.***
+---
+
+### Sample video
+#### https://drive.google.com/open?id=0B8wdzbJt0XyZR2x6SHJyOF9fOFU
 
 ---
 ### Requirements
