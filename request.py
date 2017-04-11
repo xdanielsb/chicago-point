@@ -1,6 +1,7 @@
 from urllib2 import urlopen, Request
 import json
 import urllib2
+import random
 
 #Library for Data Science
 import pandas as pd
@@ -18,8 +19,16 @@ class Request:
     def get_houses(self):
         url = "https://data.cityofchicago.org/resource/uahe-iimk.json"
         data  = urllib2.urlopen(url)
+
+        #Tricky part
         result = json.load(data)
-        return result
+        aux = json.dumps(result)
+        aux2 = json.dumps(json.loads(aux))
+
+        #Data Frame
+        data_frame =  pd.read_json(aux2)
+        data_frame = data_frame.dropna()
+        return data_frame
 
     """
         Get information about the health in a community
@@ -50,10 +59,30 @@ class Request:
         Get locations houses.
     """
     def get_locations_houses(self):
-        h = json.dumps(self.houses_data)
-        j = json.dumps(json.loads(h)) #tricky part
-        data_frame = pd.read_json(j) #Start with the science
-        data_frame = data_frame.dropna() #Remove NAN rows
-        locs = data_frame[["latitude", "longitude", "address", "community_area_number", "community_area", "phone_number", "property_name", "property_type", "zip_code"]]
+        locs = self.houses_data[["latitude", "longitude", "address", "community_area_number", "community_area", "phone_number", "property_name", "property_type", "zip_code"]]
         locs_js = locs.to_json()
         return locs_js
+
+    """
+        Get number of houses by comunity.
+    """
+    def get_number_by_comunity(self):
+        _counts = self.houses_data["community_area"].value_counts()
+        #_counts_js = _counts.to_json()
+        #print(_counts_js)
+        values = _counts.values
+        labels = _counts.index.values
+        colors = []
+        for i in values:
+            r = random.randint(0,255)
+            g = random.randint(0,255)
+            b = random.randint(0,255)
+            colors.append("rgb({},{},{})".format(r,g,b))
+
+
+        return labels, values,colors
+
+
+if(__name__ =="__main__"):
+    a = Request()
+    print(a.get_number_by_comunity())

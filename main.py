@@ -26,7 +26,8 @@ def content():
 
 @app.route('/charts/')
 def charts():
-    return render_template('charts.html')
+    labels, values,colors = request_object.get_number_by_comunity()
+    return render_template('charts.html', labels=labels, values=values, colors=colors)
 
 
 
