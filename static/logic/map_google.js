@@ -29,7 +29,7 @@ let config_mapa = {
 }
 
 /*
-* Distance between points 
+* Distance between points
 * K -> Kilometers
 */
 
@@ -83,11 +83,12 @@ function createMarker(location, info_location, _icon) {
     marker.data=  "<a class='waves-effect waves-light btn' href='#modal1'>Click me.</a>";
 
     marker.vals = info_location
+    marker.dista = l_aux
 
     google.maps.event.addListener(marker, 'click', function() {
       var $toastContent = $("<span>"+this.vals["property_name"]+"</span>");
       Materialize.toast($toastContent, 5000);
-      document.getElementById("address").innerHTML = JSON.stringify(this.vals)
+      document.getElementById("address").innerHTML = JSON.stringify(this.vals) + this.dista
       marker.info.setContent(this.data);
       marker.info.open(map, this);
     });
