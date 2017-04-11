@@ -33,7 +33,7 @@ function insert_markers_locations(response){
                  }
   // console.log(location)
   // Call google maps method.
-    createMarker(location, info)
+    createMarker(location, info, 1)
   }
 
 }
