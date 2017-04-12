@@ -1,122 +1,103 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="Dashboard">
-    <meta name="author" content="Daniel Santos">
-    <title>Visualization</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type='image/x-icon' href="{{url_for('static',filename='img/favicon.ico')}}">
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
-    {%block header%}
-
-    {%endblock%}
-
-</head>
-
-<body>
-
-
-    <header>
-
-       <ul id="nav-mobile" class="side-nav fixed">
-         <a href="/"><img class="img-responsive" src="{{url_for('static',filename='img/logo2min.png')}}" /></a>
-
-         <li class="bold"><a href="/content/" class="waves-effect waves-teal">Find a place</a></li>
-         <li class="bold"><a href="/charts/" class="waves-effect waves-teal">Charts & Statistics</a></li>
-         <li class="bold"><a href="/about/" class="waves-effect waves-teal">Meet Chicago</a></li>
-
-
-         <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-          <li>
-            <a class="collapsible-header">Indicators Icons<i class="material-icons">arrow_drop_down</i></a>
-            <div class="collapsible-body">
-              <ul>
-
-                <table>
-                  <tbody>
-                      <tr>
-                        <td><img class="img-responsive" src="{{url_for('static',filename='img/home1.png')}}" /></td>
-                        <td>(0 km, 5 km] </td>
-                      </tr>
-                      <tr>
-                        <td><img class="img-responsive" src="{{url_for('static',filename='img/home2.png')}}" /> </td>
-                        <td>(5 km, 10 km]</td>
-                      </tr>
-                      <tr>
-                        <td><img class="img-responsive" src="{{url_for('static',filename='img/home3.png')}}" /></td>
-                        <td>(10 km, 15 km]</td>
-                      </tr>
-                      <tr>
-                        <td><img class="img-responsive" src="{{url_for('static',filename='img/danger.png')}}" /></td>
-                        <td>Danger</td>
-                      </tr>
-                      <tr>
-                        <td><img class="img-responsive" src="{{url_for('static',filename='img/park.png')}}" /></td>
-                        <td>Parks</td>
-                      </tr>
-                  </tbody>
-                </table>
-
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </li>
-
-
-
-        <li class="no-padding">
-              <ul class="collapsible collapsible-accordion">
-                <li>
-                  <a class="collapsible-header">Filters<i class="material-icons">arrow_drop_down</i></a>
-                  <div class="collapsible-body">
-                    <ul>
-                      <div class="row">
-                          <div class="input-field col s12">
-                            <input id="parks" type="checkbox" class="validate">
-                            <label for="parks">Parks</label>
-                          </div>
-                          <div class="input-field col s12">
-                            <input id="danger" type="checkbox" class="validate">
-                            <label for="danger">Danger</label>
-                          </div>
-                      </div>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
+   <head>
+      <meta charset="utf-8">
+      <meta name="description" content="Dashboard">
+      <meta name="author" content="Daniel Santos">
+      <title>Visualization</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" type='image/x-icon' href="{{url_for('static',filename='img/favicon.ico')}}">
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+      <style>
+          #logo {
+            padding-left: 40px;
+            padding-top: 20px;
+          }
+      </style>
+      {%block header%}
+      {%endblock%}
+   </head>
+   <body>
+      <header>
+         <ul id="nav-mobile" class="side-nav fixed">
+            <a href="/"><img class="img-responsive" id="logo" src="{{url_for('static',filename='img/logo2min.png')}}" /></a>
+            <li class="bold"><a href="/content/" class="waves-effect waves-teal">Find a place</a></li>
+            <li class="bold"><a href="/charts/" class="waves-effect waves-teal">Charts & Statistics</a></li>
+            <li class="bold"><a href="/about/" class="waves-effect waves-teal">Meet Chicago</a></li>
+            <li class="no-padding">
+               <ul class="collapsible collapsible-accordion">
+                  <li>
+                     <a class="collapsible-header">Filters<i class="material-icons">arrow_drop_down</i></a>
+                     <div class="collapsible-body">
+                        <ul>
+                           <div class="row">
+                              <div class="input-field col s12">
+                                 <input id="parks" type="checkbox" class="validate" checked>
+                                 <label for="parks">Parks</label>
+                              </div>
+                              <div class="input-field col s12">
+                                 <input id="danger" type="checkbox" class="validate" checked>
+                                 <label for="danger">Danger</label>
+                              </div>
+                           </div>
+                        </ul>
+                     </div>
+                  </li>
+               </ul>
             </li>
-
-
-       </ul>
-
-     </header>
-
-
-    {%block body%}
-        <div class="col-md-10" id="map"></div>
-    {%endblock%}
-    <!-- jQuery: (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
-    <!-- Materialize: -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
-    <!-- Menu -->
-    <script src="{{url_for('static',filename='js/menu.js')}}"></script>
-
-    <script>
-       $(".collapsible-body").collapsible();
-    </script>
-    {%block imports%}
-
-    {%endblock%}
-
-
-</body>
-
+            <li class="no-padding">
+               <ul class="collapsible collapsible-accordion">
+                  <li>
+                     <a class="collapsible-header">Indicators Icons<i class="material-icons">arrow_drop_down</i></a>
+                     <div class="collapsible-body">
+                        <ul>
+                           <table>
+                              <tbody>
+                                 <tr>
+                                    <td><img class="img-responsive" src="{{url_for('static',filename='img/home1.png')}}" /></td>
+                                    <td>(0 km, 5 km] </td>
+                                 </tr>
+                                 <tr>
+                                    <td><img class="img-responsive" src="{{url_for('static',filename='img/home2.png')}}" /> </td>
+                                    <td>(5 km, 10 km]</td>
+                                 </tr>
+                                 <tr>
+                                    <td><img class="img-responsive" src="{{url_for('static',filename='img/home3.png')}}" /></td>
+                                    <td>(10 km, 15 km]</td>
+                                 </tr>
+                                 <tr>
+                                    <td><img class="img-responsive" src="{{url_for('static',filename='img/danger.png')}}" /></td>
+                                    <td>Danger</td>
+                                 </tr>
+                                 <tr>
+                                    <td><img class="img-responsive" src="{{url_for('static',filename='img/park.png')}}" /></td>
+                                    <td>Parks</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </ul>
+                     </div>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </header>
+      {%block body%}
+      <div class="col-md-10" id="map"></div>
+      {%endblock%}
+      <!-- jQuery: (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+      <!-- Materialize: -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+      <!-- Menu -->
+      <script src="{{url_for('static',filename='js/menu.js')}}"></script>
+      <script>
+         $(".collapsible-body").collapsible();
+      </script>
+      {%block imports%}
+      {%endblock%}
+   </body>
 </html>
