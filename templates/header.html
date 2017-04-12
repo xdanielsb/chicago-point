@@ -15,6 +15,7 @@
     {%block header%}
 
     {%endblock%}
+
 </head>
 
 <body>
@@ -23,33 +24,66 @@
     <header>
 
        <ul id="nav-mobile" class="side-nav fixed">
-         <a href="/"><img class="img-responsive" src="{{url_for('static',filename='img/logo2.png')}}" width="70%" /></a><br>
+         <a href="/"><img class="img-responsive" src="{{url_for('static',filename='img/logo2min.png')}}" /></a>
+
          <li class="bold"><a href="/content/" class="waves-effect waves-teal">Find a place</a></li>
          <li class="bold"><a href="/charts/" class="waves-effect waves-teal">Charts & Statistics</a></li>
          <li class="bold"><a href="/about/" class="waves-effect waves-teal">Meet Chicago</a></li>
 
-        <li><strong>Distance  indicators</strong></li>
-        <table>
-          <tbody>
-              <tr>
-                <td><img class="img-responsive" src="{{url_for('static',filename='img/home1.png')}}" /></td>
-                <td>(0 km, 5 km] </td>
-              </tr>
-              <tr>
-                <td><img class="img-responsive" src="{{url_for('static',filename='img/home2.png')}}" /> </td>
-                <td>(5 km, 10 km]</td>
-              </tr>
-              <tr>
-                <td><img class="img-responsive" src="{{url_for('static',filename='img/home3.png')}}" /></td>
-                <td>(10 km, 15 km]</td>
-              </tr>
-              <tr>
-                <td><img class="img-responsive" src="{{url_for('static',filename='img/home4.png')}}" /></td>
-                <td>(>15 km)</td>
 
-              </tr>
-          </tbody>
-        </table>
+         <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Indicators Icons<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+
+                <table>
+                  <tbody>
+                      <tr>
+                        <td><img class="img-responsive" src="{{url_for('static',filename='img/home1.png')}}" /></td>
+                        <td>(0 km, 5 km] </td>
+                      </tr>
+                      <tr>
+                        <td><img class="img-responsive" src="{{url_for('static',filename='img/home2.png')}}" /> </td>
+                        <td>(5 km, 10 km]</td>
+                      </tr>
+                      <tr>
+                        <td><img class="img-responsive" src="{{url_for('static',filename='img/home3.png')}}" /></td>
+                        <td>(10 km, 15 km]</td>
+                      </tr>
+                      <tr>
+                        <td><img class="img-responsive" src="{{url_for('static',filename='img/danger.png')}}" /></td>
+                        <td>Danger</td>
+                      </tr>
+                      <tr>
+                        <td><img class="img-responsive" src="{{url_for('static',filename='img/park.png')}}" /></td>
+                        <td>Parks</td>
+                      </tr>
+                  </tbody>
+                </table>
+
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+
+
+        <li class="no-padding">
+              <ul class="collapsible collapsible-accordion">
+                <li>
+                  <a class="collapsible-header">Filters<i class="material-icons">arrow_drop_down</i></a>
+                  <div class="collapsible-body">
+                    <ul>
+
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+
 
        </ul>
 
@@ -65,6 +99,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
     <!-- Menu -->
     <script src="{{url_for('static',filename='js/menu.js')}}"></script>
+
+    <script>
+       $(".collapsible-body").collapsible();
+    </script>
     {%block imports%}
 
     {%endblock%}
