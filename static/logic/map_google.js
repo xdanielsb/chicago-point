@@ -85,10 +85,45 @@ function createMarker(location, info_location, _icon) {
     marker.vals = info_location
     marker.dista = l_aux
 
+    let table_inf =
+              "<center><h5>"+info_location["property_name"]+"</h5> </center>"+
+              "<table>"+
+                "<thead>"+
+                  "<tr>"+
+                      "<th>Attribute</th>"+
+                      "<th>Value </th>"+
+                   "</tr>"+
+                 "</thead>"+
+                  "<tbody>"+
+                   "<tr>"+
+                     "<td>Address</td>"+
+                     "<td>"+info_location["address"]+"</td>"+
+                   "</tr>"+
+                   "<tr>"+
+                     "<td>Comunity</td>"+
+                     "<td>"+info_location["comunity"]+"</td>"+
+                   "</tr>"+
+                   "<tr>"+
+                     "<td>Phone</td>"+
+                     "<td>"+info_location["phone"]+"</td>"+
+                   "</tr>"+
+                   "<tr>"+
+                     "<td>Zip Code</td>"+
+                     "<td>"+info_location["zip_code"]+"</td>"+
+                   "</tr>"+
+                   "<tr>"+
+                     "<td>Distance</td>"+
+                     "<td>"+l_aux+" km</td>"+
+                   "</tr>"+
+                  "</tbody>"+
+             "</table>"
+
+
+
     google.maps.event.addListener(marker, 'click', function() {
       var $toastContent = $("<span>"+this.vals["property_name"]+"</span>");
       Materialize.toast($toastContent, 5000);
-      document.getElementById("address").innerHTML = JSON.stringify(this.vals) + this.dista
+      document.getElementById("address").innerHTML = table_inf
       marker.info.setContent(this.data);
       marker.info.open(map, this);
     });
