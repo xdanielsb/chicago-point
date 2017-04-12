@@ -12,23 +12,42 @@
       <link rel="stylesheet" href="{{url_for('static',filename='css/browser.css')}}">
     <style>
       @import "https://fonts.googleapis.com/css?family=Roboto";
+      body {
+         background: url("{{url_for('static',filename='img/background3.jpg')}}") no-repeat center center fixed;
+         /*background-attachment: fixed;*/
+         background-repeat: no-repeat;
+         /*filter: grayscale(80%);*/
+
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      p {
+          color: black;
+          font-family: "Spirax";
+          font-size: 30px;
+          color : rgb(0,0, 0);
+      }
     </style>
       <title>chicago point.</title>
    </head>
    <body >
 
       <div class="container">
-
+<!--
        <video autoplay>
          <source src="{{url_for('static',filename='video/one_day.webm')}}" type="video/webm" /> your browser does not support the video tag.
        </video>
+-->
+
 
       <center> <h1>Chicago point</h1></center>
 
        <div class="carousel" style="padding-top:-10px">
-          <a class="carousel-item " href="/content/"> <img src="{{url_for('static',filename='img/map.png')}}"> <center> find a place </center> </a>
-          <a class="carousel-item" href="/charts/">  <img src="{{url_for('static',filename='img/stats2.png')}}"> <center>  charts </center>   </a>
-          <a class="carousel-item" href="/about/">   <img src="{{url_for('static',filename='img/about2.png')}}"><center> about chicago </center> </a>
+          <a class="carousel-item " href="/content/"> <img src="{{url_for('static',filename='img/map2.png')}}"> <center> <p>Find a place</p> </center> </a>
+          <a class="carousel-item" href="/charts/">  <img src="{{url_for('static',filename='img/stats2.png')}}"> <center><p>Charts</p>  </center>   </a>
+          <a class="carousel-item" href="/about/">   <img src="{{url_for('static',filename='img/about2.png')}}"><center> <p>About chicago</p> </center> </a>
        </div>
 
       </div>
