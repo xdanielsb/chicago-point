@@ -29,10 +29,27 @@
          <li class="bold"><a href="/about/" class="waves-effect waves-teal">Meet Chicago</a></li>
 
         <li><strong>Distance  indicators</strong></li>
-                 (0 km, 5 km] <img class="img-responsive" src="{{url_for('static',filename='img/home1.png')}}" /> <br>
-                 (5 km, 10 km] <img class="img-responsive" src="{{url_for('static',filename='img/home2.png')}}" /> <br>
-                 (10 km, 15 km] <img class="img-responsive" src="{{url_for('static',filename='img/home3.png')}}" /> <br>
-                 (>15 km) <img class="img-responsive" src="{{url_for('static',filename='img/home4.png')}}" /> <br>
+        <table>
+          <tbody>
+              <tr>
+                <td><img class="img-responsive" src="{{url_for('static',filename='img/home1.png')}}" /></td>
+                <td>(0 km, 5 km] </td>
+              </tr>
+              <tr>
+                <td><img class="img-responsive" src="{{url_for('static',filename='img/home2.png')}}" /> </td>
+                <td>(5 km, 10 km]</td>
+              </tr>
+              <tr>
+                <td><img class="img-responsive" src="{{url_for('static',filename='img/home3.png')}}" /></td>
+                <td>(10 km, 15 km]</td>
+              </tr>
+              <tr>
+                <td><img class="img-responsive" src="{{url_for('static',filename='img/home4.png')}}" /></td>
+                <td>(>15 km)</td>
+
+              </tr>
+          </tbody>
+        </table>
 
        </ul>
 
