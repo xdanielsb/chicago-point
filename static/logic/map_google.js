@@ -47,17 +47,40 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 	return dist
 }
 
+function createOrigin(location,_icon){
+
+  let data = {
+     position: location,
+     map: map_data,
+     icon: houses[_icon],
+     clickable: true,
+     title: 'Click to get more information'
+   }
+
+
+   //intance the marker
+   marker = new google.maps.Marker(data);
+   marker.info = new google.maps.InfoWindow({
+     content: ''
+   });
+   marker.data=  "The University";
+
+   google.maps.event.addListener(marker, 'click', function() {
+     var $toastContent = $("<span> You are going to study here</span>");
+     Materialize.toast($toastContent, 5000);
+     marker.info.setContent(this.data);
+     marker.info.open(map, this);
+   });
+
+}
 
 // Function for place a marker
-function createMarker(location, info_location, _icon) {
+function createMarkerHouses(location, info_location, _icon) {
     //Simulate omition parameters of python
 
     let l_aux = distance(location['lat'], location['lng'], _center['lat'], _center['lng'], 'K' )
     console.log(l_aux)
-    if(l_aux  == 0){
-       _icon = 4;
-    }
-    else if(l_aux > 0 && l_aux < 5){
+    if(l_aux > 0 && l_aux < 5){
         _icon = 0;
     }else if(l_aux >= 5 && l_aux < 10){
         _icon = 1;
@@ -119,7 +142,6 @@ function createMarker(location, info_location, _icon) {
              "</table>"
 
 
-
     google.maps.event.addListener(marker, 'click', function() {
       var $toastContent = $("<span>"+this.vals["property_name"]+"</span>");
       Materialize.toast($toastContent, 5000);
@@ -148,7 +170,7 @@ function initMap() {
   // Instance the map
   div_map = document.getElementById("map")
   map_data = new google.maps.Map(div_map, config_mapa);
-  createMarker(_center, ["Origin University"],4)
+  createOrigin(_center ,4)
   console.log("The map has been loaded.")
   loadKmlLayer(kml_limitations, map_data);
 }
