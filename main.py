@@ -50,7 +50,10 @@ def info_comun():
     info = request_object.get_information_comunity()
     return jsonify(info)
 
-
+@app.route("/location_police_stations/")
+def location_stations():
+    info = request_object.get_locations_police_stations()
+    return jsonify(info)
 
 
 if __name__ =="__main__":

@@ -5,7 +5,7 @@
  */
 
 function insert_markers_locations(response){
-  console.log("Inserting markers")
+  console.log("Inserting markers houses")
 
   let result = jQuery.parseJSON(response)
   //console.log(result)

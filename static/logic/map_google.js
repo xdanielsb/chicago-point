@@ -13,8 +13,9 @@ let house1 = "../../static/img/home1.png"
 let house2 = "../../static/img/home2.png"
 let house3 = "../../static/img/home3.png"
 let house4 = "../../static/img/home4.png"
+let police ="../../static/img/police.png"
 
-let houses = [house1, house2, house3, house4, icon_origin]
+let houses = [house1, house2, house3, house4]
 
 
 let kml_limitations = "https://data.cityofchicago.org/api/geospatial/cauq-8yn6?method=export&format=KML"
@@ -52,11 +53,10 @@ function createOrigin(location,_icon){
   let data = {
      position: location,
      map: map_data,
-     icon: houses[_icon],
+     icon: icon_origin,
      clickable: true,
      title: 'Click to get more information'
    }
-
 
    //intance the marker
    marker = new google.maps.Marker(data);
@@ -73,6 +73,32 @@ function createOrigin(location,_icon){
    });
 
 }
+
+
+
+function createPoliceStations(location){
+
+  let data = {
+     position: location,
+     map: map_data,
+     icon: police,
+     clickable: true,
+     title: 'Click to get more information'
+   }
+
+   //intance the marker
+   marker = new google.maps.Marker(data);
+   marker.info = new google.maps.InfoWindow({
+     content: ''
+   });
+
+   google.maps.event.addListener(marker, 'click', function() {
+     var $toastContent = $("<span> Police station</span>");
+     Materialize.toast($toastContent, 5000);
+   });
+
+}
+
 
 // Function for place a marker
 function createMarkerHouses(location, info_location, _icon) {

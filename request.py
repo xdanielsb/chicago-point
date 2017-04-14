@@ -12,6 +12,7 @@ class Request:
         #Take a moment load the information
         self.houses_data = self.get_houses()
         self.health_data = self.get_health_statistics()
+        self.police_stations = self.get_police_stations()
 
     """
         Get the houses for rent
@@ -97,8 +98,30 @@ class Request:
         info = self.health_data[["community_area", "cancer_all_sites", "below_poverty_level", "birth_rate", "per_capita_income", "community_area_name", "crowded_housing", "infant_mortality_rate", "assault_homicide", "unemployment"]]
         info_js = info.to_json()
         return info_js
-    
+
+
+    def get_police_stations(self):
+        url ="https://data.cityofchicago.org/resource/gkur-vufi.json"
+        data = urllib2.urlopen(url)
+
+        #Tricky part
+        result = json.load(data)
+        aux = json.dumps(result)
+        aux2 = json.dumps(json.loads(aux))
+
+        #Data Frame
+        data_frame =  pd.read_json(aux2)
+        data_frame = data_frame.dropna()
+
+        return data_frame
+
+    def get_locations_police_stations(self):
+        locs = self.police_stations[["location"]]
+        locs_js = locs.to_json()
+        return locs_js
+
+
 
 if(__name__ =="__main__"):
     a = Request()
-    print(a.get_information_comunity())
+    print(a.get_locations_police_stations())
