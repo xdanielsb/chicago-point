@@ -27,8 +27,8 @@ def content():
 @app.route('/charts/')
 def charts():
     labels, values,colors = request_object.get_number_by_comunity()
-    return render_template('charts.html', labels=labels, values=values, colors=colors)
-
+    police_stations = request_object.get_info_police_stations()
+    return render_template('charts.html', labels=labels, values=values, colors=colors, police_stations= police_stations)
 
 
 """

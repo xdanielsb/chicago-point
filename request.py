@@ -120,8 +120,22 @@ class Request:
         locs_js = locs.to_json()
         return locs_js
 
+    def get_info_police_stations(self):
+        info = self.police_stations[["zip", "website", "address"]]
+        info_js = info.to_json()
+        aux = json.loads(info_js)
+        keyse = "website"
+        zipse = "zip"
+        ad = "address"
+        dataset = []
+        for ar in aux[keyse]:
+            url = aux[keyse][ar]["url"]
+            _zip = aux[zipse][ar]
+            _ad = aux[ad][ar]
+            dataset.append([url, _zip, _ad])
 
+        return dataset
 
 if(__name__ =="__main__"):
     a = Request()
-    print(a.get_locations_police_stations())
+    r = a.get_info_police_stations()

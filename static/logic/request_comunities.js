@@ -1,7 +1,7 @@
 'use strict'
 
 function create_table_health(response){
-  console.log("Creating table=)")
+  console.log("Creating table comunities")
 
   let result = jQuery.parseJSON(response)
   let _community_area = result["community_area"]
@@ -27,7 +27,7 @@ function create_table_health(response){
   console.log(dataset)
 
   // Creating the table
-  var table = $('#example').DataTable({
+  var table = $('#comunitiesdt').DataTable({
     data: dataset,
     columns: [
       { title: "Community area code" },

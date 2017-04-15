@@ -67,10 +67,12 @@
           </div>
         <div class="card-stacked">
         <div class="card-content">
-          <p>Coming soon...</p>
+          <h6> <strong>Police stations </strong></h6>
+          <p>In this table you can seek information about police stations.</p>
+
         </div>
         <div class="card-action">
-          <a href="#modal1">Click me</a>
+          <a href="#modal3">Click me</a>
         </div>
         </div>
         </div>
@@ -94,16 +96,43 @@
         </div>
       </div>
 
-      <!-- Modal Data Table -->
+      <!-- Modal Data Table comunitiens-->
        <div id="modal2" class="modal">
          <div class="modal-content">
-           <table id="example" class="table table-bordered table-hover" ></table>
+           <table id="comunitiesdt" class="table table-bordered table-hover" ></table>
          </div>
          <div class="modal-footer">
            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
          </div>
        </div>
 
+       <!-- Modal Data Table  -->
+        <div id="modal3" class="modal">
+          <div class="modal-content">
+            <h5>Police Information</h5>
+            <table id="stationsdt" class="table table-bordered table-hover" >
+              <thead>
+                <tr>
+                  <th>Website</th>
+                  <th>Zip</th>
+                  <th>Address</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for a,b,c in police_stations%}
+              <tr>
+                <td>"<a href="{{a}}">Web Page</a></td>
+                <td>"{{b}}"</td>
+                <td>"{{c}}"</td>
+              </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
+        </div>
 
 
 {%endblock%}
@@ -180,7 +209,6 @@
       <!-- Data Tables necessary -->
       <script type="text/javascript" charset="utf8"  src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
       <script defer src="{{url_for('static',filename='logic/request_comunities.js')}}"></script>
-
       <script src="{{url_for('static',filename='js/chart.js')}}"></script>
 
 {%endblock%}
