@@ -4,7 +4,6 @@
       <meta charset="utf-8">
       <title> Chicago Point </title>
       <link rel="shortcut icon" type='image/x-icon' href="{{url_for('static',filename='img/favicon.ico')}}">
-
       <meta name="viewport" content="width=device-width,  user-scalable=no">
       <!-- Latest compiled and minified CSS Bootstrap -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,89 +14,97 @@
       <!-- Custom theme -->
       <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 
-
+      <style>
+      body {
+         background : url("{{url_for('static',filename='img/background2.jpg')}}") no-repeat center center fixed;
+         /*background-attachment: fixed;*/
+         /*filter: grayscale(50%);*/
+         filter: grayscale(0%);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      </style>
    </head>
    <body>
       <div class="  container-fluid every"  >
          <div class="hidden-sm hidden-xs left-d col-md-4" style="padding-top:100px">
-
             <div class="hidden-sm hidden-xs col-md-3">
-                  <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
+               <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs d3 col-md-3">
-              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
+               <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs col-md-3" data-aos="fade-left" data-aos-duration="3000">
-                <a href="" data-toggle="modal" data-target="#myModal2">
+               <a href="" data-toggle="modal" data-target="#myModal2">
                   <div class="image">
-                    <img src="{{url_for('static',filename='img/roller.jpg')}}" alt="" width="80px" height="80px" style="padding-top: 2px;" class="gray">
+                     <img src="{{url_for('static',filename='img/roller.jpg')}}" alt="" width="80px" height="80px" style="padding-top: 2px;" class="gray">
                   </div>
-                </a>
+               </a>
             </div>
             <div class="hidden-sm hidden-xs col-md-3" data-aos="fade-left" data-aos-duration="3000">
-              <a href="" data-toggle="modal" data-target="#myModal1">
-                <div class="image">
-                  <img src="{{url_for('static',filename='img/bean.jpg')}}" alt="" width="120px" height="120px" class="gray">
-                </div>
-              </a>
+               <a href="" data-toggle="modal" data-target="#myModal1">
+                  <div class="image">
+                     <img src="{{url_for('static',filename='img/bean.jpg')}}" alt="" width="120px" height="120px" class="gray">
+                  </div>
+               </a>
             </div>
             <!--  -->
             <div class="hidden-sm hidden-xs col-md-3">
-              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
+               <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs col-md-3 " data-aos="fade-left" data-aos-duration="3000">
-              <a href="" data-toggle="modal" data-target="#myModal3">
-                <div class="image">
-                  <img src="{{url_for('static',filename='img/whale.jpg')}}"  alt="" width="60px" height="60px" class="gray">
-                </div>
-              </a>
+               <a href="" data-toggle="modal" data-target="#myModal3">
+                  <div class="image">
+                     <img src="{{url_for('static',filename='img/whale.jpg')}}"  alt="" width="60px" height="60px" class="gray">
+                  </div>
+               </a>
             </div>
             <div class="hidden-sm hidden-xs col-md-3">
-              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
+               <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs col-md-3">
-              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
+               <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <!--  -->
             <div class="hidden-sm hidden-xs col-md-3 ">
-              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
+               <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs col-md-3 " data-aos="fade-left" data-aos-duration="3000">
-              <a href="" data-toggle="modal" data-target="#myModal4">
-                <div class="image">
-                  <img src="{{url_for('static',filename='img/rex.jpg')}}" alt="" width="60px" height="60px" class="gray">
-                </div>
-              </a>
+               <a href="" data-toggle="modal" data-target="#myModal4">
+                  <div class="image">
+                     <img src="{{url_for('static',filename='img/rex.jpg')}}" alt="" width="60px" height="60px" class="gray">
+                  </div>
+               </a>
             </div>
             <div class="hidden-sm hidden-xs col-md-3">
-              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
+               <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs col-md-3">
-              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
+               <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <!--  -->
             <div class="hidden-sm hidden-xs col-md-3">
-              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
+               <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs col-md-3">
-              <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
+               <img src="{{url_for('static',filename='img/blank.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="hidden-sm hidden-xs col-md-3 " data-aos="fade-left" data-aos-duration="3000" >
-              <a href="" data-toggle="modal" data-target="#myModal5">
-                <div class="image">
-                  <img src="{{url_for('static',filename='img/lions.jpg')}}" alt="" width="60px" height="60px" class="gray">
-                </div>
-              </a>
-              </div>
-            <div class="hidden-sm hidden-xs col-md-3 " data-aos="fade-left" data-aos-duration="3000">
-              <a href="" data-toggle="modal" data-target="#myModal6">
-                <div class="image">
-                  <img src="{{url_for('static',filename='img/fountain.jpg')}}" alt="" width="60px" height="60px" class="gray">
-                </div>
-              </a>
+               <a href="" data-toggle="modal" data-target="#myModal5">
+                  <div class="image">
+                     <img src="{{url_for('static',filename='img/lions.jpg')}}" alt="" width="60px" height="60px" class="gray">
+                  </div>
+               </a>
             </div>
-
-
+            <div class="hidden-sm hidden-xs col-md-3 " data-aos="fade-left" data-aos-duration="3000">
+               <a href="" data-toggle="modal" data-target="#myModal6">
+                  <div class="image">
+                     <img src="{{url_for('static',filename='img/fountain.jpg')}}" alt="" width="60px" height="60px" class="gray">
+                  </div>
+               </a>
+            </div>
          </div>
          <div class="hidden-sm hidden-xs" style="padding-bottom:270px;">
          </div>
@@ -106,145 +113,196 @@
             <p id="hicago">HICAGO</p>
          </div>
          <div class="hidden-sm hidden-xs right-d col-md-4" >
-             <div class="col-md-2"><p class="letter">&nbsp;</p></div>
-             <div data-aos="zoom-in-up" data-aos-duration="3000" class="hidden-sm hidden-xs col-md-3"><img src="{{url_for('static',filename='img/marker.png')}}" alt="" width="150px" height="140px"></div>
-             <div class="col-md-2"><p class="letter">&nbsp;</p></div>
-             <div class="col-md-2"><p class="letter">&nbsp;</p></div>
-             <div class="col-md-1"><p class="letter">&nbsp;</p></div>
-             <div class="col-md-2"><p class="letter">&nbsp;</p></div>
-
-
-              <div class="col-md-2"><p class="letter">P</p></div>
-              <div class="col-md-2"><p class="letter">o</p></div>
-              <div class="col-md-3"><p class="letter text-center">I</p></div>
-              <div class="col-md-2"><p class="letter">n</p></div>
-              <div class="col-md-2"><p class="letter">t</p></div>
-              <div class="col-md-1"><p class="letter">.</p></div>
+            <div class="col-md-2">
+               <p class="letter">&nbsp;</p>
+            </div>
+            <div data-aos="zoom-in-up" data-aos-duration="3000" class="hidden-sm hidden-xs col-md-3"><img src="{{url_for('static',filename='img/marker.png')}}" alt="" width="150px" height="140px"></div>
+            <div class="col-md-2">
+               <p class="letter">&nbsp;</p>
+            </div>
+            <div class="col-md-2">
+               <p class="letter">&nbsp;</p>
+            </div>
+            <div class="col-md-1">
+               <p class="letter">&nbsp;</p>
+            </div>
+            <div class="col-md-2">
+               <p class="letter">&nbsp;</p>
+            </div>
+            <div class="col-md-2">
+               <p class="letter">P</p>
+            </div>
+            <div class="col-md-2">
+               <p class="letter">o</p>
+            </div>
+            <div class="col-md-3">
+               <p class="letter text-center" >I</p>
+            </div>
+            <div class="col-md-2">
+               <p class="letter">n</p>
+            </div>
+            <div class="col-md-2">
+               <p class="letter">t</p>
+            </div>
+            <div class="col-md-1">
+               <p class="letter">.</p>
+            </div>
          </div>
          <div class="hidden-lg hidden-md">
-             <br><br><br><br><br><p id="hicago">POINT</p>
+            <br><br><br><br><br>
+            <p id="hicago">POINT</p>
          </div>
-         
       </div>
-
-
-
       <!-- Modal 1-->
       <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel1">Cloud gate</h4>
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel1">Cloud gate</h4>
+               </div>
+               <div class="modal-body">
+                  <div class="media">
+                     <div class="media-left">
+                        <img class="media-object" src="{{url_for('static',filename='img/bean.jpg')}}" style="width:200px" >
+                     </div>
+                     <div class="media-body">
+                        <p>Cloud Gate is a public sculpture by Indian-born British artist Anish Kapoor, that is the centerpiece of AT&T Plaza at Millennium Park in the Loop community area of Chicago, Illinois. ... Kapoor's design was inspired by liquid mercury and the sculpture's surface reflects and distorts the city's skyline.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Further Information</button>
+               </div>
             </div>
-            <div class="modal-body">
-              <img class="img-responsive "src="{{url_for('static',filename='img/bean.jpg')}}" alt="">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Further Information</button>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-
       <!-- Modal 2-->
       <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel2">Cloud gate</h4>
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel2">Navy Pier</h4>
+               </div>
+               <div class="modal-body">
+                  <div class="media">
+                     <div class="media-left">
+                        <img class="media-object" src="{{url_for('static',filename='img/roller.jpg')}}" style="width:200px" >
+                     </div>
+                     <div class="media-body">
+                        <p>Navy Pier is a not-for-profit originally opened as a shipping and recreational facility in 1916. Located on Lake Michigan, it has served many purposes throughout its rich history and currently encompasses more than fifty acres of parks, gardens, shops, restaurants, family attractions and exhibition facilities and is the top leisure destination in the Midwest, drawing nearly nine million visitors annually.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Further Information</button>
+               </div>
             </div>
-            <div class="modal-body">
-              <img class="img-responsive" src="{{url_for('static',filename='img/roller.jpg')}}" alt="">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Further Information</button>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-
-
       <!-- Modal 3-->
       <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel3">Cloud gate</h4>
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel3">Shedd Aquarium</h4>
+               </div>
+               <div class="modal-body">
+                  <div class="media">
+                     <div class="media-left">
+                        <img class="media-object" src="{{url_for('static',filename='img/whale.jpg')}}" style="width:200px" >
+                     </div>
+                     <div class="media-body">
+                        <p>Dive in to learn more about Shedd, the place and the people. We have a proud history in Chicago and a vibrant future with a global outlook. And you can be a part of it!</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Further Information</button>
+               </div>
             </div>
-            <div class="modal-body">
-              <img class="img-responsive" src="{{url_for('static',filename='img/whale.jpg')}}" alt="">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Further Information</button>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-
       <!-- Modal 4-->
       <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel4">Cloud gate</h4>
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel4">The field museum</h4>
+               </div>
+               <div class="modal-body">
+                  <div class="media">
+                     <div class="media-left">
+                        <img class="media-object" src="{{url_for('static',filename='img/rex.jpg')}}" style="width:200px" >
+                     </div>
+                     <div class="media-body">
+                        <p>Talk with our scientists about their work and see real artifacts and specimens from the approximately 30 million items in The Field Museum's collection. Topics range from birds to insects, from mammals to plants, from pottery to spear points, and more!</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Further Information</button>
+               </div>
             </div>
-            <div class="modal-body">
-              <img class="img-responsive" src="{{url_for('static',filename='img/rex.jpg')}}" alt="">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Further Information</button>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-
       <!-- Modal 5-->
       <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel5">Cloud gate</h4>
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel5">Licoln Park Zoo</h4>
+               </div>
+               <div class="modal-body">
+                  <div class="media">
+                     <div class="media-left">
+                        <img class="media-object" src="{{url_for('static',filename='img/lions.jpg')}}" style="width:200px" >
+                     </div>
+                     <div class="media-body">
+                        <p>Lincoln Park Zoo is a free 35-acre (14 ha) zoo located in Lincoln Park in Chicago, Illinois. The zoo was founded in 1868, making it among the oldest of zoos in North America. It is also one of a few free admission zoos in the United States. The zoo is an accredited member of the Association of Zoos and Aquariums (AZA)..</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Further Information</button>
+               </div>
             </div>
-            <div class="modal-body">
-              <img class="img-responsive "src="{{url_for('static',filename='img/lions.jpg')}}" alt="">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Further Information</button>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-
-
       <!-- Modal 6-->
       <div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel6">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel6">Cloud gate</h4>
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel6">BucKingHam Fountain</h4>
+               </div>
+               <div class="modal-body">
+                  <div class="media">
+                     <div class="media-left">
+                        <img class="media-object" src="{{url_for('static',filename='img/fountain.jpg')}}" style="width:200px" >
+                     </div>
+                     <div class="media-body">
+                        <p>The Clarence Buckingham Memorial Fountain, one of the largest in the world, is located at Columbus Drive (301 East) and Congress Parkway (500 South) in Grant Park and runs from 8 a.m. to 11:00 p.m. daily, typically from early May through mid-October, depending on weather.</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Further Information</button>
+               </div>
             </div>
-            <div class="modal-body">
-              <img class="img-responsive "src="{{url_for('static',filename='img/fountain.jpg')}}" alt="">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Further Information</button>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
       <!-- Latest compiled and minified JavaScript Bootstrap-->

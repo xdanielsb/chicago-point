@@ -1,31 +1,7 @@
-body {
-   background: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2016/01/Chicago-Wallpaper-13.jpg") no-repeat center center fixed; 
-   /*background-attachment: fixed;*/
-   background-repeat: no-repeat;
-   /*filter: grayscale(80%);*/
-
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.left-d {
-  /*background: rgb(19, 240, 45);*/
-}
-
-.right-d {
-  /*background: rgb(223, 181, 32);*/
-}
-
-.center-d {
-  /*background: rgb(39, 190, 210);*/
-}
-
 #hicago, .letter{
   font-family: 'Rancho', serif;
   font-size: 100px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-shadow: 2px 2px 4px #000000;
 }
 
@@ -56,7 +32,7 @@ p {
   }
 
 .gray{
-  filter: grayscale(100%);
+  /*filter: grayscale(100%);*/
   border: 2px solid;
   border-color: rgb(255, 255, 255);
   border-radius: 50%;
