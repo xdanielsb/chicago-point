@@ -105,7 +105,7 @@ function createMarkerHouses(location, info_location, _icon) {
     //Simulate omition parameters of python
 
     let l_aux = distance(location['lat'], location['lng'], _center['lat'], _center['lng'], 'K' )
-    console.log(l_aux)
+  //  console.log(l_aux)
     if(l_aux > 0 && l_aux < 5){
         _icon = 0;
     }else if(l_aux >= 5 && l_aux < 10){

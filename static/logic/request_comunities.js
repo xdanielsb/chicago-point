@@ -24,7 +24,7 @@ function create_table_health(response){
   }
 
   // Print the dataset on console
-  console.log(dataset)
+  //console.log(dataset)
 
   // Creating the table
   var table = $('#comunitiesdt').DataTable({
