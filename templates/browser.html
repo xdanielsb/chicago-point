@@ -6,10 +6,10 @@
       <link rel="shortcut icon" type='image/x-icon' href="{{url_for('static',filename='img/favicon.ico')}}">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <link href="http://fonts.googleapis.com/icon?family=material+icons" rel="stylesheet">
+      <link rel="stylesheet"  href="http://fonts.googleapis.com/icon?family=material+icons" >
       <!--import materialize.css-->
       <link rel="stylesheet" href="{{url_for('static',filename='css/materialize.min.css')}}">
-      <link rel="stylesheet" href="{{url_for('static',filename='css/browser.css')}}">
+      <link rel="stylesheet"  href="{{url_for('static',filename='css/browser.css')}}">
     <style>
       @import "https://fonts.googleapis.com/css?family=Roboto";
       body {
@@ -45,9 +45,9 @@
       <center> <h1>Chicago point</h1></center>
 
        <div class="carousel" style="padding-top:-10px">
-          <a class="carousel-item " href="/content/"> <img src="{{url_for('static',filename='img/map2.png')}}"> <center> <p>Find a place</p> </center> </a>
-          <a class="carousel-item" href="/charts/">  <img src="{{url_for('static',filename='img/stats2.png')}}"> <center><p>Charts</p>  </center>   </a>
-          <a class="carousel-item" href="/about/">   <img src="{{url_for('static',filename='img/about2.png')}}"><center> <p>About chicago</p> </center> </a>
+          <a class="carousel-item "  href="/content/"> <img src="{{url_for('static',filename='img/map2.png')}}"> <center> <p id="content">Find a place</p> </center> </a>
+          <a class="carousel-item"  href="/charts/">  <img src="{{url_for('static',filename='img/stats2.png')}}"> <center><p id="charts">Charts</p>  </center>   </a>
+          <a class="carousel-item"  href="/about/">   <img src="{{url_for('static',filename='img/about2.png')}}"><center> <p id="about">About chicago</p> </center> </a>
        </div>
 
       </div>
@@ -57,6 +57,20 @@
       <!-- materialize: -->
       <script src="{{url_for('static',filename='js/materialize.min.js')}}"></script>
       <script src="{{url_for('static',filename='js/browser.js')}}"></script>
+
+      <script>
+      $(window).load(function() { // better to use $(document).ready(function(){
+          $('#content').on('click touchstart', function() {
+              window.location.href = "/content/";
+          });
+          $('#charts').on('click touchstart', function() {
+              window.location.href = "/charts/";
+          });
+          $('#about').on('click touchstart', function() {
+              window.location.href = "/about/";
+          });
+      });
+      </script>
 
    </body>
 </html>
