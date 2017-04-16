@@ -1,151 +1,181 @@
 [{
     "Name": "Near North Side",
     "cost1bedroom": 2000,
-    "cost2bedrooms":2910
+    "cost2bedrooms":2910,
+    "zip": 60610
  },
  {
     "Name": "Loop",
     "cost1bedroom":1960 ,
-    "cost2bedrooms": 2650
+    "cost2bedrooms": 2650,
+    "zip": 60601
  },
  {
     "Name": "Near West Side",
     "cost1bedroom": 1910,
-    "cost2bedrooms":2600
+    "cost2bedrooms":2600,
+    "zip": 60607
  },
  {
     "Name": "West Town",
     "cost1bedroom": 1840,
-    "cost2bedrooms": 2150
+    "cost2bedrooms": 2150,
+    "zip": 60612
  },
  {
     "Name": "Lincoln Park",
     "cost1bedroom": 1750,
-    "cost2bedrooms": 2490
+    "cost2bedrooms": 2490,
+    "zip": 60614
  },
  {
     "Name": "South Loop",
     "cost1bedroom": 1660,
-    "cost2bedrooms":2300
+    "cost2bedrooms":2300,
+    "zip": 60605
  },
  {
     "Name": "Evanston",
     "cost1bedroom": 1420,
-    "cost2bedrooms": 1690
+    "cost2bedrooms": 1690,
+    "zip": 60621        
  },
  {
     "Name": "Lakeview",
     "cost1bedroom": 1400,
     "cost2bedrooms": 2000
+    "zip": 60657
  },
  {
     "Name": "Logan Square",
     "cost1bedroom": 1350,
-    "cost2bedrooms":1650
+    "cost2bedrooms":1650,
+    "zip": 60647
  },
  {
     "Name": "North Center",
     "cost1bedroom": 1250,
-    "cost2bedrooms": 1700
+    "cost2bedrooms": 1700,
+    "zip": 60618
  },
  {
     "Name": "Uptown",
     "cost1bedroom": 1180,
-    "cost2bedrooms": 1650
+    "cost2bedrooms": 1650,
+    "zip": 60640    
  },
  {
     "Name": "Lincoln Square",
     "cost1bedroom": 1110,
-    "cost2bedrooms": 1750
+    "cost2bedrooms": 1750,
+    "zip": 60625
  },
  {
     "Name": "Edgewater",
     "cost1bedroom": 1050,
-    "cost2bedrooms": 1600
+    "cost2bedrooms": 1600,
+    "zip": 60640
  },
  {
     "Name": "Hyde Park",
     "cost1bedroom": 1030,
-    "cost2bedrooms": 1300
+    "cost2bedrooms": 1300,
+    "zip": 60615    
  },
  {
     "Name": "Avondale",
     "cost1bedroom": 1020,
-    "cost2bedrooms": 1500
+    "cost2bedrooms": 1500,
+    "zip": 60618
  },
  {
     "Name": "Douglas",
     "cost1bedroom": 1020,
-    "cost2bedrooms": 1350
+    "cost2bedrooms": 1350,
+    "zip":60609 
  },
  {
     "Name": "Albany Park",
     "cost1bedroom": 1010,
-    "cost2bedrooms": 1300
+    "cost2bedrooms": 1300,
+    "zip": 60625
  },
  {
     "Name": "Kenwood",
     "cost1bedroom": 940,
-    "cost2bedrooms": 1230
+    "cost2bedrooms": 1230,
+    "zip": 60653
  },
  {
     "Name": "Irving Park",
     "cost1bedroom": 900,
-    "cost2bedrooms": 1350
+    "cost2bedrooms": 1350,
+    "zip": 60641
  },
  {
     "Name": "Rogers Park",
     "cost1bedroom": 900,
-    "cost2bedrooms": 1230
+    "cost2bedrooms": 1230,
+    "zip":60626
  },
  {
     "Name": "West Ridge",
     "cost1bedroom": 900,
-    "cost2bedrooms": 1180
+    "cost2bedrooms": 1180,
+    "zip": 60645
  },
  {
     "Name": "Hermosa",
     "cost1bedroom":870 ,
-    "cost2bedrooms": 1120
+    "cost2bedrooms": 1120,
+    "zip": 60639
  },
  {
     "Name": "Belmont Cragin",
     "cost1bedroom": 850,
-    "cost2bedrooms": 1210
+    "cost2bedrooms": 1210,
+    "zip": 60634
  },
  {
     "Name": "Woodlawn",
     "cost1bedroom": 800,
-    "cost2bedrooms": 1100
+    "cost2bedrooms": 1100,
+    "zip": 60637
  },
  {
     "Name": "South Shore",
     "cost1bedroom": 730,
-    "cost2bedrooms": 800
+    "cost2bedrooms": 800,
+    "zip": 60649
  },
  {
     "Name": "North Lawndale",
     "cost1bedroom": 720,
-    "cost2bedrooms": 950
+    "cost2bedrooms": 950,
+    "zip": 60608
  },
  {
     "Name": "Austin",
     "cost1bedroom": 700,
-    "cost2bedrooms": 880
+    "cost2bedrooms": 880,
+    "zip": 60644
  },
  {
     "Name": "Auburn Gresham",
     "cost1bedroom": 680,
-    "cost2bedrooms": 760
+    "cost2bedrooms": 760,
+    "zip": 60620
  },
  {
     "Name": "Grand Crossing",
     "cost1bedroom": 670,
-    "cost2bedrooms": 790
+    "cost2bedrooms": 790,
+    "zip": 60619
  },
  {
     "Name": "Ghatham",
     "cost1bedroom": 640,
-    "cost2bedrooms":800
+    "cost2bedrooms":800,
+    "zip": 60620
  }
 ]
