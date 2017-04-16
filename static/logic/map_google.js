@@ -104,6 +104,7 @@ function createOrigin(location,_icon){
    marker.data=  "The University";
 
    google.maps.event.addListener(marker, 'click', function() {
+
      var $toastContent = $("<span> You are going to study here</span>");
      Materialize.toast($toastContent, 5000);
      marker.info.setContent(this.data);
@@ -173,8 +174,13 @@ function createMarkerHouses(location, info_location, _icon) {
       content: ''
     });
 
-    marker.data=  "<a class='waves-effect waves-light btn' href='#modal1'>Click me.</a>";
+    var img_house = 'https://maps.googleapis.com/maps/api/streetview?' +
+                     'location=' + info_location["address"] +
+                     '&size=150x150' +
+                     '&key=AIzaSyAz5H70tw5BytlMLiZffXB79vtUO_YL3N8';
 
+
+    marker.data=  "<center><img style=\"border-radius: 50%;\" src=\" "+img_house+"\" > <br><a class='waves-effect waves-light btn' href='#modal1'>Click me.</a> </center>";
 
     marker.vals = info_location
     marker.dista = l_aux
