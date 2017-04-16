@@ -13,6 +13,7 @@ class Request:
         self.houses_data = self.get_houses()
         self.health_data = self.get_health_statistics()
         self.police_stations = self.get_police_stations()
+        self.cost_neighborhood = self.get_cost_neighborhood()
 
     """
         Get the houses for rent
@@ -136,6 +137,19 @@ class Request:
 
         return dataset
 
+    def get_cost_neighborhood(self):
+        url ="static/json/cost_rent.json"
+        data = open(url, "r+")
+
+        result = json.load(data)
+        aux = json.dumps(result)
+        aux2 = json.dumps(json.loads(aux))
+        
+        #Data Frame
+        data_frame =  pd.read_json(aux2)
+        data_frame = data_frame.dropna()
+        return data_frame
+
 if(__name__ =="__main__"):
     a = Request()
-    r = a.get_info_police_stations()
+    r = a.get_cost_neighborhood()
