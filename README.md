@@ -3,8 +3,12 @@
 ***CHICAGO POINT application  solve the problem for finding home in Chicago City.***
 ---
 
+### Page
+#### http://danielsantos.net/dev
+
+
 ### Sample video
-#### https://drive.google.com/open?id=0B8wdzbJt0XyZR2x6SHJyOF9fOFU
+#### https://drive.google.com/file/d/0B8wdzbJt0XyZRlk5ajNNcUNZTTA/view?usp=sharing
 
 ---
 ### Requirements
