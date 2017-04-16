@@ -274,9 +274,11 @@ function initMap() {
   map_data = new google.maps.Map(div_map, config_mapa);
   createOrigin(_center ,4)
   console.log("The map has been loaded.")
-
+  var rendererOptions = {
+        preserveViewport: true
+    };
   directionsService = new google.maps.DirectionsService();
-  directionsDisplay = new google.maps.DirectionsRenderer();
+  directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
 
   loadKmlLayer(kml_limitations, map_data);
 }
