@@ -28,7 +28,9 @@ def content():
 def charts():
     labels, values,colors = request_object.get_number_by_comunity()
     police_stations = request_object.get_info_police_stations()
-    return render_template('charts.html', labels=labels, values=values, colors=colors, police_stations= police_stations)
+    cost_neighborhood = request_object.get_cost_table_neighborhood()
+
+    return render_template('charts.html', labels=labels, values=values, colors=colors, police_stations= police_stations, cost_neighborhood=cost_neighborhood)
 
 
 """

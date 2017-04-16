@@ -94,7 +94,7 @@
 
       </div>
       <div class="card-action">
-        <a href="#modal3">Click me</a>
+        <a href="#modal4">Click me</a>
       </div>
       </div>
       </div>
@@ -129,7 +129,7 @@
          </div>
        </div>
 
-       <!-- Modal Data Table  -->
+       <!-- Modal Cost by neighborhood  -->
         <div id="modal3" class="modal">
           <div class="modal-content">
             <h5>Police Information</h5>
@@ -156,6 +156,35 @@
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
           </div>
         </div>
+
+       <!-- Modal Data Table stations  -->
+        <div id="modal4" class="modal">
+          <div class="modal-content">
+            <h5>Police Information</h5>
+            <table id="stationsdt" class="table table-bordered table-hover" >
+              <thead>
+                <tr>
+                  <th>Name Comunity</th>
+                  <th>Cost 1 Bedroom</th>
+                  <th>Cost 2 Bedroom</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for a,b,c in cost_neighborhood%}
+              <tr>
+                <td>{{a}}</td>
+                <td>{{b}}</td>
+                <td>{{c}}</td>
+              </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
+        </div>
+
 
 
 {%endblock%}

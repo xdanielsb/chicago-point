@@ -2,6 +2,7 @@ from urllib2 import urlopen, Request
 import json
 import urllib2
 import random
+from operator import itemgetter #fancy sorted
 
 #Library for Data Science
 import pandas as pd
@@ -144,12 +145,28 @@ class Request:
         result = json.load(data)
         aux = json.dumps(result)
         aux2 = json.dumps(json.loads(aux))
-        
+
         #Data Frame
         data_frame =  pd.read_json(aux2)
         data_frame = data_frame.dropna()
         return data_frame
 
+    def get_cost_table_neighborhood(self):
+        info = self.cost_neighborhood[["Name", "cost1bedroom", "cost2bedrooms"]]
+        info_js = info.to_json()
+        aux = json.loads(info_js)
+
+        keyse = "Name"
+        zipse = "cost1bedroom"
+        ad = "cost2bedrooms"
+        dataset = []
+        for ar in aux[zipse]:
+            url = aux[keyse][ar]
+            _zip = aux[zipse][ar]
+            _ad = aux[ad][ar]
+            dataset.append([url, _zip, _ad])
+        return dataset
+
 if(__name__ =="__main__"):
     a = Request()
-    r = a.get_cost_neighborhood()
+    r = a.get_cost_table_neighborhood()
