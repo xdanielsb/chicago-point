@@ -1,0 +1,151 @@
+[{
+    "Name": "Near North Side",
+    "cost1bedroom": 2000,
+    "cost2bedrooms":2910
+ },
+ {
+    "Name": "Loop",
+    "cost1bedroom":1960 ,
+    "cost2bedrooms": 2650
+ },
+ {
+    "Name": "Near West Side",
+    "cost1bedroom": 1910,
+    "cost2bedrooms":2600
+ },
+ {
+    "Name": "West Town",
+    "cost1bedroom": 1840,
+    "cost2bedrooms": 2150
+ },
+ {
+    "Name": "Lincoln Park",
+    "cost1bedroom": 1750,
+    "cost2bedrooms": 2490
+ },
+ {
+    "Name": "South Loop",
+    "cost1bedroom": 1660,
+    "cost2bedrooms":2300
+ },
+ {
+    "Name": "Evanston",
+    "cost1bedroom": 1420,
+    "cost2bedrooms": 1690
+ },
+ {
+    "Name": "Lakeview",
+    "cost1bedroom": 1400,
+    "cost2bedrooms": 2000
+ },
+ {
+    "Name": "Logan Square",
+    "cost1bedroom": 1350,
+    "cost2bedrooms":1650
+ },
+ {
+    "Name": "North Center",
+    "cost1bedroom": 1250,
+    "cost2bedrooms": 1700
+ },
+ {
+    "Name": "Uptown",
+    "cost1bedroom": 1180,
+    "cost2bedrooms": 1650
+ },
+ {
+    "Name": "Lincoln Square",
+    "cost1bedroom": 1110,
+    "cost2bedrooms": 1750
+ },
+ {
+    "Name": "Edgewater",
+    "cost1bedroom": 1050,
+    "cost2bedrooms": 1600
+ },
+ {
+    "Name": "Hyde Park",
+    "cost1bedroom": 1030,
+    "cost2bedrooms": 1300
+ },
+ {
+    "Name": "Avondale",
+    "cost1bedroom": 1020,
+    "cost2bedrooms": 1500
+ },
+ {
+    "Name": "Douglas",
+    "cost1bedroom": 1020,
+    "cost2bedrooms": 1350
+ },
+ {
+    "Name": "Albany Park",
+    "cost1bedroom": 1010,
+    "cost2bedrooms": 1300
+ },
+ {
+    "Name": "Kenwood",
+    "cost1bedroom": 940,
+    "cost2bedrooms": 1230
+ },
+ {
+    "Name": "Irving Park",
+    "cost1bedroom": 900,
+    "cost2bedrooms": 1350
+ },
+ {
+    "Name": "Rogers Park",
+    "cost1bedroom": 900,
+    "cost2bedrooms": 1230
+ },
+ {
+    "Name": "West Ridge",
+    "cost1bedroom": 900,
+    "cost2bedrooms": 1180
+ },
+ {
+    "Name": "Hermosa",
+    "cost1bedroom":870 ,
+    "cost2bedrooms": 1120
+ },
+ {
+    "Name": "Belmont Cragin",
+    "cost1bedroom": 850,
+    "cost2bedrooms": 1210
+ },
+ {
+    "Name": "Woodlawn",
+    "cost1bedroom": 800,
+    "cost2bedrooms": 1100
+ },
+ {
+    "Name": "South Shore",
+    "cost1bedroom": 730,
+    "cost2bedrooms": 800
+ },
+ {
+    "Name": "North Lawndale",
+    "cost1bedroom": 720,
+    "cost2bedrooms": 950
+ },
+ {
+    "Name": "Austin",
+    "cost1bedroom": 700,
+    "cost2bedrooms": 880
+ },
+ {
+    "Name": "Auburn Gresham",
+    "cost1bedroom": 680,
+    "cost2bedrooms": 760
+ },
+ {
+    "Name": "Grand Crossing",
+    "cost1bedroom": 670,
+    "cost2bedrooms": 790
+ },
+ {
+    "Name": "Ghatham",
+    "cost1bedroom": 640,
+    "cost2bedrooms":800
+ }
+]
