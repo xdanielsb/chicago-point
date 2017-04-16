@@ -57,6 +57,11 @@ def location_stations():
     info = request_object.get_locations_police_stations()
     return jsonify(info)
 
+@app.route("/weatherzip/<zipcode>")
+def weather_zip(zipcode):
+    info = request_object.get_weather2(zipcode)
+    return jsonify(info)
+
 
 if __name__ =="__main__":
     app.run(debug=True, host="0.0.0.0", port=5000, threaded=True)

@@ -34,6 +34,7 @@ let config_mapa = {
 * K -> Kilometers
 */
 
+
 function distance(lat1, lon1, lat2, lon2, unit) {
 	var radlat1 = Math.PI * lat1/180
 	var radlat2 = Math.PI * lat2/180
@@ -46,6 +47,42 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 	if (unit=="K") { dist = dist * 1.609344 }
 	if (unit=="N") { dist = dist * 0.8684 }
 	return dist
+}
+
+//Create ajax JQuery request without token
+function request_weather(_method, _url) {
+  $.ajax({
+    method: _method,
+    url: _url
+  })
+  .done((res) => {
+    console.log("The request for :"+_url+ " has finished");
+    console.log(res)
+    var _humidity = res["main"]["humidity"]
+    var _presure = res["main"]["pressure"]
+    var _temp = res["main"]["temp"]
+    var content  = "<li> <ul> Humidity:" + _humidity + "</ul>"+
+                   "<ul>Pressure" + _presure + "</ul>"+
+                   "<ul>Temperature" + _temp +"<ul></li>"
+    var img_w;
+    if(_humidity < 10){
+        img_w = "<img src=\"../static/img/sun.png\" width=\"120px\">"
+    }else if (_humidity < 30){
+        img_w = "<img src=\"../static/img/sun_clouds.png\" width=\"120px\">"
+    }else if (_humidity < 50){
+        img_w = "<img src=\"../static/img/raining.png\" width=\"120px\">"
+    }else if (_humidity < 60){
+        img_w = "<img src=\"../static/img/snow.png\" width=\"120px\">"
+    }else {
+        img_w = "<img src=\"../static/img/thunder.png\" width=\"120px\">"
+    }
+
+    document.getElementById("weather").innerHTML = "<center>"+ img_w +content + "</center>"
+  })
+  .fail((_, status, error) => {
+    console.log(status)
+    console.log(error)
+  });
 }
 
 function createOrigin(location,_icon){
@@ -95,6 +132,7 @@ function createPoliceStations(location){
    google.maps.event.addListener(marker, 'click', function() {
      var $toastContent = $("<span> Police station</span>");
      Materialize.toast($toastContent, 5000);
+     request_weather("GET", "")
    });
 
 }
@@ -174,6 +212,8 @@ function createMarkerHouses(location, info_location, _icon) {
       document.getElementById("address").innerHTML = table_inf
       marker.info.setContent(this.data);
       marker.info.open(map, this);
+
+      request_weather("GET","/weatherzip/"+this.vals["zip_code"]);
     });
 
 }

@@ -38,12 +38,12 @@
     "Name": "Evanston",
     "cost1bedroom": 1420,
     "cost2bedrooms": 1690,
-    "zip": 60621        
+    "zip": 60621
  },
  {
     "Name": "Lakeview",
     "cost1bedroom": 1400,
-    "cost2bedrooms": 2000
+    "cost2bedrooms": 2000,
     "zip": 60657
  },
  {
@@ -62,7 +62,7 @@
     "Name": "Uptown",
     "cost1bedroom": 1180,
     "cost2bedrooms": 1650,
-    "zip": 60640    
+    "zip": 60640
  },
  {
     "Name": "Lincoln Square",
@@ -74,13 +74,13 @@
     "Name": "Edgewater",
     "cost1bedroom": 1050,
     "cost2bedrooms": 1600,
-    "zip": 60640
+    "zip": 60660
  },
  {
     "Name": "Hyde Park",
     "cost1bedroom": 1030,
     "cost2bedrooms": 1300,
-    "zip": 60615    
+    "zip": 60615
  },
  {
     "Name": "Avondale",
@@ -92,7 +92,7 @@
     "Name": "Douglas",
     "cost1bedroom": 1020,
     "cost2bedrooms": 1350,
-    "zip":60609 
+    "zip":60609
  },
  {
     "Name": "Albany Park",
@@ -122,7 +122,7 @@
     "Name": "West Ridge",
     "cost1bedroom": 900,
     "cost2bedrooms": 1180,
-    "zip": 60645
+    "zip": 60659
  },
  {
     "Name": "Hermosa",

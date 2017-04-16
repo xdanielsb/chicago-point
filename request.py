@@ -167,6 +167,16 @@ class Request:
             dataset.append([url, _zip, _ad])
         return dataset
 
+    def get_weather2(self, zipc="94040"):
+        appid = "6aa0bdb1f586c5630d60b6237dfce45c"
+        url = "http://api.openweathermap.org/data/2.5/weather?zip={},us&appid={}".format(zipc, appid)
+        data = urllib2.urlopen(url)
+        result = json.load(data)
+
+        return result
+
+
 if(__name__ =="__main__"):
     a = Request()
-    r = a.get_cost_table_neighborhood()
+    r = a.get_weather2()
+    print(r)
