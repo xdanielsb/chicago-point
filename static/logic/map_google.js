@@ -30,6 +30,9 @@ let config_mapa = {
   mapTypeId: 'terrain'
 }
 
+let directionsService
+let directionsDisplay
+
 /*
 * Distance between points
 * K -> Kilometers
@@ -145,6 +148,23 @@ function clusterMarkers(){
   {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
 }
 
+
+function calcRoute(start) {
+    var request = {
+      origin: start,
+      destination: _center,
+      travelMode: google.maps.TravelMode.DRIVING
+    };
+    directionsService.route(request, function(response, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+        directionsDisplay.setMap(map_data);
+      } else {
+        alert("Could not calculate the route");
+      }
+    });
+  }
+
 // Function for place a marker
 function createMarkerHouses(location, info_location, _icon) {
     //Simulate omition parameters of python
@@ -229,6 +249,7 @@ function createMarkerHouses(location, info_location, _icon) {
       marker.info.open(map, this);
 
       request_weather("GET","/weatherzip/"+this.vals["zip_code"]);
+      calcRoute(this.position)
     });
 
 }
@@ -253,5 +274,9 @@ function initMap() {
   map_data = new google.maps.Map(div_map, config_mapa);
   createOrigin(_center ,4)
   console.log("The map has been loaded.")
+
+  directionsService = new google.maps.DirectionsService();
+  directionsDisplay = new google.maps.DirectionsRenderer();
+
   loadKmlLayer(kml_limitations, map_data);
 }
