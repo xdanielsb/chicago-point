@@ -35,7 +35,7 @@ function insert_markers_locations(response){
   // Call google maps method.
     createMarkerHouses(location, info, 1)
   }
-
+  clusterMarkers()
 }
 
 //Create ajax JQuery request without token

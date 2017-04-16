@@ -3,6 +3,7 @@
  * Depend on: no one local file
  */
 let map_data
+let markers = new Array()
 let marker
 let div_map
 let infowindow
@@ -61,9 +62,9 @@ function request_weather(_method, _url) {
     var _humidity = res["main"]["humidity"]
     var _presure = res["main"]["pressure"]
     var _temp = res["main"]["temp"]
-    var content  = "<li> <ul> Humidity:" + _humidity + "</ul>"+
-                   "<ul>Pressure" + _presure + "</ul>"+
-                   "<ul>Temperature" + _temp +"<ul></li>"
+    var content  = "<li> <ul> Temperature: " + _temp  + "</ul>"+
+                   "<ul>Pressure: " + _presure + "</ul>"+
+                   "<ul> Humidity: " + _humidity +"<ul></li>"
     var img_w;
     if(_humidity < 10){
         img_w = "<img src=\"../static/img/sun.png\" width=\"120px\">"
@@ -109,6 +110,7 @@ function createOrigin(location,_icon){
      marker.info.open(map, this);
    });
 
+
 }
 
 
@@ -137,6 +139,10 @@ function createPoliceStations(location){
 
 }
 
+function clusterMarkers(){
+  var markerCluster = new MarkerClusterer(map_data, markers,
+  {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+}
 
 // Function for place a marker
 function createMarkerHouses(location, info_location, _icon) {
@@ -169,8 +175,11 @@ function createMarkerHouses(location, info_location, _icon) {
 
     marker.data=  "<a class='waves-effect waves-light btn' href='#modal1'>Click me.</a>";
 
+
     marker.vals = info_location
     marker.dista = l_aux
+
+    markers.push(marker)
 
     let table_inf =
               "<center><h5>"+info_location["property_name"]+"</h5> </center>"+
