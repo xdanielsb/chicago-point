@@ -275,7 +275,8 @@ function initMap() {
   createOrigin(_center ,4)
   console.log("The map has been loaded.")
   var rendererOptions = {
-        preserveViewport: true
+        preserveViewport: true,
+        polylineOptions: { strokeColor: "#8b0013" }
     };
   directionsService = new google.maps.DirectionsService();
   directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
