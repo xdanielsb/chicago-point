@@ -26,11 +26,19 @@
 {%endblock%}
 
 
-
 {%block imports%}
 <!-- Google maps; Application Programing Interface -->
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<!-- Send a request for the weather -->
+<script defer src="{{url_for('static',filename='logic/request_weather.js')}}"></script>
+<!--  Functions in the map: use functions in request_weather.js-->
 <script defer src="{{url_for('static',filename='logic/map_google.js')}}"></script>
+<!--  Events : use events in map_google.js-->
+<script defer src="{{url_for('static',filename='logic/events.js')}}"></script>
+<!--  Create markers: use variables in map_google_js-->
+<script defer src="{{url_for('static',filename='logic/create_marquers.js')}}"></script>
+
+<!--  Google maps: Fetche the map and trigger initMap-->
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSaP-yNmxveks9F0c-ylR8R2yXt6356f4&v=3.26&callback=initMap"></script>
 <!-- jQuery: Request API -->
 <script defer  src="{{url_for('static',filename='logic/request_location_houses.js')}}"></script>
