@@ -28,17 +28,18 @@ function create_table_health(response){
 
   // Creating the table
   var table = $('#comunitiesdt').DataTable({
+
     data: dataset,
     columns: [
       { title: "Community area code" },
       { title: "Comunity area name" },
-      { title: "Rate Cancer" },
+      { title: "Cancer Rate" },
       { title: "Below Poverty level" },
       { title: "Birth Rate" },
       { title: "Per Capita Income" },
       { title: "Crowed housing" },
       { title: "Infant mortality rate" },
-      { title: "Assaul homicide" },
+      { title: "Assaults and homicides" },
       { title: "unemployment" }
     ]
   });

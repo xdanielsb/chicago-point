@@ -200,7 +200,7 @@ function createMarkerHouses(location, info_location, _icon) {
                      '&key=AIzaSyAz5H70tw5BytlMLiZffXB79vtUO_YL3N8';
 
 
-    marker.data=  "<center><img style=\"border-radius: 50%;\" src=\" "+img_house+"\" > <br><a class='waves-effect waves-light btn' href='#modal1'>Click me.</a> </center>";
+    marker.data=  "<center><img style=\"border-radius: 50%;\" src=\" "+img_house+"\" > <br><a class='waves-effect waves-light btn' href='#modal1'>Details.</a> </center>";
 
     marker.vals = info_location
     marker.dista = l_aux
@@ -235,7 +235,7 @@ function createMarkerHouses(location, info_location, _icon) {
                    "</tr>"+
                    "<tr>"+
                      "<td>Distance</td>"+
-                     "<td>"+l_aux+" km</td>"+
+                     "<td>"+parseFloat(l_aux).toPrecision(3)+" km</td>"+
                    "</tr>"+
                   "</tbody>"+
              "</table>"
@@ -263,7 +263,7 @@ function loadKmlLayer(src, map) {
   });
   google.maps.event.addListener(kmlLayer, 'click', function(event) {
     var content = event.featureData.infoWindowHtml;
-    alert(content)
+  //  alert(content)
   });
 }
 
