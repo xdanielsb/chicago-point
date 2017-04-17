@@ -1,4 +1,4 @@
-![Alt Planarity testing](static/img/logo1.png?raw=true "Logo")
+![Alt Planarity testing](static/img/logo_desc.png?raw=true "Logo")
 
 ***CHICAGO POINT application  solve the problem for finding home in Chicago City.***
 ---
