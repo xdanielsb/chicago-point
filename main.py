@@ -47,6 +47,11 @@ def weather():
     weather_data = request_object.get_weather()
     return jsonify(weather_data)
 
+@app.route("/parks/")
+def parks():
+    info= request_object.get_location_parks()
+    return jsonify(info)
+
 @app.route("/info_comunities/")
 def info_comun():
     info = request_object.get_information_comunity()

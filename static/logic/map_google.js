@@ -15,6 +15,7 @@ let house2 = "../../static/img/home2.png"
 let house3 = "../../static/img/home3.png"
 let house4 = "../../static/img/home4.png"
 let police ="../../static/img/police.png"
+let park ="../../static/img/park.png"
 
 let houses = [house1, house2, house3, house4]
 
@@ -138,10 +139,33 @@ function createPoliceStations(location){
    google.maps.event.addListener(marker, 'click', function() {
      var $toastContent = $("<span> Police station</span>");
      Materialize.toast($toastContent, 5000);
-     request_weather("GET", "")
    });
 
 }
+
+function createParks(location, name){
+  console.log(location)
+  let data = {
+     position: location,
+     map: map_data,
+     icon: park,
+     clickable: true,
+     title: 'Click to get more information'
+   }
+
+   //intance the marker
+   marker = new google.maps.Marker(data);
+   marker.info = new google.maps.InfoWindow({
+     content: ''
+   });
+
+   google.maps.event.addListener(marker, 'click', function() {
+     var $toastContent = $("<span> Park: "+name+" </span>");
+     Materialize.toast($toastContent, 5000);
+   });
+
+}
+
 
 function clusterMarkers(){
   var markerCluster = new MarkerClusterer(map_data, markers,

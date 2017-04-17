@@ -15,6 +15,7 @@ class Request:
         self.health_data = self.get_health_statistics()
         self.police_stations = self.get_police_stations()
         self.cost_neighborhood = self.get_cost_neighborhood()
+        self.parks = self.get_parks()
 
     """
         Get the houses for rent
@@ -67,6 +68,34 @@ class Request:
         request.add_header('token', token)
         response = json.load(urlopen(request))
         return response
+
+    """
+        This method helps me to get the parks in chicago city
+    """
+    def get_parks(self):
+        url = "https://data.cityofchicago.org/resource/4xwe-2j3y.json"
+        data = urllib2.urlopen(url)
+
+        #Tricky part
+        result = json.load(data)
+        aux = json.dumps(result)
+        aux2 = json.dumps(json.loads(aux))
+
+        #Data Frame
+        data_frame =  pd.read_json(aux2)
+        data_frame = data_frame[["location", "park_name"]]
+        data_frame = data_frame.dropna()
+        #Many parks
+        data_frame = data_frame.sample(frac=0.1)
+        return data_frame
+
+    """
+
+    """
+    def get_location_parks(self):
+        locs_js = self.parks.to_json()
+        return locs_js
+
 
     """
         Get locations houses.
@@ -181,4 +210,5 @@ class Request:
 
 if(__name__ =="__main__"):
     a = Request()
-    r = a.get_locations_houses()
+    r = a.get_parks()
+    print(r)
