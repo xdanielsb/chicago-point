@@ -10,6 +10,10 @@
             border-color: blue;
             border-top: blue;
       }
+      h1,h2,h3,h4,h5 {
+          color: black;
+          font-family: "Spirax";
+      }
     </style>
 
 {%endblock%}
@@ -134,6 +138,7 @@
         <div id="modal3" class="modal">
           <div class="modal-content">
             <h5>Police Information</h5>
+
             <table id="stationsdt" class="table table-bordered table-hover" >
               <thead>
                 <tr>
@@ -145,9 +150,9 @@
               <tbody>
               {% for a,b,c in police_stations%}
               <tr>
-                <td>"<a href="{{a}}">Web Page</a></td>
-                <td>"{{b}}"</td>
-                <td>"{{c}}"</td>
+                <td>{{b}}</td>
+                <td>{{c}}</td>
+                <td><a href="{{a}}">Web Page - Details Police Station</a></td>
               </tr>
               {% endfor %}
               </tbody>
@@ -161,7 +166,7 @@
        <!-- Modal Data Table stations  -->
         <div id="modal4" class="modal">
           <div class="modal-content">
-            <h5>Police Information</h5>
+            <h5>Cost rent per Comunity</h5>
             <table id="stationsdt" class="table table-bordered table-hover" >
               <thead>
                 <tr>
