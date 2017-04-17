@@ -94,6 +94,8 @@ function initMap() {
   map_data = new google.maps.Map(div_map, config_mapa);
   createOrigin(_center ,4)
   console.log("The map has been loaded.")
+
+  //Options for directions services
   let color_stroke = "#8b0013";
   var rendererOptions = {
         preserveViewport: true,
