@@ -20,7 +20,8 @@ let park ="../../static/img/park.png"
 let houses = [house1, house2, house3, house4]
 
 
-let kml_limitations = "https://data.cityofchicago.org/api/geospatial/cauq-8yn6?method=export&format=KML"
+//let kml_limitations = "https://data.cityofchicago.org/api/geospatial/cauq-8yn6?method=export&format=KML"
+let kml_limitations = "http://danielsantos.net/ChicagoPoint.kml"
 
 let _center = {lat: 41.870732, lng: -87.650495}
 
