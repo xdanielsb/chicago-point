@@ -8,6 +8,9 @@ let marker
 let div_map
 let infowindow
 
+let police_stations_a = []
+let parks_a =[]
+
 //Check this-- a bit tricky
 let icon_origin = '../../static/img/location_pin1.png'
 let house1 = "../../static/img/home1.png"
@@ -18,6 +21,9 @@ let police ="../../static/img/police.png"
 let park ="../../static/img/park.png"
 
 let houses = [house1, house2, house3, house4]
+
+let visible_stations = true
+let visible_parks = true
 
 
 //let kml_limitations = "https://data.cityofchicago.org/api/geospatial/cauq-8yn6?method=export&format=KML"
@@ -63,7 +69,7 @@ function request_weather(_method, _url) {
   })
   .done((res) => {
     console.log("The request for :"+_url+ " has finished");
-    console.log(res)
+//    console.log(res)
     var _humidity = res["main"]["humidity"]
     var _presure = res["main"]["pressure"]
     var _temp = res["main"]["temp"]
@@ -120,6 +126,15 @@ function createOrigin(location,_icon){
 }
 
 
+function hideStations(){
+  for (var i = 0; i < police_stations_a.length; i++) {
+      police_stations_a[i].setVisible(visible_stations);
+   }
+}
+$("#police_checkbox").click(function() {
+    visible_stations = !visible_stations
+    hideStations();
+});
 
 function createPoliceStations(location){
 
@@ -142,10 +157,21 @@ function createPoliceStations(location){
      Materialize.toast($toastContent, 5000);
    });
 
+   police_stations_a.push(marker)
 }
 
+function hideParks(){
+  for (var i = 0; i < parks_a.length; i++) {
+      parks_a[i].setVisible(visible_parks);
+   }
+}
+$("#parks_checkbox").click(function() {
+    visible_parks = !visible_parks
+    hideParks();
+});
+
 function createParks(location, name){
-  console.log(location)
+  //console.log(location)
   let data = {
      position: location,
      map: map_data,
@@ -164,6 +190,8 @@ function createParks(location, name){
      var $toastContent = $("<span> Park: "+name+" </span>");
      Materialize.toast($toastContent, 5000);
    });
+
+   parks_a.push(marker)
 
 }
 
