@@ -237,6 +237,14 @@ function createMarkerHouses(location, info_location, _icon) {
                      "<td>Distance</td>"+
                      "<td>"+parseFloat(l_aux).toPrecision(3)+" km</td>"+
                    "</tr>"+
+                   "<tr>"+
+                     "<td>Cost 1 Bed Per/month /'Comunity'</td>"+
+                     "<td>"+info_location["cost_1bed"]+" $</td>"+
+                   "</tr>"+
+                   "<tr>"+
+                     "<td>Cost 2 Beds Per/month 'Comunity'</td>"+
+                     "<td>"+info_location["cost_2bed"] +" $</td>"+
+                   "</tr>"+
                   "</tbody>"+
              "</table>"
 

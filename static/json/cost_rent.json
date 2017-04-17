@@ -1,181 +1,259 @@
 [{
-    "Name": "Near North Side",
+    "community_area": "Near North Side",
     "cost1bedroom": 2000,
     "cost2bedrooms":2910,
-    "zip": 60610
+    "zip_code": 60610
  },
  {
-    "Name": "Loop",
+    "community_area": "Pullman",
+    "cost1bedroom": 900 ,
+    "cost2bedrooms": 1295,
+    "zip_code": 60628
+ },
+ {
+    "community_area": "Loop",
     "cost1bedroom":1960 ,
     "cost2bedrooms": 2650,
-    "zip": 60601
+    "zip_code": 60601
  },
  {
-    "Name": "Near West Side",
+    "community_area": "Near West Side",
     "cost1bedroom": 1910,
     "cost2bedrooms":2600,
-    "zip": 60607
+    "zip_code": 60607
  },
  {
-    "Name": "West Town",
+    "community_area": "West Town",
     "cost1bedroom": 1840,
     "cost2bedrooms": 2150,
-    "zip": 60612
+    "zip_code": 60612
  },
  {
-    "Name": "Lincoln Park",
+    "community_area": "Washington Heights",
+    "cost1bedroom": 950,
+    "cost2bedrooms": 975,
+    "zip_code": 60643
+ },
+ {
+    "community_area": "West Town",
+    "cost1bedroom": 1840,
+    "cost2bedrooms": 2150,
+    "zip_code": 60622
+ },
+ {
+    "community_area": "Lincoln Park",
     "cost1bedroom": 1750,
     "cost2bedrooms": 2490,
-    "zip": 60614
+    "zip_code": 60614
  },
  {
-    "Name": "South Loop",
+    "community_area": "South Loop",
     "cost1bedroom": 1660,
     "cost2bedrooms":2300,
-    "zip": 60605
+    "zip_code": 60605
  },
  {
-    "Name": "Evanston",
+    "community_area": "Evanston",
     "cost1bedroom": 1420,
     "cost2bedrooms": 1690,
-    "zip": 60621
+    "zip_code": 60621
  },
  {
-    "Name": "Lakeview",
+    "community_area": "Lakeview",
     "cost1bedroom": 1400,
     "cost2bedrooms": 2000,
-    "zip": 60657
+    "zip_code": 60657
  },
  {
-    "Name": "Logan Square",
+    "community_area": "Lakeview",
+    "cost1bedroom": 1400,
+    "cost2bedrooms": 2000,
+    "zip_code": 60613
+ },
+ {
+    "community_area": "Logan Square",
     "cost1bedroom": 1350,
     "cost2bedrooms":1650,
-    "zip": 60647
+    "zip_code": 60647
  },
  {
-    "Name": "North Center",
+    "community_area": "North Center",
     "cost1bedroom": 1250,
     "cost2bedrooms": 1700,
-    "zip": 60618
+    "zip_code": 60618
  },
  {
-    "Name": "Uptown",
+    "community_area": "Uptown",
     "cost1bedroom": 1180,
     "cost2bedrooms": 1650,
-    "zip": 60640
+    "zip_code": 60640
  },
  {
-    "Name": "Lincoln Square",
+    "community_area": "Lincoln Square",
     "cost1bedroom": 1110,
     "cost2bedrooms": 1750,
-    "zip": 60625
+    "zip_code": 60625
  },
  {
-    "Name": "Edgewater",
+    "community_area": "Edgewater",
     "cost1bedroom": 1050,
     "cost2bedrooms": 1600,
-    "zip": 60660
+    "zip_code": 60660
  },
  {
-    "Name": "Hyde Park",
+    "community_area": "Hyde Park",
     "cost1bedroom": 1030,
     "cost2bedrooms": 1300,
-    "zip": 60615
+    "zip_code": 60615
  },
  {
-    "Name": "Avondale",
+    "community_area": "Avondale",
     "cost1bedroom": 1020,
     "cost2bedrooms": 1500,
-    "zip": 60618
+    "zip_code": 60618
  },
  {
-    "Name": "Douglas",
+    "community_area": "Douglas",
     "cost1bedroom": 1020,
     "cost2bedrooms": 1350,
-    "zip":60609
+    "zip_code":60609
  },
  {
-    "Name": "Albany Park",
+    "community_area": "Albany Park",
     "cost1bedroom": 1010,
     "cost2bedrooms": 1300,
-    "zip": 60625
+    "zip_code": 60625
  },
  {
-    "Name": "Kenwood",
+    "community_area": "Kenwood",
     "cost1bedroom": 940,
     "cost2bedrooms": 1230,
-    "zip": 60653
+    "zip_code": 60653
  },
  {
-    "Name": "Irving Park",
+    "community_area": "Irving Park",
     "cost1bedroom": 900,
     "cost2bedrooms": 1350,
-    "zip": 60641
+    "zip_code": 60641
  },
  {
-    "Name": "Rogers Park",
+    "community_area": "Rogers Park",
     "cost1bedroom": 900,
     "cost2bedrooms": 1230,
-    "zip":60626
+    "zip_code":60626
  },
  {
-    "Name": "West Ridge",
+    "community_area": "West Ridge",
     "cost1bedroom": 900,
     "cost2bedrooms": 1180,
-    "zip": 60659
+    "zip_code": 60659
  },
  {
-    "Name": "Hermosa",
+    "community_area": "Hermosa",
     "cost1bedroom":870 ,
     "cost2bedrooms": 1120,
-    "zip": 60639
+    "zip_code": 60639
  },
  {
-    "Name": "Belmont Cragin",
+    "community_area": "Humboldt Park",
+    "cost1bedroom": 1250,
+    "cost2bedrooms": 1700,
+    "zip_code": 60624
+ },
+ {
+    "community_area": "North Park",
+    "cost1bedroom": 1350,
+    "cost2bedrooms": 1420,
+    "zip_code": 60646
+ },
+ {
+    "community_area": "West Englewood",
+    "cost1bedroom": 725,
+    "cost2bedrooms": 1200,
+    "zip_code": 60636
+ },
+ {
+    "community_area": "Belmont Cragin",
     "cost1bedroom": 850,
     "cost2bedrooms": 1210,
-    "zip": 60634
+    "zip_code": 60634
  },
  {
-    "Name": "Woodlawn",
+    "community_area": "Woodlawn",
     "cost1bedroom": 800,
     "cost2bedrooms": 1100,
-    "zip": 60637
+    "zip_code": 60637
  },
  {
-    "Name": "South Shore",
+    "community_area": "South Shore",
     "cost1bedroom": 730,
     "cost2bedrooms": 800,
-    "zip": 60649
+    "zip_code": 60649
  },
  {
-    "Name": "North Lawndale",
+    "community_area": "North Lawndale",
     "cost1bedroom": 720,
     "cost2bedrooms": 950,
-    "zip": 60608
+    "zip_code": 60608
  },
  {
-    "Name": "Austin",
+    "community_area": "North Lawndale",
+    "cost1bedroom": 720,
+    "cost2bedrooms": 950,
+    "zip_code": 60623
+ },
+ {
+    "community_area": "Chicago Lawn",
+    "cost1bedroom": 850,
+    "cost2bedrooms": 1250,
+    "zip_code": 60629
+ },
+ {
+    "community_area": "Austin",
     "cost1bedroom": 700,
     "cost2bedrooms": 880,
-    "zip": 60644
+    "zip_code": 60644
  },
  {
-    "Name": "Auburn Gresham",
+    "community_area": "Belmont Cragin",
+    "cost1bedroom": 850,
+    "cost2bedrooms": 1210,
+    "zip_code": 60634
+ },
+ {
+    "community_area": "Montclare",
+    "cost1bedroom": 2000,
+    "cost2bedrooms": 2200,
+    "zip_code": 60707
+ },
+ {
+    "community_area": "Auburn Gresham",
     "cost1bedroom": 680,
     "cost2bedrooms": 760,
-    "zip": 60620
+    "zip_code": 60620
  },
  {
-    "Name": "Grand Crossing",
+    "community_area": "South Chicago",
+    "cost1bedroom": 950,
+    "cost2bedrooms": 1200,
+    "zip_code": 60617
+ },
+ {
+    "community_area": "Grand Crossing",
     "cost1bedroom": 670,
     "cost2bedrooms": 790,
-    "zip": 60619
+    "zip_code": 60619
  },
  {
-    "Name": "Ghatham",
+    "community_area": "Near South Side",
+    "cost1bedroom": 625,
+    "cost2bedrooms": 800,
+    "zip_code": 60616
+ },
+ {
+    "community_area": "Ghatham",
     "cost1bedroom": 640,
     "cost2bedrooms":800,
-    "zip": 60620
+    "zip_code": 60620
  }
 ]

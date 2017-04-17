@@ -73,7 +73,10 @@ class Request:
     """
     def get_locations_houses(self):
         locs = self.houses_data[["latitude", "longitude", "address", "community_area_number", "community_area", "phone_number", "property_name", "property_type", "zip_code"]]
-        locs_js = locs.to_json()
+        #Merge Datasets
+        result = pd.merge(locs, self.cost_neighborhood, on="zip_code")
+        print (result)
+        locs_js = result.to_json()
         return locs_js
 
     """
@@ -152,11 +155,11 @@ class Request:
         return data_frame
 
     def get_cost_table_neighborhood(self):
-        info = self.cost_neighborhood[["Name", "cost1bedroom", "cost2bedrooms"]]
+        info = self.cost_neighborhood[["community_area", "cost1bedroom", "cost2bedrooms"]]
         info_js = info.to_json()
         aux = json.loads(info_js)
 
-        keyse = "Name"
+        keyse = "community_area"
         zipse = "cost1bedroom"
         ad = "cost2bedrooms"
         dataset = []
@@ -178,5 +181,4 @@ class Request:
 
 if(__name__ =="__main__"):
     a = Request()
-    r = a.get_weather2()
-    print(r)
+    r = a.get_locations_houses()
