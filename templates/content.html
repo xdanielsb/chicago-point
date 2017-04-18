@@ -5,12 +5,39 @@
   <link rel="stylesheet" href="{{url_for('static',filename='css/content.css')}}">
   <style>
     .modal { width: 30% !important;}
+    .map-control {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+        font-family: 'Roboto','sans-serif';
+        margin: 10px;
+        padding-right: 5px;
+        /* Hide the control initially, to prevent it from appearing
+           before the map loads. */
+        display: none;
+      }
+      /* Display the control once it is inside the map. */
+      #map .map-control { display: block; }
+
+      .selector-control {
+        font-size: 14px;
+        line-height: 30px;
+        vertical-align: baseline;
+      }
   </style>
 {%endblock%}
 
 {%block body%}
   <div class="cont">
   <div id="map_container"></div>
+  <div id="style-selector-control" class="map-control">
+      <input type="checkbox" name="show-hide" id="hide-poi"
+          class="selector-control">
+      <label for="hide-poi">Police stations</label>
+      <input type="checkbox" name="show-hide" id="show-poi"
+          class="selector-control" checked="checked">
+      <label for="show-poi">Parks</label>
+  </div>
   <div id="map"></div>
   </div>
 
@@ -33,8 +60,6 @@
 <script defer src="{{url_for('static',filename='logic/request_weather.js')}}"></script>
 <!--  Functions in the map: use functions in request_weather.js-->
 <script defer src="{{url_for('static',filename='logic/map_google.js')}}"></script>
-<!--  Events : use events in map_google.js-->
-<script defer src="{{url_for('static',filename='logic/events.js')}}"></script>
 <!--  Create markers: use variables in map_google_js-->
 <script defer src="{{url_for('static',filename='logic/create_marquers.js')}}"></script>
 

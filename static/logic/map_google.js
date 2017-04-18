@@ -190,8 +190,26 @@ function initMap() {
     fullscreenControl: true,
     gestureHandling: 'cooperative'
   });
-
+  //Add styled map to the possible maps
   map_data.mapTypes.set('styled_map', styledMapType);
+
+  // Add controls to the map, allowing users to hide/show features.
+  var styleControl = document.getElementById('style-selector-control');
+  map_data.controls[google.maps.ControlPosition.TOP_CENTER].push(styleControl);
+
+  // Apply new JSON when the user chooses to hide/show features.
+  document.getElementById('hide-poi').addEventListener('click', function() {
+    visible_stations = !visible_stations
+    for (var i = 0; i < police_stations_a.length; i++) {
+        police_stations_a[i].setVisible(visible_stations);
+     }
+  });
+  document.getElementById('show-poi').addEventListener('click', function() {
+    visible_parks = !visible_parks
+    for (var i = 0; i < parks_a.length; i++) {
+        parks_a[i].setVisible(visible_parks);
+     }
+  });
 
 
   createOrigin(_center ,4)
