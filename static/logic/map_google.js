@@ -42,12 +42,6 @@ let houses = [house1, house2, house3, house4]
 //let kml_limitations = "https://data.cityofchicago.org/api/geospatial/cauq-8yn6?method=export&format=KML"
 let kml_limitations = "http://danielsantos.net/ChicagoPoint.kml"
 
-/* Configuration  for the map */
-let config_mapa = {
-  zoom: 15,
-  center: _center, //Center in US
-  mapTypeId: 'terrain'
-}
 
 /* Function that helps me to cluster the house - markers */
 function clusterMarkers(){
@@ -91,7 +85,28 @@ function loadKmlLayer(src, map) {
 function initMap() {
   // Instance the map
   div_map = document.getElementById("map")
-  map_data = new google.maps.Map(div_map, config_mapa);
+
+  /* Configuration  for the map */
+  map_data = new google.maps.Map(div_map, {
+    zoom: 15,
+    center: _center, //Center in US
+    //mapTypeId: 'terrain'
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+      position: google.maps.ControlPosition.TOP_CENTER,
+      mapTypeIds: ['roadmap', 'terrain']
+    },
+    scaleControl: true,
+    streetViewControl: true,
+    streetViewControlOptions: {
+      position: google.maps.ControlPosition.TOP_CENTER
+    },
+    fullscreenControl: true,
+    gestureHandling: 'cooperative'
+  });
+
+
   createOrigin(_center ,4)
   console.log("The map has been loaded.")
 
