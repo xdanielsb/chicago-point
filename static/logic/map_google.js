@@ -42,12 +42,95 @@ let houses = [house1, house2, house3, house4]
 //let kml_limitations = "https://data.cityofchicago.org/api/geospatial/cauq-8yn6?method=export&format=KML"
 let kml_limitations = "http://danielsantos.net/ChicagoPoint.kml"
 
+/* Style map*/
+let confs_styles_map =  [
+            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+            {
+              featureType: 'administrative.locality',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'geometry',
+              stylers: [{color: '#263c3f'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#6b9a76'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry',
+              stylers: [{color: '#38414e'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#212a37'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#9ca5b3'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [{color: '#746855'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#1f2835'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#f3d19c'}]
+            },
+            {
+              featureType: 'transit',
+              elementType: 'geometry',
+              stylers: [{color: '#2f3948'}]
+            },
+            {
+              featureType: 'transit.station',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'geometry',
+              stylers: [{color: '#17263c'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#515c6d'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.stroke',
+              stylers: [{color: '#17263c'}]
+            }
+          ]
+
 
 /* Function that helps me to cluster the house - markers */
 function clusterMarkers(){
   var markerCluster = new MarkerClusterer(map_data, markers,
   {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
 }
+
 
 /*
  * Based in a origin and a clicked marker calc the route
@@ -86,6 +169,8 @@ function initMap() {
   // Instance the map
   div_map = document.getElementById("map")
 
+  var styledMapType = new google.maps.StyledMapType(confs_styles_map, {name: 'Night Mode'});
+
   /* Configuration  for the map */
   map_data = new google.maps.Map(div_map, {
     zoom: 15,
@@ -95,7 +180,7 @@ function initMap() {
     mapTypeControlOptions: {
       style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
       position: google.maps.ControlPosition.TOP_CENTER,
-      mapTypeIds: ['roadmap', 'terrain']
+      mapTypeIds: ['roadmap', 'terrain', 'styled_map']
     },
     scaleControl: true,
     streetViewControl: true,
@@ -105,6 +190,8 @@ function initMap() {
     fullscreenControl: true,
     gestureHandling: 'cooperative'
   });
+
+  map_data.mapTypes.set('styled_map', styledMapType);
 
 
   createOrigin(_center ,4)
