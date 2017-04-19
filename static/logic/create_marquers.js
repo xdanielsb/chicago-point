@@ -90,6 +90,8 @@ function createParks(location, name){
 
    parks_a.push(marker)
 
+
+
 }
 
 
@@ -186,7 +188,7 @@ function createMarkerHouses(location, info_location, _icon) {
       marker.info.open(map, this);
 
       request_weather("GET","/weatherzip/"+this.vals["zip_code"]);
-      calcRoute(this.position)
+      calcRoute(this.position);
     });
 
 }

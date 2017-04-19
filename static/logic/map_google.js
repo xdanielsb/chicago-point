@@ -21,11 +21,15 @@ let parks_a =[]
 /* Auxiliar variables to show and hide the markers */
 let visible_stations = true
 let visible_parks = true
+let active_clustering = true
 
 /*  Variables for the directions services */
 let directionsService
 let directionsDisplay
 
+
+/* Cluster maps */
+let markerCluster;
 
 /* Variables for the project*/
 let path = "../../static/img/"
@@ -127,7 +131,7 @@ let confs_styles_map =  [
 
 /* Function that helps me to cluster the house - markers */
 function clusterMarkers(){
-  var markerCluster = new MarkerClusterer(map_data, markers,
+  markerCluster = new MarkerClusterer(map_data, markers,
   {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
 }
 
@@ -197,19 +201,33 @@ function initMap() {
   var styleControl = document.getElementById('style-selector-control');
   map_data.controls[google.maps.ControlPosition.TOP_CENTER].push(styleControl);
 
-  // Apply new JSON when the user chooses to hide/show features.
+  // Event police stations
   document.getElementById('hide-poi').addEventListener('click', function() {
     visible_stations = !visible_stations
     for (var i = 0; i < police_stations_a.length; i++) {
         police_stations_a[i].setVisible(visible_stations);
      }
   });
+  // Event parks
   document.getElementById('show-poi').addEventListener('click', function() {
     visible_parks = !visible_parks
     for (var i = 0; i < parks_a.length; i++) {
         parks_a[i].setVisible(visible_parks);
      }
   });
+  // Clustering event
+  document.getElementById('clustering_checkbox').addEventListener('click', function() {
+    active_clustering = !active_clustering
+    if (active_clustering == false){
+      markerCluster.setMaxZoom(1);
+      markerCluster.repaint();
+    }else {
+      markerCluster.setMaxZoom(40);
+      markerCluster.repaint();
+    }
+  });
+
+
 
 
   createOrigin(_center ,4)
