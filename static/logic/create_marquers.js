@@ -131,7 +131,7 @@ function createMarkerHouses(location, info_location, _icon) {
                      '&key=AIzaSyAz5H70tw5BytlMLiZffXB79vtUO_YL3N8';
 
 
-    marker.data=  "<center><img style=\"border-radius: 50%;\" src=\" "+img_house+"\" > <br><a class='waves-effect waves-light btn' href='#modal1'>Details.</a> </center>";
+    marker.data=  "<center><img  data-caption='A picture of the house' width='120'  src=\" "+img_house+"\" > <br><a class='btn' href='#modal1'>Details.</a> </center>";
 
     marker.vals = info_location
     marker.dista = l_aux
@@ -158,7 +158,7 @@ function createMarkerHouses(location, info_location, _icon) {
                    "</tr>"+
                    "<tr>"+
                      "<td>Phone</td>"+
-                     "<td>"+info_location["phone"]+"</td>"+
+                     "<td> <i class='material-icons left'>phone</i> "+info_location["phone"]+"</td>"+
                    "</tr>"+
                    "<tr>"+
                      "<td>Zip Code</td>"+
