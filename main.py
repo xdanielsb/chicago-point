@@ -24,6 +24,10 @@ def index():
 def content():
     return render_template('content.html')
 
+@app.route('/recommend/')
+def recommend():
+    return render_template('recomendations.html')
+
 @app.route('/charts/')
 def charts():
     labels, values,colors = request_object.get_number_by_comunity()
