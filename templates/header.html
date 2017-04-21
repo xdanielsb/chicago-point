@@ -16,7 +16,6 @@
             padding-left: 40px;
             padding-top: 20px;
           }
-          
       </style>
       {%block header%}
       {%endblock%}
@@ -24,35 +23,14 @@
    <body>
       <header>
          <ul id="nav-mobile" class="side-nav fixed">
-            <a href="/"><img class="img-responsive" id="logo" src="{{url_for('static',filename='img/logo2min.png')}}" /></a>
-            <li class="bold"><a href="/content/" class="waves-effect waves-teal">Find a place</a></li>
-            <li class="bold"><a href="/charts/" class="waves-effect waves-teal">Charts & Statistics</a></li>
-            <li class="bold"><a href="/about/" class="waves-effect waves-teal">Meet Chicago</a></li>
+            <a href="/"><i class="material-icons left">home</i><img class="img-responsive" id="logo" src="{{url_for('static',filename='img/logo2min.png')}}" /></a>
+            <li class="bold"><a href="/content/" class="waves-effect waves-teal"><i class="material-icons left">place</i>Find a place</a></li>
+            <li class="bold"><a href="/charts/" class="waves-effect waves-teal"><i class="material-icons left">show_chart</i>Charts & Statistics</a></li>
+            <li class="bold"><a href="/about/" class="waves-effect waves-teal"><i class="material-icons left">card_travel</i>Meet Chicago</a></li>
             <li class="bold">
               <div id="weather" >
 
               </div>
-            </li>
-            <li class="no-padding">
-               <ul class="collapsible collapsible-accordion">
-                  <li>
-                     <a class="collapsible-header">Filters<i class="material-icons">arrow_drop_down</i></a>
-                     <div class="collapsible-body">
-                        <ul>
-                           <div class="row">
-                              <div class="input-field col s12">
-                                 <input id="clustering_checkbox" type="checkbox" class="validate" checked>
-                                 <label for="clustering_checkbox">Clustering</label>
-                              </div>
-                              <div class="input-field col s12">
-                                 <input id="hospitals_checkbox" type="checkbox" class="validate" checked>
-                                 <label for="hospitals_checkbox">Hospitals</label>
-                              </div>
-                           </div>
-                        </ul>
-                     </div>
-                  </li>
-               </ul>
             </li>
 
          </ul>

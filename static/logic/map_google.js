@@ -202,21 +202,21 @@ function initMap() {
   map_data.controls[google.maps.ControlPosition.TOP_CENTER].push(styleControl);
 
   // Event police stations
-  document.getElementById('hide-poi').addEventListener('click', function() {
+  document.getElementById('show-police').addEventListener('click', function() {
     visible_stations = !visible_stations
     for (var i = 0; i < police_stations_a.length; i++) {
         police_stations_a[i].setVisible(visible_stations);
      }
   });
   // Event parks
-  document.getElementById('show-poi').addEventListener('click', function() {
+  document.getElementById('show-parks').addEventListener('click', function() {
     visible_parks = !visible_parks
     for (var i = 0; i < parks_a.length; i++) {
         parks_a[i].setVisible(visible_parks);
      }
   });
   // Clustering event
-  document.getElementById('clustering_checkbox').addEventListener('click', function() {
+  document.getElementById('show-clust').addEventListener('click', function() {
     active_clustering = !active_clustering
     if (active_clustering == false){
       markerCluster.setMaxZoom(1);
