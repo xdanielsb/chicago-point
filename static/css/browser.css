@@ -2,11 +2,16 @@
 
 h1 {
     padding: 50px 0;
-   font-size: 80px;
+   font-size: 90px;
    font-family: "Spirax";
    font-style: normal;
    font-weight: 400;
-   color : rgb(255, 255, 255);
+   color : #c2a342;
+   -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(transparent, transparent),
+    url("../img/texture.png") repeat;
+    background: -o-linear-gradient(transparent, transparent);
+    -webkit-background-clip: text;
 }
 
 /*

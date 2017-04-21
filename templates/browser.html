@@ -27,7 +27,12 @@
           color: black;
           font-family: "Spirax";
           font-size: 30px;
-          color : rgb(0,0, 0);
+          color : #c2a342;
+          -webkit-text-fill-color: transparent;
+           background: -webkit-linear-gradient(transparent, transparent),
+           url("{{url_for('static',filename='img/texture_black.png')}}") repeat;
+           background: -o-linear-gradient(transparent, transparent);
+           -webkit-background-clip: text;
       }
     </style>
       <title>chicago point.</title>
