@@ -11,11 +11,15 @@ class Request:
 
     def __init__(self):
         #Take a moment load the information
+
         self.houses_data = self.get_houses()
         self.health_data = self.get_health_statistics()
         self.police_stations = self.get_police_stations()
         self.cost_neighborhood = self.get_cost_neighborhood()
         self.parks = self.get_parks()
+        self.hospitals = self.get_hospitals()
+        self.get_libraries = self.get_libraries()
+
 
     """
         Get the houses for rent
@@ -33,6 +37,40 @@ class Request:
         data_frame =  pd.read_json(aux2)
         data_frame = data_frame.dropna()
         return data_frame
+
+    """
+        Get the hospitals in chicago
+    """
+    def get_hospitals(self):
+        url = "https://data.cityofchicago.org/resource/cjg8-dbka.json"
+        data  = urllib2.urlopen(url)
+
+        #Tricky part
+        result = json.load(data)
+        #Data Frame
+        data_frame =  pd.read_json(json.dumps(result))
+        return data_frame
+
+    """
+        Get the libraries in chicago
+    """
+    def get_libraries(self):
+        url = "https://data.cityofchicago.org/resource/x8fc-8rcq.json"
+        data  = urllib2.urlopen(url)
+
+        #Tricky part
+        result = json.load(data)
+        #Data Frame
+        data_frame =  pd.read_json(json.dumps(result))
+        return data_frame
+
+    """
+        Get important info libraries
+    """
+    def get_locations_libraries(self):
+        locs = self.libraries[["location", "address", "hours_of_operation", "teacher_in_the_library", "website", "name_"]]
+        locs_js = locs.to_json()
+        return locs_js
 
     """
         Get information about the health in a community
@@ -106,6 +144,14 @@ class Request:
         result = pd.merge(locs, self.cost_neighborhood, on="zip_code")
         #print (result)
         locs_js = result.to_json()
+        return locs_js
+
+    """
+        Data health centers in chicago
+    """
+    def get_locations_health_center(self):
+        locs = self.hospitals[["community_area", "facility", "location_1", "phone"]]
+        locs_js = locs.to_json()
         return locs_js
 
     """
@@ -229,9 +275,9 @@ class Request:
 
 
 """
-    Just a function for testing some funcitons in the code
+    Just a function for testing some functions in the code
 """
 if(__name__ =="__main__"):
     a = Request()
-    r = a.get_parks()
-    #print(r)
+    r = a.get_libraries()
+    print(r)

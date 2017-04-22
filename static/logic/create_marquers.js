@@ -66,6 +66,54 @@ function createPoliceStations(location){
    police_stations_a.push(marker)
 }
 
+function createHealthCenters(location){
+
+  let data = {
+     position: location,
+     map: map_data,
+     icon: hospital,
+     clickable: true,
+     title: 'Click to get more information'
+   }
+
+   //intance the marker
+   marker = new google.maps.Marker(data);
+   marker.info = new google.maps.InfoWindow({
+     content: ''
+   });
+
+   google.maps.event.addListener(marker, 'click', function() {
+     var $toastContent = $("<span> Health center</span>");
+     Materialize.toast($toastContent, 5000);
+   });
+
+   health_centers_a.push(marker)
+}
+
+function createLibraries(location){
+
+  let data = {
+     position: location,
+     map: map_data,
+     icon: library,
+     clickable: true,
+     title: 'Click to get more information'
+   }
+
+   //intance the marker
+   marker = new google.maps.Marker(data);
+   marker.info = new google.maps.InfoWindow({
+     content: ''
+   });
+
+   google.maps.event.addListener(marker, 'click', function() {
+     var $toastContent = $("<span> Health center</span>");
+     Materialize.toast($toastContent, 5000);
+   });
+
+   libraries_a.push(marker)
+}
+
 
 function createParks(location, name){
   //console.log(location)

@@ -17,6 +17,10 @@ let markers = []
 let police_stations_a = []
 /* Markers for the parks */
 let parks_a =[]
+/* Markers for health centers*/
+let health_centers_a = []
+/* Markers for libraries */
+let libraries_a = []
 
 /* Auxiliar variables to show and hide the markers */
 let visible_stations = true
@@ -33,13 +37,15 @@ let markerCluster;
 
 /* Variables for the project*/
 let path = "../../static/img/"
-let icon_origin = path + 'location_pin1.png'
+let icon_origin = path + 'university.png'
 let house1 =  path + "home1.png"
 let house2 =  path + "home2.png"
 let house3 =  path + "home3.png"
 let house4 =  path + "home4.png"
 let police =  path + "police.png"
 let park   =  path + "park.png"
+let library = path + "library.png"
+let hospital = path + "hospital.png"
 
 let houses = [house1, house2, house3, house4]
 

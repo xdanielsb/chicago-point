@@ -51,6 +51,13 @@ def weather():
     weather_data = request_object.get_weather()
     return jsonify(weather_data)
 
+
+
+@app.route("/libraries/")
+def libraries():
+    info= request_object.get_locations_libraries()
+    return jsonify(info)
+
 @app.route("/parks/")
 def parks():
     info= request_object.get_location_parks()
@@ -65,6 +72,12 @@ def info_comun():
 def location_stations():
     info = request_object.get_locations_police_stations()
     return jsonify(info)
+
+@app.route("/health/")
+def info_health_center():
+    info = request_object.get_locations_health_center()
+    return jsonify(info)
+
 
 @app.route("/weatherzip/<zipcode>")
 def weather_zip(zipcode):
