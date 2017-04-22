@@ -107,7 +107,7 @@ function createLibraries(location){
    });
 
    google.maps.event.addListener(marker, 'click', function() {
-     var $toastContent = $("<span> Health center</span>");
+     var $toastContent = $("<span> Library </span>");
      Materialize.toast($toastContent, 5000);
    });
 

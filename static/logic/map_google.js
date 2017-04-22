@@ -25,7 +25,10 @@ let libraries_a = []
 /* Auxiliar variables to show and hide the markers */
 let visible_stations = true
 let visible_parks = true
+let visible_libraries = true
+let visible_health_centers = true
 let active_clustering = true
+
 
 /*  Variables for the directions services */
 let directionsService
@@ -221,6 +224,22 @@ function initMap() {
         parks_a[i].setVisible(visible_parks);
      }
   });
+  //Event health centers
+  document.getElementById('show-hosp').addEventListener('click', function() {
+    visible_health_centers = !visible_health_centers
+    for (var i = 0; i < health_centers_a.length; i++) {
+        health_centers_a[i].setVisible(visible_health_centers);
+     }
+  });
+
+  //Events libraries
+  document.getElementById('show-libs').addEventListener('click', function() {
+    visible_libraries = !visible_libraries
+    for (var i = 0; i < libraries_a.length; i++) {
+        libraries_a[i].setVisible(visible_libraries);
+     }
+  });
+
   // Clustering event
   document.getElementById('show-clust').addEventListener('click', function() {
     active_clustering = !active_clustering

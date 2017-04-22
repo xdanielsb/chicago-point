@@ -18,7 +18,7 @@ class Request:
         self.cost_neighborhood = self.get_cost_neighborhood()
         self.parks = self.get_parks()
         self.hospitals = self.get_hospitals()
-        self.get_libraries = self.get_libraries()
+        self.libraries = self.get_libraries()
 
 
     """
