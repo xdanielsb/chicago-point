@@ -86,20 +86,29 @@
 
 <script>
 // Data configuration
-let data_values = [12, 19, 3, 5, 2, 3]
-let data_labels = ["Daniel", "Julian", "Ana", "Polo", "Erika", "Felipe"]
-let bcolors = ["#FF6384","#4BC0C0","#FFCE56","#E7E9ED","#36A2EB","rgb(36, 250, 17)"]
+//let bcolors = ["#FF6384","#4BC0C0","#FFCE56","#E7E9ED","#36A2EB","rgb(36, 250, 17)"]
 
 var config_line = {
   type: 'polarArea', //bar, line
   data: {
-      labels: data_labels,
+      labels: [{% for a,b,c,d,f,g,h,i,j,k in nearest_places %}
+                     "{{f}}",
+                 {% endfor %}],
       datasets: [{
           label: '# of  People',
-          data: data_values,
+          data: [{% for a,b,c,d,f,g,h,i,j,k in nearest_places %}
+                         "{{i}}",
+                     {% endfor %}],
           borderWidth: 1,
           fill: false,
-          backgroundColor: bcolors,
+          backgroundColor: [
+                      'rgba(255,99,132,1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)'
+                    ],
           borderColor: "black"
       }]
   },
@@ -150,10 +159,37 @@ function(evt){
 var config_bar = {
     type: 'bar', //bar, line
     data: {
-        labels: data_labels,
+        labels: [{% for a,b,c in cheapest_places %}
+                       "{{a}}",
+                   {% endfor %}],
         datasets: [{
-            label: '# of Votes',
-            data: data_values,
+            label: '# Cost 1 bedroom',
+            data: [{% for a,b,c in cheapest_places %}
+                           "{{b}}",
+                       {% endfor %}],
+            borderWidth: 1,
+            fill: true,
+            backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+            borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                      ]
+        }, {
+            label: '# Cost 2 bedrooms',
+            data: [{% for a,b,c in cheapest_places %}
+                           "{{c}}",
+                       {% endfor %}],
             borderWidth: 1,
             fill: true,
             backgroundColor: [

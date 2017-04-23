@@ -1,3 +1,5 @@
+let active_circle;
+
 function createOrigin(location,_icon){
   let data = {
      position: location,
@@ -14,11 +16,25 @@ function createOrigin(location,_icon){
    });
    marker.data=  "The University";
 
+   var circle = new google.maps.Circle({
+					strokeColor: 'rgb(10, 74, 241)',
+					strokeOpacity: 0.5,
+					strokeWeight: 2,
+					fillColor: 'rgb(73, 151, 195)',
+					fillOpacity: 0.1,
+					map: map_data,
+					center: location,
+					radius: 777
+		});
+    marker.circle = circle;
+    active_circle = circle;
+
    google.maps.event.addListener(marker, 'click', function() {
      var $toastContent = $("<span> You are going to study here</span>");
      Materialize.toast($toastContent, 5000);
-     marker.info.setContent(this.data);
-     marker.info.open(map, this);
+     active_circle.setOptions({ visible: false });
+     this.circle.setOptions({visible: true});
+     active_circle = this.circle;
    });
 }
 
@@ -165,6 +181,19 @@ function createMarkerHouses(location, info_location, _icon) {
     marker.vals = info_location
     marker.dista = l_aux
 
+    var circle = new google.maps.Circle({
+ 					strokeColor: 'rgb(10, 74, 241)',
+ 					strokeOpacity: 0.5,
+ 					strokeWeight: 2,
+ 					fillColor: 'rgb(73, 151, 195)',
+ 					fillOpacity: 0.1,
+ 					map: map_data,
+ 					center: location,
+ 					radius: 777,
+          visible: false
+ 		});
+    marker.circle = circle;
+
     markers.push(marker)
 
     let table_inf =
@@ -218,6 +247,10 @@ function createMarkerHouses(location, info_location, _icon) {
 
       request_weather("GET","/weatherzip/"+this.vals["zip_code"]);
       calcRoute(this.position);
+
+      active_circle.setOptions({ visible: false });
+      this.circle.setOptions({visible: true});
+      active_circle = this.circle;
     });
 
 }
