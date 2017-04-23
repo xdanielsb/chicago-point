@@ -1,8 +1,8 @@
 #hicago, .letter{
   font-family: 'Rancho', serif;
   font-size: 100px;
-  color: rgb(255, 255, 255);
-  text-shadow: 2px 2px 4px #000000;
+  color: rgb(14, 177, 194);
+  text-shadow: 2px 2px 7px rgb(0, 0, 0);
 }
 
 p {
@@ -34,6 +34,6 @@ p {
 .gray{
   /*filter: grayscale(100%);*/
   border: 2px solid;
-  border-color: rgb(255, 255, 255);
+  border-color:   color: rgb(14, 177, 194);
   border-radius: 50%;
 }
