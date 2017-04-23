@@ -196,6 +196,10 @@ function createMarkerHouses(location, info_location, _icon) {
 
     markers.push(marker)
 
+    let dis = parseFloat(l_aux).toPrecision(3)
+    let por_des = parseFloat((dis/20.0)*100).toPrecision(2)
+    let por_c1 =  parseFloat((info_location["cost_1bed"]/3000) *100).toPrecision(2)
+    let por_c2 =  parseFloat((info_location["cost_2bed"]/3000) *100).toPrecision(2)
     let table_inf =
               "<center><h5>"+info_location["property_name"]+"</h5> </center>"+
               "<table>"+
@@ -222,20 +226,20 @@ function createMarkerHouses(location, info_location, _icon) {
                      "<td>Zip Code</td>"+
                      "<td>"+info_location["zip_code"]+"</td>"+
                    "</tr>"+
-                   "<tr>"+
-                     "<td>Distance</td>"+
-                     "<td>"+parseFloat(l_aux).toPrecision(3)+" km</td>"+
-                   "</tr>"+
-                   "<tr>"+
-                     "<td>Cost 1 Bed Per/month /'Comunity'</td>"+
-                     "<td>"+info_location["cost_1bed"]+" $</td>"+
-                   "</tr>"+
-                   "<tr>"+
-                     "<td>Cost 2 Beds Per/month 'Comunity'</td>"+
-                     "<td>"+info_location["cost_2bed"] +" $</td>"+
-                   "</tr>"+
                   "</tbody>"+
-             "</table>"
+             "</table>"+
+             "<br>Distance: <br>"+dis+" km <i class='material-icons left'>directions_run</i> <br>"+
+             "<div class='w3-light-grey w3-round'> "+
+                "<div class='w3-container w3-green w3-round' style='width:"+por_des+"%'>"+por_des+"%</div>"+
+              "</div>"+
+             "<br>Cost 1 Bed Per/month 'Comunity': <i class='material-icons left'>attach_money</i> <br>"+info_location["cost_1bed"]+" km<br>"+
+              "<div class='w3-light-grey w3-round'> "+
+                 "<div class='w3-container w3-blue w3-round' style='width:"+por_c1+"%'>"+por_c1+"%</div>"+
+               "</div>"+
+              "<br>Cost 2 Beds Per/month 'Comunity': <i class='material-icons left'>attach_money</i> <br>"+info_location["cost_2bed"]+" km<br>"+
+               "<div class='w3-light-grey w3-round'> "+
+                  "<div class='w3-container w3-red w3-round' style='width:"+por_c2+"%'>"+por_c2+"%</div>"+
+                "</div>"
 
 
     google.maps.event.addListener(marker, 'click', function() {

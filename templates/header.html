@@ -11,6 +11,7 @@
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
       <style>
           #logo {
             padding-left: 40px;
@@ -23,11 +24,11 @@
    <body>
       <header>
          <ul id="nav-mobile" class="side-nav fixed">
-            <a href="/"><img class="img-responsive" id="logo" src="{{url_for('static',filename='img/logo2min.png')}}" /></a>
+            <a href="/"><img class="img-responsive" id="logo" src="{{url_for('static',filename='img/logo_header.png')}}" /></a>
             <li class="bold"><a href="/" class="waves-effect waves-teal"><i class="material-icons left">home</i>Home</a></li>
             <li class="bold"><a href="/content/" class="waves-effect waves-teal"><i class="material-icons left">place</i>Find a place</a></li>
-            <li class="bold"><a href="/charts/" class="waves-effect waves-teal"><i class="material-icons left">show_chart</i>Information of interest</a></li>
-            <li class="bold"><a href="/recommend/" class="waves-effect waves-teal"><i class="material-icons left">touch_app</i>Recommendations <span class="new badge">2</span></a></li>
+            <li class="bold"><a href="/charts/" class="waves-effect waves-teal"><i class="material-icons left">show_chart</i>Information of interest</a> </li>
+            <li class="bold"><a href="/recommend/" class="waves-effect waves-teal"> <span class="new badge blue"></span> <i class="material-icons left">touch_app</i>Advice</a></li>
             <li class="bold"><a href="/about/" class="waves-effect waves-teal"><i class="material-icons left">card_travel</i>Meet Chicago</a></li>
             <li class="bold">
               <div id="weather" >
@@ -40,7 +41,7 @@
                     </div>
                   <div class="card-stacked">
                   <div class="card-content">
-                    <h6> <strong>Information</strong></h6>
+                    <h6> <strong>Information, Click a marker with a house.</strong></h6>
                     <p>
                     </p>
                   </div>
@@ -49,7 +50,18 @@
         </div>
               </div>
             </li>
-            <li> <img class="img-responsive" id="logo" width="87%" src="{{url_for('static',filename='img/conventions.png')}}" /></li>
+            <li>
+              <img class="img-responsive" id="logo"  width="85%" src="{{url_for('static',filename='img/conventionsm.png')}}" />
+              <img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/convention-health-center.png')}}" />
+              <img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/convention-library.png')}}" />
+              <img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/convention-park.png')}}" />
+              <img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/convention-police-station.png')}}" />
+             </li>
+            <li>
+              <img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/github-box.png')}}" />
+              <img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/linkedin-box.png')}}" />
+              <img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/help.png')}}" />
+            </li>
          </ul>
       </header>
       {%block body%}
