@@ -32,14 +32,12 @@ class Request:
         #Take a moment load the information
 
         self.houses_data = self.get_houses()
-        """
         self.health_data = self.get_health_statistics()
         self.police_stations = self.get_police_stations()
         self.cost_neighborhood = self.get_cost_neighborhood()
         self.parks = self.get_parks()
         self.hospitals = self.get_hospitals()
         self.libraries = self.get_libraries()
-        """
 
     """
         Get the houses for rent
@@ -71,7 +69,7 @@ class Request:
     def get_nearest_locations(self, n=5):
         locs = self.houses_data[["latitude", "longitude", "address", "community_area_number", "community_area", "phone_number", "property_name", "property_type", "zip_code", "distance"]]
         nearest =  locs.nsmallest(n, 'distance')
-        nearest.reset_index()
+        nearest.reset_index() #erase
         locs_js = nearest.to_json()
 
         aux = json.loads(locs_js)
@@ -86,9 +84,28 @@ class Request:
             for a in keys:
                 row.append(aux[a][cod])
             dataset.append(row)
-        print(dataset)
+        #print(dataset)
         return  dataset
 
+    """
+        Get most cheapest comunities
+    """
+    def get_cheapest_comunities(self,n = 5):
+        info = self.cost_neighborhood[["community_area", "cost1bedroom", "cost2bedrooms"]]
+        cheapest =  info.nsmallest(n, 'cost1bedroom')
+        info_js = cheapest.to_json()
+        aux = json.loads(info_js)
+
+        keyse = "community_area"
+        zipse = "cost1bedroom"
+        ad = "cost2bedrooms"
+        dataset = []
+        for ar in aux[zipse]:
+            url = aux[keyse][ar]
+            _zip = aux[zipse][ar]
+            _ad = aux[ad][ar]
+            dataset.append([url, _zip, _ad])
+        return dataset
 
     """
         Get the hospitals in chicago

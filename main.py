@@ -27,7 +27,8 @@ def content():
 @app.route('/recommend/')
 def recommend():
     nearest_places = request_object.get_nearest_locations()
-    return render_template('recomendations.html', nearest_places=nearest_places)
+    cheapest_places = request_object.get_cheapest_comunities()
+    return render_template('recomendations.html', nearest_places=nearest_places, cheapest_places= cheapest_places)
 
 @app.route('/charts/')
 def charts():
