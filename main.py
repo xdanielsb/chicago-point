@@ -51,8 +51,6 @@ def weather():
     weather_data = request_object.get_weather()
     return jsonify(weather_data)
 
-
-
 @app.route("/libraries/")
 def libraries_dat():
     info= request_object.get_locations_libraries()

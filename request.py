@@ -3,6 +3,24 @@ import json
 import urllib2
 import random
 from operator import itemgetter #fancy sorted
+from math import radians, cos, sin, asin, sqrt
+
+
+def haversine(lon1, lat1):
+    lon2, lat2 = [-87.650495, 41.870732]
+    """
+    Calculate the great circle distance between two points
+    on the earth (specified in decimal degrees)
+    """
+    # convert decimal degrees to radians
+    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+    # haversine formula
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    c = 2 * asin(sqrt(a))
+    km = 6367 * c
+    return km
 
 #Library for Data Science
 import pandas as pd
@@ -36,6 +54,12 @@ class Request:
         #Data Frame
         data_frame =  pd.read_json(aux2)
         data_frame = data_frame.dropna()
+        distances = []
+        #Compute the distance between two points useing harvesine formule
+        for index, row in data_frame.iterrows():
+            distances.append(haversine(row['longitude'], row['latitude']))
+        data_frame['distance'] = pd.Series(distances, index=data_frame.index)
+
         return data_frame
 
     """
@@ -139,7 +163,7 @@ class Request:
         Get locations houses.
     """
     def get_locations_houses(self):
-        locs = self.houses_data[["latitude", "longitude", "address", "community_area_number", "community_area", "phone_number", "property_name", "property_type", "zip_code"]]
+        locs = self.houses_data[["latitude", "longitude", "address", "community_area_number", "community_area", "phone_number", "property_name", "property_type", "zip_code", "distance"]]
         #Merge Datasets
         result = pd.merge(locs, self.cost_neighborhood, on="zip_code")
         #print (result)
@@ -279,5 +303,3 @@ class Request:
 """
 if(__name__ =="__main__"):
     a = Request()
-    r = a.get_libraries()
-    print(r)
