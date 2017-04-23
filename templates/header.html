@@ -34,16 +34,10 @@
               <div id="weather" >
 
           <div class="col s9">
-
                   <div class="card horizontal cyan lighten-2">
-                    <div class="card-image">
-                      <!-- <img src="http://lorempixel.com/100/190/nature/6"> -->
-                    </div>
                   <div class="card-stacked">
                   <div class="card-content">
                     <h6> <strong>Information, Click a marker with a house.</strong></h6>
-                    <p>
-                    </p>
                   </div>
                   </div>
                   </div>
@@ -57,11 +51,10 @@
               <img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/convention-park.png')}}" />
               <img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/convention-police-station.png')}}" />
              </li>
-            <li>
-              <img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/github-box.png')}}" />
-              <img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/linkedin-box.png')}}" />
-              <img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/help.png')}}" />
-            </li>
+
+             <a href="https://github.com/xdanielsb" ><img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/github-box.png')}}" /></a>
+             <a href="#" ><img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/linkedin-box.png')}}" /></a>
+             <a href="#" ><img class="img-responsive" id="logo"  src="{{url_for('static',filename='img/help.png')}}" /></a>
          </ul>
       </header>
       {%block body%}
