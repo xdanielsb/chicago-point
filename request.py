@@ -20,6 +20,7 @@ def haversine(lon1, lat1):
     a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
     c = 2 * asin(sqrt(a))
     km = 6367 * c
+    km = round(km, 3)
     return km
 
 #Library for Data Science
@@ -31,13 +32,14 @@ class Request:
         #Take a moment load the information
 
         self.houses_data = self.get_houses()
+        """
         self.health_data = self.get_health_statistics()
         self.police_stations = self.get_police_stations()
         self.cost_neighborhood = self.get_cost_neighborhood()
         self.parks = self.get_parks()
         self.hospitals = self.get_hospitals()
         self.libraries = self.get_libraries()
-
+        """
 
     """
         Get the houses for rent
@@ -61,6 +63,32 @@ class Request:
         data_frame['distance'] = pd.Series(distances, index=data_frame.index)
 
         return data_frame
+
+    """
+        Get the 5 nearest locations to the center, defined in the
+        requeriments
+    """
+    def get_nearest_locations(self, n=5):
+        locs = self.houses_data[["latitude", "longitude", "address", "community_area_number", "community_area", "phone_number", "property_name", "property_type", "zip_code", "distance"]]
+        nearest =  locs.nsmallest(n, 'distance')
+        nearest.reset_index()
+        locs_js = nearest.to_json()
+
+        aux = json.loads(locs_js)
+        keys = ["address", "community_area_number", "community_area", "phone_number", "property_name", "property_type", "zip_code", "distance", "latitude", "longitude"]
+        dataset = []
+        cods = []
+        for cod  in aux[keys[0]] :
+            cods.append(cod)
+
+        for cod in cods:
+            row = []
+            for a in keys:
+                row.append(aux[a][cod])
+            dataset.append(row)
+        print(dataset)
+        return  dataset
+
 
     """
         Get the hospitals in chicago
@@ -303,3 +331,4 @@ class Request:
 """
 if(__name__ =="__main__"):
     a = Request()
+    a. get_nearest_locations()
