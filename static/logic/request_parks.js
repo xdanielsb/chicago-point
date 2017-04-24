@@ -7,11 +7,11 @@ function insert_park(response){
   console.log("Inserting markers for parks ")
 
   let result = jQuery.parseJSON(response)
-  console.log(result)
+  // console.log(result)
   //console.log(result)
   let _locs = result['location']
   let _names = result['park_name']
-  console.log(_locs)
+  // console.log(_locs)
   for (var key in _locs){
     let _dat = _locs[key]
     let _lat = parseFloat(_dat["coordinates"][1])
