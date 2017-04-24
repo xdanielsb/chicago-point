@@ -4,12 +4,12 @@
 ---
 
 ### Page (Some of the following)
-#### http://104.131.176.222:5000/
 #### http://danielsantos.net/dev
+#### http://104.131.176.222
 
 
 ### Sample video
-#### https://drive.google.com/file/d/0B8wdzbJt0XyZRlk5ajNNcUNZTTA/view?usp=sharing
+#### https://youtu.be/e1cLy38TN-8
 
 ---
 ### Requirements
@@ -89,3 +89,5 @@ MIT
 [HTML]: <http://html.com/>
 [JQuery]: <http://jquery.com/>
 [CSS]: <http://html.com/>
+[AOS]: <https://michalsnik.github.io/aos/>
+[Materialize]: <http://materializecss.com/>
