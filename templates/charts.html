@@ -2,7 +2,7 @@
 
 {%block header%}
     <!-- Data tables styles   -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/jquery.dataTables.min.css')}}">
 
     <style>
       .modal { width: 90% !important; max-height: 80% !important; }
@@ -271,7 +271,7 @@
 </script>
 
       <!-- Data Tables necessary -->
-      <script type="text/javascript" charset="utf8"  src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+      <script type="text/javascript" charset="utf8"  src="{{url_for('static',filename='js/jquery.dataTables.min.js')}}"></script>
       <script defer src="{{url_for('static',filename='logic/request_comunities.js')}}"></script>
       <script src="{{url_for('static',filename='js/chart.js')}}"></script>
 

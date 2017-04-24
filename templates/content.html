@@ -4,7 +4,7 @@
 {%block header%}
   <link rel="stylesheet" href="{{url_for('static',filename='css/content.css')}}">
   <!--  Progress bars-->
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/w3.css')}}">
 
   <style>
     .modal { width: 30% !important;}
@@ -27,6 +27,9 @@
         font-size: 14px;
         line-height: 30px;
         vertical-align: baseline;
+      }
+      html, body {
+        overflow: hidden;
       }
   </style>
 
@@ -75,7 +78,7 @@
 
 {%block imports%}
 <!-- Google maps; Application Programing Interface -->
-<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script src="{{url_for('static',filename='js/markerclusterer.js')}}"></script>
 <!-- Send a request for the weather -->
 <script defer src="{{url_for('static',filename='logic/request_weather.js')}}"></script>
 <!--  Functions in the map: use functions in request_weather.js-->

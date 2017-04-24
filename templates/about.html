@@ -6,10 +6,10 @@
       <link rel="shortcut icon" type='image/x-icon' href="{{url_for('static',filename='img/favicon.ico')}}">
       <meta name="viewport" content="width=device-width,  user-scalable=no">
       <!-- Latest compiled and minified CSS Bootstrap -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
       <!-- Optional theme -->
       <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-theme.min.css')}}">
-      <!-- AOS (Fancy transitions) -->
+      <!-- aos (fancy transitions) -->
       <link rel="stylesheet" href="{{url_for('static',filename='css/aos.css')}}" />
       <!-- Custom theme -->
       <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
@@ -297,7 +297,7 @@
                </div>
                <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  
+
                </div>
             </div>
          </div>
