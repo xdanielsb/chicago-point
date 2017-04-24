@@ -15,12 +15,13 @@
         font-family: 'Roboto','sans-serif';
         margin: 10px;
         padding-right: 5px;
+        overflow: hidden;
         /* Hide the control initially, to prevent it from appearing
            before the map loads. */
         display: none;
       }
       /* Display the control once it is inside the map. */
-      #map .map-control { display: block; }
+      #map .map-control { display: block; overflow: hidden; }
 
       .selector-control {
         font-size: 14px;
