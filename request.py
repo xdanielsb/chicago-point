@@ -300,7 +300,7 @@ class Request:
         Create data frame cost by neighborhood
     """
     def get_cost_neighborhood(self):
-        url ="static/json/cost_rent.json"
+        url ="static/json/cost_rent.json" #take care with this url.
         data = open(url, "r+")
 
         result = json.load(data)
