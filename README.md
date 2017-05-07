@@ -9,7 +9,7 @@
 
 
 ### Sample video
-#### https://youtu.be/e1cLy38TN-8
+#### https://www.youtube.com/watch?v=q1zJT8Zg_mk
 
 ---
 ### Requirements
