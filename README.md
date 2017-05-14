@@ -1,9 +1,10 @@
-![Alt Planarity testing](static/img/logo_desc.png?raw=true "Logo")
+![Alt Logo Chicago Point](static/img/logo_desc.png?raw=true "Logo")
 
-***CHICAGO POINT application  solve the problem for finding home in Chicago City.***
+***CHICAGO POINT application that solves the problem for finding home in Chicago City.***
 ---
 
-### Page (Some of the following)
+### Page
+
 #### http://danielsantos.net/dev
 #### http://104.131.176.222
 
@@ -28,8 +29,8 @@ $ sudo pip install pandas
 Follow the next steps
 
 ```sh
-$ git clone https://github.com/goldironhack/2017-Purdue-UNAL-IronHack-xdanielsb.git
-$ cd 2017-Purdue-UNAL-IronHack-xdanielsb
+$ git clone name_repository
+$ cd name_repository
 $ python main.py
 $ ** Open a browser an write in the the url bar localhost:5000 **
 ```
@@ -40,6 +41,7 @@ $ ** Open a browser an write in the the url bar localhost:5000 **
   - Ad-hoc Queries
   - Easy to use
   - Responsive design
+  - User Experience
 
 ---
 
@@ -72,16 +74,13 @@ $ ** Open a browser an write in the the url bar localhost:5000 **
 * Name : DANIEL FERNANDO SANTOS BUSTOS
 * Email : dfsantosbu@unal.edu.co
 * Description: Small, intelligent and commited to create a better world through software
-* Class : Software Enginiering I
-* Group : #2
-* Teacher : Jairo Aponte
 
 ---
 
 ### License
 
 MIT
-**Free Software, Hell Yeah!**
+**Free Software, It's the right way  to do things!**
 
 
 [comment]: <> (References)
