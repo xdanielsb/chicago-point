@@ -1,3 +1,4 @@
+'use strict'
 setTimeout(greeting, 3000)
 setTimeout(remind, 7000)
 

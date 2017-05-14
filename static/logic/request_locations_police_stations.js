@@ -1,4 +1,4 @@
-
+'use strict'
 /*
  * This function insert the markers
  */

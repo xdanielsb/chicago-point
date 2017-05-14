@@ -1,3 +1,4 @@
+'use strict'
 //Create ajax JQuery request without token
 function request_weather(_method, _url) {
   $.ajax({

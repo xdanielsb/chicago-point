@@ -1,3 +1,4 @@
+'use strict'
 let active_circle;
 
 function createOrigin(location,_icon){
