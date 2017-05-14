@@ -5,7 +5,6 @@ import pandas as pd
 from functions import haversine
 
 
-
 class RequestHealth:
 
     def __init__(self):

@@ -1,5 +1,10 @@
 from requests.houses import RequestHouses
-from request.health import RequestHealth
+from requests.health import RequestHealth
+from requests.hospitals import RequestHospital
+from requests.libraries import RequestLibrary
+from requests.parks import RequestPark
+from requests.police import RequestPolice
+from requests.cost import RequestCost
 
 from urllib2 import urlopen, Request
 from operator import itemgetter
