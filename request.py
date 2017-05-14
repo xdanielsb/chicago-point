@@ -1,48 +1,36 @@
+from requests.houses import RequestHouses
+from request.health import RequestHealth
+
+from urllib2 import urlopen, Request
+from operator import itemgetter
+
 import json
 import urllib2
 import random
-import pandas as pd #Library for Data Science
-
-from urllib2 import urlopen, Request
-from operator import itemgetter #fancy sorted
-from functions import haversine
+import pandas as pd
 
 
 class Request:
 
     def __init__(self):
-        #Take a moment load the information
+        #Create objects
+        rhouses = RequestHouses()
+        rhealth = RequestHealth()
+        rpolice = RequestPolice()
+        rcost = RequestCost()
+        rpark = RequestPark()
+        rlibrary = RequestLibrary()
+        rhospital = RequestHospital()
 
-        self.houses_data = self.get_houses()
-        self.health_data = self.get_health_statistics()
-        self.police_stations = self.get_police_stations()
-        self.cost_neighborhood = self.get_cost_neighborhood()
-        self.parks = self.get_parks()
-        self.hospitals = self.get_hospitals()
-        self.libraries = self.get_libraries()
+        self.houses_data = rhouses.get_data()
+        self.health_data = rhealth.get_data()
+        self.police_stations = rpolice.get_data()
+        self.parks = rpark.get_data()
+        self.hospitals = rhospital.get_data()
+        self.libraries = rlibrary.get_data()
+        self.cost_neighborhood = rcost.get_data()
 
-    """
-        Get the houses for rent
-    """
-    def get_houses(self):
-        url = "https://data.cityofchicago.org/resource/uahe-iimk.json"
-        data  = urllib2.urlopen(url)
 
-        #Tricky part
-        result = json.load(data)
-        aux = json.dumps(result)
-        aux2 = json.dumps(json.loads(aux))
-
-        #Data Frame
-        data_frame =  pd.read_json(aux2)
-        data_frame = data_frame.dropna()
-        distances = []
-        #Compute the distance between two points useing harvesine formule
-        for index, row in data_frame.iterrows():
-            distances.append(haversine(row['longitude'], row['latitude']))
-        data_frame['distance'] = pd.Series(distances, index=data_frame.index)
-
-        return data_frame
 
     """
         Get the 5 nearest locations to the center, defined in the
@@ -89,31 +77,7 @@ class Request:
             dataset.append([url, _zip, _ad])
         return dataset
 
-    """
-        Get the hospitals in chicago
-    """
-    def get_hospitals(self):
-        url = "https://data.cityofchicago.org/resource/cjg8-dbka.json"
-        data  = urllib2.urlopen(url)
 
-        #Tricky part
-        result = json.load(data)
-        #Data Frame
-        data_frame =  pd.read_json(json.dumps(result))
-        return data_frame
-
-    """
-        Get the libraries in chicago
-    """
-    def get_libraries(self):
-        url = "https://data.cityofchicago.org/resource/x8fc-8rcq.json"
-        data  = urllib2.urlopen(url)
-
-        #Tricky part
-        result = json.load(data)
-        #Data Frame
-        data_frame =  pd.read_json(json.dumps(result))
-        return data_frame
 
     """
         Get important info libraries
@@ -123,23 +87,6 @@ class Request:
         locs_js = locs.to_json()
         return locs_js
 
-    """
-        Get information about the health in a community
-    """
-    def get_health_statistics(self):
-        url = "https://data.cityofchicago.org/resource/iqnk-2tcu.json"
-        data = urllib2.urlopen(url)
-
-        #Tricky part
-        result = json.load(data)
-        aux = json.dumps(result)
-        aux2 = json.dumps(json.loads(aux))
-
-        #Data Frame
-        data_frame =  pd.read_json(aux2)
-        data_frame = data_frame.dropna()
-
-        return data_frame
 
     """
         Get the weather based on ZIP code
@@ -158,25 +105,7 @@ class Request:
         response = json.load(urlopen(request))
         return response
 
-    """
-        This method helps me to get the parks in chicago city
-    """
-    def get_parks(self):
-        url = "https://data.cityofchicago.org/resource/4xwe-2j3y.json"
-        data = urllib2.urlopen(url)
 
-        #Tricky part
-        result = json.load(data)
-        aux = json.dumps(result)
-        aux2 = json.dumps(json.loads(aux))
-
-        #Data Frame
-        data_frame =  pd.read_json(aux2)
-        data_frame = data_frame[["location", "park_name"]]
-        data_frame = data_frame.dropna()
-        #Many parks
-        data_frame = data_frame.sample(frac=0.1)
-        return data_frame
 
     """
         Get the locations of the parks
@@ -233,23 +162,6 @@ class Request:
         info_js = info.to_json()
         return info_js
 
-    """
-        Create data frame police stations
-    """
-    def get_police_stations(self):
-        url ="https://data.cityofchicago.org/resource/gkur-vufi.json"
-        data = urllib2.urlopen(url)
-
-        #Tricky part
-        result = json.load(data)
-        aux = json.dumps(result)
-        aux2 = json.dumps(json.loads(aux))
-
-        #Data Frame
-        data_frame =  pd.read_json(aux2)
-        data_frame = data_frame.dropna()
-
-        return data_frame
 
     """
         Get location police stations
@@ -278,21 +190,6 @@ class Request:
 
         return dataset
 
-    """
-        Create data frame cost by neighborhood
-    """
-    def get_cost_neighborhood(self):
-        url ="static/json/cost_rent.json" #take care with this url.
-        data = open(url, "r+")
-
-        result = json.load(data)
-        aux = json.dumps(result)
-        aux2 = json.dumps(json.loads(aux))
-
-        #Data Frame
-        data_frame =  pd.read_json(aux2)
-        data_frame = data_frame.dropna()
-        return data_frame
 
     """
         Get the table of cost by neighborhood.
