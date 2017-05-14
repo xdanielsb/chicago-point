@@ -1,4 +1,15 @@
-"""This module control the application."""
+"""
+    ===================================
+    Hello I'm Daniel, I think that open
+    source is the right way to do things
+    for that reason I share the project,
+    I hope that this  be useful for
+    your job.
+    If you want  something similar don't
+    hesitate to fork and star the project.
+    Regards Daniel Santos.
+    ===================================
+"""
 
 from flask import Flask, render_template, jsonify
 from request import *
@@ -86,4 +97,5 @@ def weather_zip(zipcode):
 
 
 if __name__ =="__main__":
+    print(__doc__)
     app.run(debug=True, host="0.0.0.0", port=5000, threaded=True)
