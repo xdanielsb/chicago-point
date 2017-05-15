@@ -7,6 +7,7 @@
 #map_container{
   position: relative;
 }
+
 #map{
     height: 0;
     overflow: hidden;
@@ -14,6 +15,7 @@
     position: relative;
 }
 
+/* Input search, for queries ad-hoc*/
 input[type=search] {
     width: 100%;
     padding: 12px 20px;

@@ -1,3 +1,4 @@
+/* Letters when the screen is smalls*/
 #hicago, .letter{
   font-family: 'Rancho', serif;
   font-size: 100px;
@@ -9,6 +10,9 @@ p {
   float: left;
 }
 
+/*
+  Styles images letter C in about content
+*/
 
 .image {
   width: 100%;

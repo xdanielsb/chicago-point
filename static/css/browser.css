@@ -1,5 +1,6 @@
 @import "https://fonts.googleapis.com/css?family=Spirax";
 
+/* Style for the title*/
 h1 {
     padding: 50px 0;
    font-size: 90px;
@@ -14,6 +15,7 @@ h1 {
     -webkit-background-clip: text;
 }
 
+/* Style for the form content*/
 #form_content {
   background: rgb(0, 0, 0,0.8);
   color: #fff;
