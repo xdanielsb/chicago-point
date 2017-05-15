@@ -9,7 +9,7 @@ from functions import haversine
 class RequestHospital:
 
     def __init__(self):
-        pass
+        self.hospitals = self.get_data()
 
     """
         Get the hospitals in chicago
@@ -23,3 +23,11 @@ class RequestHospital:
         #Data Frame
         data_frame =  pd.read_json(json.dumps(result))
         return data_frame
+
+    """
+        Data health centers in chicago
+    """
+    def get_locations_health_center(self):
+        locs = self.hospitals[["community_area", "facility", "location_1", "phone"]]
+        locs_js = locs.to_json()
+        return locs_js

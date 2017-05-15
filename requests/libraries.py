@@ -9,7 +9,7 @@ from functions import haversine
 class RequestLibrary:
 
     def __init__(self):
-        pass
+        self.libraries = self.get_data()
 
     """
         Get the libraries in chicago
@@ -23,3 +23,11 @@ class RequestLibrary:
         #Data Frame
         data_frame =  pd.read_json(json.dumps(result))
         return data_frame
+
+    """
+        Get important info libraries
+    """
+    def get_locations_libraries(self):
+        locs = self.libraries[["location", "address", "hours_of_operation", "teacher_in_the_library", "website", "name_"]]
+        locs_js = locs.to_json()
+        return locs_js

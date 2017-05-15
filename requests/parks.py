@@ -9,7 +9,7 @@ from functions import haversine
 class RequestPark:
 
     def __init__(self):
-        pass
+        self.parks = self.get_data()
 
     """
         This method helps me to get the parks in chicago city
@@ -30,3 +30,10 @@ class RequestPark:
         #Many parks
         data_frame = data_frame.sample(frac=0.1)
         return data_frame
+
+    """
+        Get the locations of the parks
+    """
+    def get_location_parks(self):
+        locs_js = self.parks.to_json()
+        return locs_js

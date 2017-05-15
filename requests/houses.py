@@ -2,14 +2,17 @@ from urllib2 import urlopen, Request
 import json
 import urllib2
 import pandas as pd
+import random
 from functions import haversine
 
 
 
 class RequestHouses:
 
-    def __init__(self):
-        pass
+    def __init__(self, cost):
+        self.cost_neighborhood = cost
+        self.houses_data = self.get_data()
+
 
     """
         Get the houses for rent
@@ -33,3 +36,59 @@ class RequestHouses:
         data_frame['distance'] = pd.Series(distances, index=data_frame.index)
 
         return data_frame
+
+
+    """
+        Get the 5 nearest locations to the center, defined in the
+        requeriments
+    """
+    def get_nearest_locations(self, n=5):
+        locs = self.houses_data[["latitude", "longitude", "address", "community_area_number", "community_area", "phone_number", "property_name", "property_type", "zip_code", "distance"]]
+        nearest =  locs.nsmallest(n, 'distance')
+        nearest.reset_index() #erase
+        locs_js = nearest.to_json()
+
+        aux = json.loads(locs_js)
+        keys = ["address", "community_area_number", "community_area", "phone_number", "property_name", "property_type", "zip_code", "distance", "latitude", "longitude"]
+        dataset = []
+        cods = []
+        for cod  in aux[keys[0]] :
+            cods.append(cod)
+
+        for cod in cods:
+            row = []
+            for a in keys:
+                row.append(aux[a][cod])
+            dataset.append(row)
+        #print(dataset)
+        return  dataset
+
+    """
+        Get number of houses by comunity.
+    """
+    def get_number_by_comunity(self):
+        _counts = self.houses_data["community_area"].value_counts()
+        #_counts_js = _counts.to_json()
+        #print(_counts_js)
+        values = _counts.values
+        labels = _counts.index.values
+        colors = []
+        #Create random colors
+        for i in values:
+            r = random.randint(0,255)
+            g = random.randint(0,255)
+            b = random.randint(0,255)
+            colors.append("rgb({},{},{})".format(r,g,b))
+
+        return labels, values,colors
+
+    """
+        Get locations houses.
+    """
+    def get_locations_houses(self):
+        locs = self.houses_data[["latitude", "longitude", "address", "community_area_number", "community_area", "phone_number", "property_name", "property_type", "zip_code", "distance"]]
+        #Merge Datasets
+        result = pd.merge(locs, self.cost_neighborhood, on="zip_code")
+        #print (result)
+        locs_js = result.to_json()
+        return locs_js

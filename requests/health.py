@@ -8,7 +8,7 @@ from functions import haversine
 class RequestHealth:
 
     def __init__(self):
-        pass
+        self.health_data = self.get_data()
 
     """
         Get information about the health in a community
@@ -27,3 +27,11 @@ class RequestHealth:
         data_frame = data_frame.dropna()
 
         return data_frame
+
+    """
+        Get the information of the comunity
+    """
+    def get_information_comunity(self):
+        info = self.health_data[["community_area", "cancer_all_sites", "below_poverty_level", "birth_rate", "per_capita_income", "community_area_name", "crowded_housing", "infant_mortality_rate", "assault_homicide", "unemployment"]]
+        info_js = info.to_json()
+        return info_js
