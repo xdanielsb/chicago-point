@@ -7,9 +7,6 @@ from requests.police import RequestPolice
 from requests.cost import RequestCost
 from requests.weather import RequestWeather
 
-from operator import itemgetter
-
-
 
 class Request:
 
