@@ -1,11 +1,12 @@
 from urllib2 import urlopen, Request
+from irequest import IRequest
 import json
 import urllib2
 import pandas as pd
 from functions import haversine
 
 
-class RequestHealth:
+class RequestHealth(IRequest):
 
     def __init__(self):
         self.health_data = self.get_data()

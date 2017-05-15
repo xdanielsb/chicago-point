@@ -1,4 +1,5 @@
 from urllib2 import urlopen, Request
+from irequest import IRequest
 import json
 import urllib2
 import pandas as pd
@@ -6,7 +7,7 @@ from functions import haversine
 
 
 
-class RequestPolice:
+class RequestPolice(IRequest):
 
     def __init__(self):
         self.police_stations = self.get_data()

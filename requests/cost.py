@@ -1,4 +1,5 @@
 from urllib2 import urlopen, Request
+from irequest import IRequest
 import json
 import urllib2
 import pandas as pd
@@ -6,7 +7,7 @@ from functions import haversine
 
 
 
-class RequestCost:
+class RequestCost(IRequest):
 
     def __init__(self):
         self.cost_neighborhood = self.get_data()
@@ -16,7 +17,7 @@ class RequestCost:
     """
     def get_instance_data(self):
         return self.cost_neighborhood
-        
+
     """
         Create data frame cost by neighborhood
     """

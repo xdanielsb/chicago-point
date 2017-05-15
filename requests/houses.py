@@ -1,3 +1,4 @@
+from irequest import IRequest
 from urllib2 import urlopen, Request
 import json
 import urllib2
@@ -7,7 +8,7 @@ from functions import haversine
 
 
 
-class RequestHouses:
+class RequestHouses(IRequest):
 
     def __init__(self, cost):
         self.cost_neighborhood = cost

@@ -1,15 +1,11 @@
 from urllib2 import urlopen, Request
+from irequest import IRequest
 import json
 import urllib2
 import pandas as pd
 from functions import haversine
 
-
-
 class RequestWeather:
-
-    def __init__(self):
-        pass
 
     """
         Get the weather based on ZIP code
