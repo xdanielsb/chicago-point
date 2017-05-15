@@ -1,3 +1,11 @@
+#!/usr/bin/python
+__author__ = "Daniel Fernando Santos Bustos"
+__license__ = "MIT"
+__version__ = "1.0"
+__maintainer__ = "Daniel Santos"
+__email__ = "dfsantosbu@unal.edu.co"
+__status__ = "Production"
+
 from requests.houses import RequestHouses
 from requests.health import RequestHealth
 from requests.hospitals import RequestHospital
