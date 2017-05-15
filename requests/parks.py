@@ -10,14 +10,14 @@ from functions import haversine
 class RequestPark(IRequest):
 
     def __init__(self):
+        self.url = "https://data.cityofchicago.org/resource/4xwe-2j3y.json"
         self.parks = self.get_data()
 
     """
         This method helps me to get the parks in chicago city
     """
     def get_data(self):
-        url = "https://data.cityofchicago.org/resource/4xwe-2j3y.json"
-        data = urllib2.urlopen(url)
+        data = urllib2.urlopen(self.url)
 
         #Tricky part
         result = json.load(data)

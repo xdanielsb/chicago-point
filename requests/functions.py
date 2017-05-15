@@ -1,5 +1,8 @@
 from math import radians, cos, sin, asin, sqrt
 
+"""
+    Compute harversine distance
+"""
 def haversine(lon1, lat1):
     lon2, lat2 = [-87.650495, 41.870732]
     """

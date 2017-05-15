@@ -7,6 +7,10 @@ from functions import haversine
 
 class RequestWeather:
 
+    def __init__(self):
+        self.appid = "6aa0bdb1f586c5630d60b6237dfce45c"
+        self.url = "http://api.openweathermap.org/data/2.5/weather"
+
     """
         Get the weather based on ZIP code
     """
@@ -28,8 +32,7 @@ class RequestWeather:
         Get the weather another api
     """
     def get_weather2(self, zipc="94040"):
-        appid = "6aa0bdb1f586c5630d60b6237dfce45c"
-        url = "http://api.openweathermap.org/data/2.5/weather?zip={},us&appid={}".format(zipc, appid)
+        url = self.url+"?zip={},us&appid={}".format(zipc, self.appid)
         data = urllib2.urlopen(url)
         result = json.load(data)
 

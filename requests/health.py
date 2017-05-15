@@ -9,14 +9,14 @@ from functions import haversine
 class RequestHealth(IRequest):
 
     def __init__(self):
+        self.url = "https://data.cityofchicago.org/resource/iqnk-2tcu.json"
         self.health_data = self.get_data()
 
     """
         Get information about the health in a community
     """
     def get_data(self):
-        url = "https://data.cityofchicago.org/resource/iqnk-2tcu.json"
-        data = urllib2.urlopen(url)
+        data = urllib2.urlopen(self.url)
 
         #Tricky part
         result = json.load(data)

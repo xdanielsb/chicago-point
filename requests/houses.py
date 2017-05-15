@@ -11,6 +11,7 @@ from functions import haversine
 class RequestHouses(IRequest):
 
     def __init__(self, cost):
+        self.url = "https://data.cityofchicago.org/resource/uahe-iimk.json"
         self.cost_neighborhood = cost
         self.houses_data = self.get_data()
 
@@ -19,8 +20,7 @@ class RequestHouses(IRequest):
         Get the houses for rent
     """
     def get_data(self):
-        url = "https://data.cityofchicago.org/resource/uahe-iimk.json"
-        data  = urllib2.urlopen(url)
+        data  = urllib2.urlopen(self.url)
 
         #Tricky part
         result = json.load(data)

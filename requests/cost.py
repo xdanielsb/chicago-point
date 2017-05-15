@@ -5,11 +5,10 @@ import urllib2
 import pandas as pd
 from functions import haversine
 
-
-
 class RequestCost(IRequest):
 
     def __init__(self):
+        self.url = "static/json/cost_rent.json"
         self.cost_neighborhood = self.get_data()
 
     """
@@ -22,8 +21,7 @@ class RequestCost(IRequest):
         Create data frame cost by neighborhood
     """
     def get_data(self):
-        url ="static/json/cost_rent.json" #take care with this url.
-        data = open(url, "r+")
+        data = open(self.url, "r+")
 
         result = json.load(data)
         aux = json.dumps(result)

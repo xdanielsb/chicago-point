@@ -10,14 +10,14 @@ from functions import haversine
 class RequestPolice(IRequest):
 
     def __init__(self):
+        self.url = "https://data.cityofchicago.org/resource/gkur-vufi.json"
         self.police_stations = self.get_data()
 
     """
         Create data frame police stations
     """
     def get_data(self):
-        url ="https://data.cityofchicago.org/resource/gkur-vufi.json"
-        data = urllib2.urlopen(url)
+        data = urllib2.urlopen(self.url)
 
         #Tricky part
         result = json.load(data)
