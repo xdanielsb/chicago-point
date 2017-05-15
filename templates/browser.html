@@ -20,86 +20,63 @@
       <meta charset="utf-8">
       <link rel="shortcut icon" type='image/x-icon' href="{{url_for('static',filename='img/favicon.ico')}}">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
       <link rel="stylesheet"  href="https://fonts.googleapis.com/icon?family=Material+Icons" >
       <!--import materialize.css-->
-
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
-          <link rel="stylesheet"  href="{{url_for('static',filename='css/browser.css')}}">
-
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+      <link rel="stylesheet"  href="{{url_for('static',filename='css/browser.css')}}">
       <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <style>
-      @import "https://fonts.googleapis.com/css?family=Roboto";
-      body {
+      <style>
+         @import "https://fonts.googleapis.com/css?family=Roboto";
+         body {
          background: url("{{url_for('static',filename='img/background3.jpg')}}") no-repeat center center fixed;
-         /*background-attachment: fixed;*/
          background-repeat: no-repeat;
-         /*filter: grayscale(80%);*/
-
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-      }
-
-      p {
-        color: rgb(249, 249, 249);
-        background-color: rgb(0, 0, 0);
-        font-family: "Spirax";
-        font-size: 30px;
-      }
-    </style>
-
+         -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+         background-size: cover;
+         }
+      </style>
       <title>chicago point.</title>
    </head>
    <body >
-
       <div class="container">
-<!--
-       <video autoplay>
-         <source src="{{url_for('static',filename='video/one_day.webm')}}" type="video/webm" /> your browser does not support the video tag.
-       </video>
--->
-
-
-      <center> <h1>Chicago point</h1></center>
-
-       <div class="carousel" style="padding-top:-10px">
-          <a class="carousel-item "  href="/content/"> <img src="{{url_for('static',filename='img/map2.png')}}"> <center> <p id="content">Find a place</p> </center> </a>
-          <a class="carousel-item"  href="/charts/">  <img src="{{url_for('static',filename='img/stats2.png')}}"> <center><p id="charts">Charts</p>  </center>   </a>
-          <a class="carousel-item"  href="/about/">   <img src="{{url_for('static',filename='img/about2.png')}}"><center> <p id="about">About chicago</p> </center> </a>
-       </div>
-
+         <center>
+            <h1>Chicago point</h1>
+         </center>
+         <div class="carousel" style="padding-top:-10px">
+            <a class="carousel-item "  href="/content/">
+               <img src="{{url_for('static',filename='img/map2.png')}}">
+               <center>
+                  <p id="content">Find a place</p>
+               </center>
+            </a>
+            <a class="carousel-item"  href="/charts/">
+               <img src="{{url_for('static',filename='img/stats2.png')}}">
+               <center>
+                  <p id="charts">Charts</p>
+               </center>
+            </a>
+            <a class="carousel-item"  href="/about/">
+               <img src="{{url_for('static',filename='img/about2.png')}}">
+               <center>
+                  <p id="about">About chicago</p>
+               </center>
+            </a>
+         </div>
       </div>
-
       <!-- jquery: (necessary for bootstrap's javascript plugins) -->
       <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
       <!-- materialize: -->
       <script src="{{url_for('static',filename='js/materialize.min.js')}}"></script>
       <script src="{{url_for('static',filename='js/browser.js')}}"></script>
-
+      <!--  Analytics -->
       <script>
-      $(window).load(function() { // better to use $(document).ready(function(){
-          $('#content').on('click touchstart', function() {
-              window.location.href = "/content/";
-          });
-          $('#charts').on('click touchstart', function() {
-              window.location.href = "/charts/";
-          });
-          $('#about').on('click touchstart', function() {
-              window.location.href = "/about/";
-          });
-      });
+         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+         ga('create', 'UA-97608126-1', 'auto');
+         ga('send', 'pageview');
       </script>
-
-      <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-          ga('create', 'UA-97608126-1', 'auto');
-          ga('send', 'pageview');
-      </script>
-
    </body>
 </html>

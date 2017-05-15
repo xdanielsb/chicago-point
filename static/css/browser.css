@@ -21,3 +21,11 @@ h1 {
   color: #fff;
   border-radius: 25px;
 }
+
+/* Letters */
+p {
+  color: rgb(249, 249, 249);
+  background-color: rgb(0, 0, 0);
+  font-family: "Spirax";
+  font-size: 30px;
+}

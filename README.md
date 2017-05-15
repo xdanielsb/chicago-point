@@ -17,7 +17,7 @@
 * python 2.7
 * pip
 * Flask
-* Firefox *Run with firefox for creating a better user-experience*
+* Browser \o/
 
 ```sh
 $ sudo pip install Flask
