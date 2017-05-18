@@ -1,4 +1,4 @@
-![Alt Logo Chicago Point](static/img/logo_desc.png?raw=true "Logo")
+![Alt Chicago Point](static/preview/preview.gif)
 
 ***CHICAGO POINT application that solves the problem for finding home in Chicago City.***
 ---
@@ -71,9 +71,9 @@ $ ** Open a browser an write in the the url bar localhost:5000 **
 
 ### About the author
 
-* Name : DANIEL FERNANDO SANTOS BUSTOS
+* Name : Daniel Santos
 * Email : dfsantosbu@unal.edu.co
-* Description: Small, intelligent and commited to create a better world through software
+* Description: A person that likes turning magic things in real.
 
 ---
 
