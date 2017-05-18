@@ -1,13 +1,11 @@
 ***CHICAGO POINT application that solves the problem for finding home in Chicago City.***
 ---
 
-<img src="static/preview/preview.gif" align="center">
-
 ### Page
 #### http://danielsantos.net/dev
 
 ### Sample video
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=https://www.youtube.com/watch?v=q1zJT8Zg_mk" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" alt="Youtube Video" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=q1zJT8Zg_mk" target="_blank"><img src="static/preview/preview.gif" alt="Youtube Video" width="240" height="180" border="10" /></a>
 
 ---
 ### Requirements
