@@ -6,9 +6,11 @@
 
 ### Sample video
 <p align="center">
-    <a href="http://www.youtube.com/watch?feature=player_embedded&v=q1zJT8Zg_mk" target="_blank"><img src="static/preview/mask.png" alt="Youtube Video" width="240" height="180" border="10" /></a>
+    <a href="http://www.youtube.com/watch?feature=player_embedded&v=q1zJT8Zg_mk" target="_blank"><img src="static/preview/mask.png" alt="Youtube Video" width="394" height="218" border="2" /></a>
 </p>
+
 ---
+
 ### Requirements
 * python 2.7
 * pip
