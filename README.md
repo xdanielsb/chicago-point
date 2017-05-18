@@ -1,16 +1,13 @@
-![Alt Chicago Point](static/preview/preview.gif)
-
 ***CHICAGO POINT application that solves the problem for finding home in Chicago City.***
 ---
 
+<img src="static/preview/preview.gif" align="center">
+
 ### Page
-
 #### http://danielsantos.net/dev
-#### http://104.131.176.222
-
 
 ### Sample video
-#### https://www.youtube.com/watch?v=q1zJT8Zg_mk
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=https://www.youtube.com/watch?v=q1zJT8Zg_mk" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" alt="Youtube Video" width="240" height="180" border="10" /></a>
 
 ---
 ### Requirements
