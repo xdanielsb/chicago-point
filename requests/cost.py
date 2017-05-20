@@ -11,16 +11,14 @@ class RequestCost(IRequest):
         self.url = "static/json/cost_rent.json"
         self.cost_neighborhood = self.get_data()
 
-    """
-        Just a getter
-    """
+
     def get_instance_data(self):
+        """ Get the instance of this class """
         return self.cost_neighborhood
 
-    """
-        Create data frame cost by neighborhood
-    """
+
     def get_data(self):
+        """ Create data frame cost by neighborhood """
         data = open(self.url, "r+")
 
         result = json.load(data)
@@ -32,10 +30,9 @@ class RequestCost(IRequest):
         data_frame = data_frame.dropna()
         return data_frame
 
-    """
-        Get most cheapest comunities
-    """
+
     def get_cheapest_comunities(self,n = 5):
+        """ Get most cheapest comunities by default 5 """
         info = self.cost_neighborhood[["community_area", "cost1bedroom", "cost2bedrooms"]]
         cheapest =  info.nsmallest(n, 'cost1bedroom')
         info_js = cheapest.to_json()
@@ -52,10 +49,9 @@ class RequestCost(IRequest):
             dataset.append([url, _zip, _ad])
         return dataset
 
-    """
-        Get the table of cost by neighborhood.
-    """
+
     def get_cost_table_neighborhood(self):
+        """ Get the table of cost by neighborhood. """
         info = self.cost_neighborhood[["community_area", "cost1bedroom", "cost2bedrooms"]]
         info_js = info.to_json()
         aux = json.loads(info_js)

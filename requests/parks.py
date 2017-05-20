@@ -13,10 +13,9 @@ class RequestPark(IRequest):
         self.url = "https://data.cityofchicago.org/resource/4xwe-2j3y.json"
         self.parks = self.get_data()
 
-    """
-        This method helps me to get the parks in chicago city
-    """
+
     def get_data(self):
+        """ This method helps me to get the parks in chicago city """
         data = urllib2.urlopen(self.url)
 
         #Tricky part
@@ -32,9 +31,8 @@ class RequestPark(IRequest):
         data_frame = data_frame.sample(frac=0.1)
         return data_frame
 
-    """
-        Get the locations of the parks
-    """
+
     def get_location_parks(self):
+        """ Get the locations of the parks """
         locs_js = self.parks.to_json()
         return locs_js

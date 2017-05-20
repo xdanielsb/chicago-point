@@ -1,9 +1,8 @@
 from math import radians, cos, sin, asin, sqrt
 
-"""
-    Compute harversine distance
-"""
+
 def haversine(lon1, lat1):
+    """ Compute harversine distance """
     lon2, lat2 = [-87.650495, 41.870732]
     """
     Calculate the great circle distance between two points

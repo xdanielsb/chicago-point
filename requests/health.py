@@ -12,10 +12,9 @@ class RequestHealth(IRequest):
         self.url = "https://data.cityofchicago.org/resource/iqnk-2tcu.json"
         self.health_data = self.get_data()
 
-    """
-        Get information about the health in a community
-    """
+
     def get_data(self):
+        """ Get information about the health in a community """
         data = urllib2.urlopen(self.url)
 
         #Tricky part
@@ -29,10 +28,9 @@ class RequestHealth(IRequest):
 
         return data_frame
 
-    """
-        Get the information of the comunity
-    """
+
     def get_information_comunity(self):
+        """ Get the information of the comunity """
         info = self.health_data[["community_area", "cancer_all_sites", "below_poverty_level", "birth_rate", "per_capita_income", "community_area_name", "crowded_housing", "infant_mortality_rate", "assault_homicide", "unemployment"]]
         info_js = info.to_json()
         return info_js

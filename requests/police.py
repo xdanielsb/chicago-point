@@ -13,10 +13,8 @@ class RequestPolice(IRequest):
         self.url = "https://data.cityofchicago.org/resource/gkur-vufi.json"
         self.police_stations = self.get_data()
 
-    """
-        Create data frame police stations
-    """
     def get_data(self):
+        """ Create data frame police stations """
         data = urllib2.urlopen(self.url)
 
         #Tricky part
@@ -30,10 +28,8 @@ class RequestPolice(IRequest):
 
         return data_frame
 
-    """
-        Get information police stationn
-    """
     def get_info_police_stations(self):
+        """ Get information about police station """
         info = self.police_stations[["zip", "website", "address"]]
         info_js = info.to_json()
         aux = json.loads(info_js)
@@ -49,10 +45,8 @@ class RequestPolice(IRequest):
 
         return dataset
 
-    """
-        Get location police stations
-    """
     def get_locations_police_stations(self):
+        """ Get location  of police stations    """
         locs = self.police_stations[["location"]]
         locs_js = locs.to_json()
         return locs_js

@@ -16,10 +16,9 @@ class RequestHouses(IRequest):
         self.houses_data = self.get_data()
 
 
-    """
-        Get the houses for rent
-    """
+
     def get_data(self):
+        """ Get the houses for rent """
         data  = urllib2.urlopen(self.url)
 
         #Tricky part
@@ -39,11 +38,9 @@ class RequestHouses(IRequest):
         return data_frame
 
 
-    """
-        Get the 5 nearest locations to the center, defined in the
-        requeriments
-    """
+
     def get_nearest_locations(self, n=5):
+        """ Get the 5 nearest locations to the center """
         locs = self.houses_data[["latitude", "longitude", "address", "community_area_number", "community_area", "phone_number", "property_name", "property_type", "zip_code", "distance"]]
         nearest =  locs.nsmallest(n, 'distance')
         nearest.reset_index() #erase
@@ -64,10 +61,9 @@ class RequestHouses(IRequest):
         #print(dataset)
         return  dataset
 
-    """
-        Get number of houses by comunity.
-    """
+
     def get_number_by_comunity(self):
+        """ Get number of houses by comunity. """
         _counts = self.houses_data["community_area"].value_counts()
         #_counts_js = _counts.to_json()
         #print(_counts_js)
@@ -83,10 +79,9 @@ class RequestHouses(IRequest):
 
         return labels, values,colors
 
-    """
-        Get locations houses.
-    """
+
     def get_locations_houses(self):
+        """ Get locations houses. """
         locs = self.houses_data[["latitude", "longitude", "address", "community_area_number", "community_area", "phone_number", "property_name", "property_type", "zip_code", "distance"]]
         #Merge Datasets
         result = pd.merge(locs, self.cost_neighborhood, on="zip_code")
