@@ -1,1 +1,4 @@
 *.pyc
+build/*
+ChicagoPoint.egg-info/*
+dist/*
