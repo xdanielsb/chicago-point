@@ -32,7 +32,10 @@ app.register_blueprint(api)
 
 @app.route('/')
 def browser ():
-    return render_template('browser.html')
+    try:
+        return render_template('browser.html')
+    except Exception as e:
+        return render_template('500.html',error=e)
 
 @app.route('/about/')
 def index():
@@ -40,8 +43,10 @@ def index():
 
 @app.route('/content/')
 def content():
-    return render_template('content.html')
-
+    try:
+        return render_template('content.html')
+    except Exception as e:
+        return render_template('500.html',error=e)
 
 if __name__ =="__main__":
     print(__doc__)
