@@ -12,23 +12,6 @@ class RequestWeather:
         self.url = "http://api.openweathermap.org/data/2.5/weather"
 
     """
-        Get the weather based on ZIP code
-    """
-    def get_weather(self,locationid="60007",startdate="2016-05-01", enddate="2016-05-31", datasetid="GSOM"):
-        url = "https://www.ncdc.noaa.gov/cdo-web/api/v2/data?"+ \
-          "datasetid={}"+ \
-          "&locationid=ZIP:{}"+ \
-          "&startdate={}"+\
-          "&enddate={}"
-
-        url = url.format(datasetid, locationid, startdate, enddate)
-        token = "xtLJFvVAFGacWOPnHFCOJvAfwVhVPFmI"
-        request = Request(url)
-        request.add_header('token', token)
-        response = json.load(urlopen(request))
-        return response
-
-    """
         Get the weather another api
     """
     def get_weather2(self, zipc="94040"):

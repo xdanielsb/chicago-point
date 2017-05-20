@@ -17,6 +17,11 @@ request_object = Request()
 
 @api.route('/recommend/')
 def recommend():
+    """
+        Return page with recommendations
+            -nearest places
+            -cheapest places
+    """
     try:
         nearest_places = request_object.get_nearest_locations()
         cheapest_places = request_object.get_cheapest_comunities()
@@ -26,6 +31,13 @@ def recommend():
 
 @api.route('/charts/')
 def charts():
+    """
+        Return page with cards that show information
+            - Police_stations
+            - Healthy per comunity
+            - Cost per neighborhood
+            ...
+    """
     try:
         labels, values,colors = request_object.get_number_by_comunity()
         police_stations = request_object.get_info_police_stations()
@@ -33,29 +45,25 @@ def charts():
         return render_template('charts.html', labels=labels, values=values, colors=colors, police_stations= police_stations, cost_neighborhood=cost_neighborhood)
     except Exception as e:
         return render_template('500.html',error=e)
-"""
-    Methods for the custom API
-"""
+
 
 @api.route('/location_houses/')
 def location_houses():
+    """
+        API method to get location of the houses in Chicago
+    """
     try:
         locs = request_object.get_locations_houses()
         return locs
     except Exception as e:
         return render_template('500.html',error=e)
 
-@api.route("/weather/")
-def weather():
-    try:
-        weather_data = request_object.get_weather()
-        return jsonify(weather_data)
-    except Exception as e:
-        return render_template('500.html',error=e)
-
 
 @api.route("/libraries/")
 def libraries_dat():
+    """
+        API method to get the libraries
+    """
     try:
         info= request_object.get_locations_libraries()
         return jsonify(info)
@@ -64,6 +72,9 @@ def libraries_dat():
 
 @api.route("/parks/")
 def parks():
+    """
+        API method to get the parks in Chicago
+    """
     try:
         info= request_object.get_location_parks()
         return jsonify(info)
@@ -72,6 +83,10 @@ def parks():
 
 @api.route("/info_comunities/")
 def info_comun():
+    """
+        API method to get the information of each comunity
+            - Healthy rates per comunity
+    """
     try:
         info = request_object.get_information_comunity()
         return jsonify(info)
@@ -80,6 +95,9 @@ def info_comun():
 
 @api.route("/location_police_stations/")
 def location_stations():
+    """
+        API method to get the location of police stations
+    """
     try:
         info = request_object.get_locations_police_stations()
         return jsonify(info)
@@ -88,6 +106,9 @@ def location_stations():
 
 @api.route("/health/")
 def info_health_center():
+    """
+        API method to get the location of health centers in Chicago
+    """
     try:
         info = request_object.get_locations_health_center()
         return jsonify(info)
@@ -96,6 +117,9 @@ def info_health_center():
 
 @api.route("/weatherzip/<zipcode>")
 def weather_zip(zipcode):
+    """
+        API method to get the weather given a zipcode
+    """
     try:
         info = request_object.get_weather2(zipcode)
         return jsonify(info)

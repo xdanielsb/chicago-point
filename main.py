@@ -25,13 +25,11 @@ from api_blueprint import api
 
 app = Flask(__name__)
 app.register_blueprint(api)
-"""
-    Create no heavy request at the init of the application
-"""
 
 
 @app.route('/')
 def browser ():
+    """  Return the main page  with the main items """
     try:
         return render_template('browser.html')
     except Exception as e:
@@ -39,10 +37,15 @@ def browser ():
 
 @app.route('/about/')
 def index():
-    return render_template('about.html')
+    """  Return the page in order to know a bit of Chicago  """
+    try:
+        return render_template('about.html')
+    except Exception as e:
+        return render_template('500.html',error=e)
 
 @app.route('/content/')
 def content():
+    """  Render the page with the map an the menu  """
     try:
         return render_template('content.html')
     except Exception as e:
