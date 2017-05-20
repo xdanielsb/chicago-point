@@ -13,9 +13,8 @@
 
 ### Requirements
 * python 2.7
-* pip
+* Pandas
 * Flask
-* Browser \o/
 
 ```sh
 $ sudo pip install Flask
@@ -23,23 +22,11 @@ $ sudo pip install pandas
 ```
 
 ---
-### How to run the application?
-Follow the next steps
 
-```sh
-$ git clone name_repository
-$ cd name_repository
-$ python main.py
-$ ** Open a browser an write in the the url bar localhost:5000 **
-```
----
-
-#### Some features
-
-  - Ad-hoc Queries
-  - Easy to use
-  - Responsive design
-  - User Experience
+### Domain Model
+<p align="center">
+    <img src="docs/domain_model.png" alt="Model" border="2" />
+</p>
 
 ---
 
