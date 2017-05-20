@@ -4,11 +4,13 @@ import json
 import urllib2
 import pandas as pd
 from functions import haversine
+import os
 
 class RequestCost(IRequest):
 
     def __init__(self):
-        self.url = "static/json/cost_rent.json"
+        self.name = "static/json/cost_rent.json"
+        self.url = os.path.join(os.path.dirname(__file__),"../", self.name)
         self.cost_neighborhood = self.get_data()
 
 
