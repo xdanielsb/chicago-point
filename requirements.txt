@@ -10,3 +10,6 @@ pytz==2017.3
 six==1.11.0
 Werkzeug==0.14.1
 gunicorn==19.4.5
+eventlet==0.22.0
+gevent==1.2.2
+greenlet==0.4.9
