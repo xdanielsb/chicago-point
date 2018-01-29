@@ -15,22 +15,31 @@ class RequestHealth(IRequest):
 
     def get_data(self):
         """ Get information about the health in a community """
-        data = urllib2.urlopen(self.url)
+        try:
+            data = urllib2.urlopen(self.url)
 
-        #Tricky part
-        result = json.load(data)
-        aux = json.dumps(result)
-        aux2 = json.dumps(json.loads(aux))
+            #Tricky part
+            result = json.load(data)
+            aux = json.dumps(result)
+            aux2 = json.dumps(json.loads(aux))
 
-        #Data Frame
-        data_frame =  pd.read_json(aux2)
-        data_frame = data_frame.dropna()
+            #Data Frame
+            data_frame =  pd.read_json(aux2)
+            data_frame = data_frame.dropna()
 
-        return data_frame
+            return data_frame
+        except Exception as e:
+            print("error")
+            return []
+
 
 
     def get_information_comunity(self):
         """ Get the information of the comunity """
-        info = self.health_data[["community_area", "cancer_all_sites", "below_poverty_level", "birth_rate", "per_capita_income", "community_area_name", "crowded_housing", "infant_mortality_rate", "assault_homicide", "unemployment"]]
-        info_js = info.to_json()
-        return info_js
+        try:
+            info = self.health_data[["community_area", "cancer_all_sites", "below_poverty_level", "birth_rate", "per_capita_income", "community_area_name", "crowded_housing", "infant_mortality_rate", "assault_homicide", "unemployment"]]
+            info_js = info.to_json()
+            return info_js
+        except Exception as e:
+            print("error")
+            return []

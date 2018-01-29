@@ -19,23 +19,28 @@ class RequestHouses(IRequest):
 
     def get_data(self):
         """ Get the houses for rent """
-        data  = urllib2.urlopen(self.url)
+        try:
+            data  = urllib2.urlopen(self.url)
 
-        #Tricky part
-        result = json.load(data)
-        aux = json.dumps(result)
-        aux2 = json.dumps(json.loads(aux))
+            #Tricky part
+            result = json.load(data)
+            aux = json.dumps(result)
+            aux2 = json.dumps(json.loads(aux))
 
-        #Data Frame
-        data_frame =  pd.read_json(aux2)
-        data_frame = data_frame.dropna()
-        distances = []
-        #Compute the distance between two points useing harvesine formule
-        for index, row in data_frame.iterrows():
-            distances.append(haversine(row['longitude'], row['latitude']))
-        data_frame['distance'] = pd.Series(distances, index=data_frame.index)
+            #Data Frame
+            data_frame =  pd.read_json(aux2)
+            data_frame = data_frame.dropna()
+            distances = []
+            #Compute the distance between two points useing harvesine formule
+            for index, row in data_frame.iterrows():
+                distances.append(haversine(row['longitude'], row['latitude']))
+                data_frame['distance'] = pd.Series(distances, index=data_frame.index)
 
-        return data_frame
+                return data_frame
+        except Exception as e:
+            print("error")
+            return []
+
 
 
 

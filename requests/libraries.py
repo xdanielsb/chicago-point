@@ -14,17 +14,24 @@ class RequestLibrary(IRequest):
         self.libraries = self.get_data()
 
     def get_data(self):
-        """ Get the libraries in chicago """
-        data  = urllib2.urlopen(self.url)
+        try:
+            data  = urllib2.urlopen(self.url)
 
-        #Tricky part
-        result = json.load(data)
-        #Data Frame
-        data_frame =  pd.read_json(json.dumps(result))
-        return data_frame
+            #Tricky part
+            result = json.load(data)
+            #Data Frame
+            data_frame =  pd.read_json(json.dumps(result))
+            return data_frame
+        except Exception as e:
+            raise
+        """ Get the libraries in chicago """
 
     def get_locations_libraries(self):
         """ Get important info libraries """
-        locs = self.libraries[["location", "address", "hours_of_operation", "teacher_in_the_library", "website", "name_"]]
-        locs_js = locs.to_json()
-        return locs_js
+        try:
+            locs = self.libraries[["location", "address", "hours_of_operation", "teacher_in_the_library", "website", "name_"]]
+            locs_js = locs.to_json()
+            return locs_js
+        except Exception as e:
+            print("E1: Error in request")
+            return []

@@ -14,8 +14,13 @@ class RequestWeather:
 
     def get_weather2(self, zipc="94040"):
         """ Get the weather based on a zip """
-        url = self.url+"?zip={},us&appid={}".format(zipc, self.appid)
-        data = urllib2.urlopen(url)
-        result = json.load(data)
+        try:
+            url = self.url+"?zip={},us&appid={}".format(zipc, self.appid)
+            data = urllib2.urlopen(url)
+            result = json.load(data)
 
-        return result
+            return result
+
+        except Exception as e:
+            print("E1: Error in request")
+            return []
