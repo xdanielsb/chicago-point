@@ -2,3 +2,4 @@
 build/*
 ChicagoPoint.egg-info/*
 dist/*
+__pychache__/*

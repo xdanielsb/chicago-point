@@ -1,5 +1,5 @@
-from urllib2 import urlopen, Request
 from irequest import IRequest
+from urllib2 import urlopen, Request
 import json
 import urllib2
 import pandas as pd
