@@ -1,6 +1,6 @@
 #!/usr/bin/python
 __author__ = "Daniel Fernando Santos Bustos"
-__license__ = "MIT"
+__license__ = "GPL V3"
 __version__ = "1.0"
 __maintainer__ = "Daniel Santos"
 __email__ = "dfsantosbu@unal.edu.co"
@@ -53,4 +53,4 @@ def content():
 
 if __name__ =="__main__":
     print(__doc__)
-    app.run(debug=True, host="0.0.0.0", port=80, threaded=True)
+    app.run(host="0.0.0.0", threaded=True)
