@@ -186,7 +186,7 @@ function initMap() {
 
   /* Configuration  for the map */
   map_data = new google.maps.Map(div_map, {
-    zoom: 15,
+    zoom: 12,
     center: _center, //Center in US
     //mapTypeId: 'terrain'
     mapTypeControl: true,
