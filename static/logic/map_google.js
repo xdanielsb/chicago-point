@@ -21,6 +21,8 @@ let parks_a =[]
 let health_centers_a = []
 /* Markers for libraries */
 let libraries_a = []
+/* Markers for houses */
+let houses_a = []
 
 /* Auxiliar variables to show and hide the markers */
 let visible_stations = true
@@ -159,7 +161,8 @@ function calcRoute(start) {
         directionsDisplay.setDirections(response);
         directionsDisplay.setMap(map_data);
       } else {
-        alert("Could not calculate the route");
+        console.log("Could not calculate the route");
+
       }
     });
 }
@@ -243,6 +246,10 @@ function initMap() {
   // Clustering event
   document.getElementById('show-clust').addEventListener('click', function() {
     active_clustering = !active_clustering
+    /* for (var i = 0; i < houses_a.length; i++) {
+        houses_a[i].setVisible(true);
+     }
+  console.log(houses_a[0])*/
     if (active_clustering == false){
       markerCluster.setMaxZoom(1);
       markerCluster.repaint();

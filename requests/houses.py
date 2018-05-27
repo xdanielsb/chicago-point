@@ -32,13 +32,14 @@ class RequestHouses(IRequest):
             data_frame = data_frame.dropna()
             distances = []
             #Compute the distance between two points useing harvesine formule
-            for index, row in data_frame.iterrows():
-                distances.append(haversine(row['longitude'], row['latitude']))
-                data_frame['distance'] = pd.Series(distances, index=data_frame.index)
-
-                return data_frame
+            #print(data_frame)
+            for i, r in data_frame.iterrows():
+                ans = haversine(r['longitude'], r['latitude'])
+                distances.append( ans )
+            data_frame['distance'] = pd.Series(distances, index=data_frame.index)
+            return data_frame
         except Exception as e:
-            print("error")
+            print("error", str(e))
             return []
 
 

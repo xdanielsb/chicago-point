@@ -3,7 +3,7 @@ from math import radians, cos, sin, asin, sqrt
 
 def haversine(lon1, lat1):
     """ Compute harversine distance """
-    lon2, lat2 = [-87.650495, 41.870732]
+    lon2, lat2 = [41.870732, -87.650495]
     """
     Calculate the great circle distance between two points
     on the earth (specified in decimal degrees)

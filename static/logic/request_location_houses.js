@@ -21,8 +21,9 @@ function insert_markers_locations(response){
   let _cost_1bed =  result['cost1bedroom']
   let _cost_2bed =  result['cost2bedrooms']
   let _distance = result['distance']
+  console.log('distance = ', _distance)
   for (var key in _lats){
-    var loc = {lat: _lats[key], lng: _longs[key]}
+    var loc = {lng: _lats[key], lat: _longs[key]}
     var info = {
                  id: key,
                  address: _address[key],
