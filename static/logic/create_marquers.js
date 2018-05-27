@@ -143,9 +143,9 @@ function createParks(location, name){
 
 
 // Function for place a marker
-function createMarkerHouses(location, info_location, _icon) {
+function createMarkerHouses(loc, info_location, _icon) {
     //Simulate omition parameters of python
-
+    console.log("position", loc)
     let l_aux = info_location['distance']
   //  console.log(l_aux)
     if(l_aux > 0 && l_aux < 5){
@@ -158,7 +158,7 @@ function createMarkerHouses(location, info_location, _icon) {
         _icon = 3;
     }
     let data = {
-       position: location,
+       position: loc,
        map: map_data,
        icon: houses[_icon],
        clickable: true,
@@ -189,7 +189,7 @@ function createMarkerHouses(location, info_location, _icon) {
  					fillColor: 'rgb(73, 151, 195)',
  					fillOpacity: 0.1,
  					map: map_data,
- 					center: location,
+ 					center: loc,
  					radius: 777,
           visible: false
  		});
