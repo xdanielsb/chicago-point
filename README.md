@@ -1,29 +1,11 @@
 
 <div align="center">
-
-<h1>CHICAGO POINT<h1>
-<h6>find a house in Chicago<h6>
-
-
-<br> <br>
-    <img src="docs/collage.png" alt="Youtube Video" width="500" height="400" border="2"/>
-    <br><br><br>
-
-    <a href="https://chicagopoint.herokuapp.com/" target="_blank">See the live project</a> <br>
-
-    <a href="http://www.youtube.com/watch?feature=player_embedded&v=q1zJT8Zg_mk" target="_blank">See a video that shows the functionalities </a>
-
-
-    <iframe
-   class=""
-  src="https://www.youtube.com/embed/hgzzLIa-93c?autoplay=0& modestbranding=1&rel=0"
-  frameborder="0"
-  allowTransparency="false"
-  allowfullscreen
-  >
-
+  <h1>CHICAGO POINT<h1>
+  <h6>find a house in Chicago<h6><br><br>
+  <img src="docs/collage.png" alt="Youtube Video" width="500" height="400" border="2"/><br><br><br>
+  <a href="https://chicagopoint.herokuapp.com/" target="_blank">See the live project</a><br>
+  <a href="http://www.youtube.com/watch?feature=player_embedded&v=q1zJT8Zg_mk" target="_blank">See a video that shows the functionalities </a>
 </div>
-
 
 Model
 ============
