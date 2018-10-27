@@ -9,7 +9,7 @@
     <img src="docs/collage.png" alt="Youtube Video" width="500" height="400" border="2"/>
     <br><br><br>
 
-    <a href="http://www.youtube.com/watch?feature=player_embedded&v=q1zJT8Zg_mk" target="_blank">See the live project</a> <br>
+    <a href="https://chicagopoint.herokuapp.com/" target="_blank">See the live project</a> <br>
 
     <a href="http://www.youtube.com/watch?feature=player_embedded&v=q1zJT8Zg_mk" target="_blank">See a video that shows the functionalities </a>
 
