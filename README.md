@@ -1,15 +1,31 @@
-***CHICAGO POINT -find a house in Chicago***
-============================================
+
+<div align="center">
+
+<h1>CHICAGO POINT<h1>
+<h6>find a house in Chicago<h6>
 
 
-Video
-=====
-<p align="center">
-    <a href="http://www.youtube.com/watch?feature=player_embedded&v=q1zJT8Zg_mk" target="_blank"><img src="project/static/preview/mask.png" alt="Youtube Video" width="394" height="218" border="2" /></a>
-</p>
+<br> <br>
+    <img src="docs/collage.png" alt="Youtube Video" width="500" height="400" border="2"/>
+    <br><br><br>
+
+    <a href="http://www.youtube.com/watch?feature=player_embedded&v=q1zJT8Zg_mk" target="_blank">See the live project</a> <br>
+
+    <a href="http://www.youtube.com/watch?feature=player_embedded&v=q1zJT8Zg_mk" target="_blank">See a video that shows the functionalities </a>
 
 
-Domain Model
+    <iframe
+   class=""
+  src="https://www.youtube.com/embed/hgzzLIa-93c?autoplay=0& modestbranding=1&rel=0"
+  frameborder="0"
+  allowTransparency="false"
+  allowfullscreen
+  >
+
+</div>
+
+
+Model
 ============
 <p align="center">
     <img src="docs/domain_model.png" alt="Model" border="2" />
@@ -28,13 +44,11 @@ Datasets
 * [Cost Rent Chicago](https://www.zumper.com/blog/2015/03/chicago-rent-prices-by-neighborhood-february-2015/)
 * [Libraries](https://data.cityofchicago.org/resource/x8fc-8rcq.json)
 
-
 Author
 =====
 
 * Name : Daniel Santos
 * Email : dfsantosbu@unal.edu.co
-* Web : https://danielsantos.net
 
 License
 =======
