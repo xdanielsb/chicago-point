@@ -26,14 +26,8 @@ Datasets
 * [Cost Rent Chicago](https://www.zumper.com/blog/2015/03/chicago-rent-prices-by-neighborhood-february-2015/)
 * [Libraries](https://data.cityofchicago.org/resource/x8fc-8rcq.json)
 
-Author
-=====
-
-* Name : Daniel Santos
-* Email : dfsantosbu@unal.edu.co
-
 License
 =======
 
 GPL V3
-**Free Software, It's the right way  to do things!**
+
